@@ -3,3 +3,4 @@ my-research-page/
 │
 ├── index.html
 └── styles.cs
+└── script.js
