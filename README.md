@@ -1,6 +1,5 @@
 # cristianvega1995.github.io
 my-research-page/
 │
-├── index.html
+├── page1.html
 └── styles.cs
-└── script.js
