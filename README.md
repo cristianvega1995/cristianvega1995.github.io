@@ -147,7 +147,7 @@ Arica, Arica y Parinacota, Chile.
 - Statistics  
 - Introduction to Calculus  
 - Introduction to Algebra
-- 
+
 ### Part-Time Lecturer, Universidad Técnica Federico Santa María (2020)
 - Statistics
 - Integral Calculus
