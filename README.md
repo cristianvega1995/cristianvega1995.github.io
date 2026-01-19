@@ -83,30 +83,30 @@ Arica, Arica y Parinacota, Chile.
 ## Publications {#publ}
 
 ### Journal publications
-|.) F. Lara and C. Vega.: "*[Delayed Feedback in Online Non-Convex Optimization: A Non-Stationary Approach with Applications](https://arxiv.org/pdf/2412.14506)*", *Numerical Algorithms*, 2025.
-2.) F. Roldán and C. Vega.: "*[Relaxed and Inertial Nonlinear Forward-Backward with Momentum](https://link.springer.com/article/10.1007/s10957-025-02694-5)*", *Journal of Optimization Theory and Applications*, 206 (2), 2025.
-3.) C. Vega, C. Molinari, S. Villa, and L. Rosasco.: "*[Fast iterative regularization by reusing data](https://www.degruyter.com/document/doi/10.1515/jiip-2023-0009/html)*", *Journal of Inverse and Ill-posed Problems*, 32(4), pp. 733--759, 2024.
-4.) L. Briceno-Arias, J. Deride, and C. Vega.: "*[Random activations in primal-dual splittings for monotone inclusions with a priori information](https://link.springer.com/article/10.1007/s10957-021-01944-6)*", *Journal of Optimization Theory and Applications*, 192 (1), pp. 56--81, 2022.
+1. F. Lara and C. Vega.: "*[Delayed Feedback in Online Non-Convex Optimization: A Non-Stationary Approach with Applications](https://arxiv.org/pdf/2412.14506)*", *Numerical Algorithms*, 2025.
+2. F. Roldán and C. Vega.: "*[Relaxed and Inertial Nonlinear Forward-Backward with Momentum](https://link.springer.com/article/10.1007/s10957-025-02694-5)*", *Journal of Optimization Theory and Applications*, 206 (2), 2025.
+3. C. Vega, C. Molinari, S. Villa, and L. Rosasco.: "*[Fast iterative regularization by reusing data](https://www.degruyter.com/document/doi/10.1515/jiip-2023-0009/html)*", *Journal of Inverse and Ill-posed Problems*, 32(4), pp. 733--759, 2024.
+4. L. Briceno-Arias, J. Deride, and C. Vega.: "*[Random activations in primal-dual splittings for monotone inclusions with a priori information](https://link.springer.com/article/10.1007/s10957-021-01944-6)*", *Journal of Optimization Theory and Applications*, 192 (1), pp. 56--81, 2022.
 
 ### Articles Submitted
 
-- A. Beck, F. Lara, and C. Vega.: "*Block descent type methods for quasar-convex minimization*", 2025.
-- J.J. Maulén, F. Roldán, and C. Vega.: "*[Relaxed and inertial nonlinear Forward-Backward algorithm](https://arxiv.org/pdf/2507.18856)*", arXiv preprint arXiv:2507.18856, 2025.
-- H. Labarriére, C. Molinari, L. Rosasco, C. Vega, and S. Villa.: "*[Optimization Insights into Deep Diagonal Linear Networks]({https://arxiv.org/pdf/2412.16765)*", arXiv preprint arXiv:2412.16765, 2024.
+5. A. Beck, F. Lara, and C. Vega.: "*Block descent type methods for quasar-convex minimization*", 2025.
+6. J.J. Maulén, F. Roldán, and C. Vega.: "*[Relaxed and inertial nonlinear Forward-Backward algorithm](https://arxiv.org/pdf/2507.18856)*", arXiv preprint arXiv:2507.18856, 2025.
+7. H. Labarriére, C. Molinari, L. Rosasco, C. Vega, and S. Villa.: "*[Optimization Insights into Deep Diagonal Linear Networks]({https://arxiv.org/pdf/2412.16765)*", arXiv preprint arXiv:2412.16765, 2024.
 
 ### Articles in preparation
-- V.S. Amaral, F. Lara, and C. Vega.: "*Block Coordinate Descent Methods for Nonconvex Nonsmooth Optimization with Applications*", in preparation, 2026.
-- F. Lara, and C. Vega.: "*QuAdam: A Variant of Adam for Quasar Convex Functions*", in preparation, 2026.
+8. V.S. Amaral, F. Lara, and C. Vega.: "*Block Coordinate Descent Methods for Nonconvex Nonsmooth Optimization with Applications*", in preparation, 2026.
+9. F. Lara, and C. Vega.: "*QuAdam: A Variant of Adam for Quasar Convex Functions*", in preparation, 2026.
 <br>
 
 
 ## Research Projects {#research}
 
 
-1.) UTA research project: "*Fortalecimiento de Grupos de Investigación*", Code 8802-25, 2026, Postdoctoral researcher. 
-2.) ECOS-Sud-France and ANID-Chile (ECOS240031): "*Dynamical systems associated to nonconvex optimization problems*", Apr. 2025--Mar. 2028. Member of Chilean team.
-3.) Marie Sklodowska-Curie grant agreement No. 861137, EU Horizon 2020 programme. , Mar. 2021--Mar. 2024. PhD student.
-4.) FONDECYT 1190871, Regular 2019,  "*Fast primal-dual splitting algorithms for solving coupled inclusions*". Apr. 2020--Nov. 2020. Master student.
+1. UTA research project: "*Fortalecimiento de Grupos de Investigación*", Code 8802-25, 2026, Postdoctoral researcher. 
+2. ECOS-Sud-France and ANID-Chile (ECOS240031): "*Dynamical systems associated to nonconvex optimization problems*", Apr. 2025--Mar. 2028. Member of Chilean team.
+3. Marie Sklodowska-Curie grant agreement No. 861137, EU Horizon 2020 programme. , Mar. 2021--Mar. 2024. PhD student.
+4. FONDECYT 1190871, Regular 2019,  "*Fast primal-dual splitting algorithms for solving coupled inclusions*". Apr. 2020--Nov. 2020. Master student.
 
 
 <br>
@@ -116,47 +116,47 @@ Arica, Arica y Parinacota, Chile.
 ## Talks {#talks}
 
 ### Conferences and Workshops
-1.) *2nd Latin American Congress on Industrial and Applied Mathematics*, Valparaíso, Chile, Jan. 19--23 ene. 2026: "Inertial Nonlinear Forward-Backward algorithms."
+1. *2nd Latin American Congress on Industrial and Applied Mathematics*, Valparaíso, Chile, Jan. 19--23 ene. 2026: "Inertial Nonlinear Forward-Backward algorithms."
 
-2.) *XCIII Annual Meeting of the Mathematical Society of Chile*, Vicuña, Chile, Nov. 25--28, 2025: "Inertial Nonlinear Forward-Backward algorithms."
+2. *XCIII Annual Meeting of the Mathematical Society of Chile*, Vicuña, Chile, Nov. 25--28, 2025: "Inertial Nonlinear Forward-Backward algorithms."
 
-3.) *PGMO Days 2025*, Paris, France, Nov. 18--19, 2025: "Inertial Nonlinear Forward-Backward algorithms."
+3. *PGMO Days 2025*, Paris, France, Nov. 18--19, 2025: "Inertial Nonlinear Forward-Backward algorithms."
 
-4.) *PGMO Days 2025*, Paris, France, Nov. 18--19, 2025: "Delayed Feedback in Online Non-Convex Optimization: A Non-Stationary Approach with Applications."
+4. *PGMO Days 2025*, Paris, France, Nov. 18--19, 2025: "Delayed Feedback in Online Non-Convex Optimization: A Non-Stationary Approach with Applications."
 
-5.) *XXXVII Mathematics Conference of the Southern Zone*, Talca, Chile, Apr. 23--25, 2025: "Delayed Feedback in Online Non-Convex Optimization: A Non-Stationary Approach with Applications."
+5. *XXXVII Mathematics Conference of the Southern Zone*, Talca, Chile, Apr. 23--25, 2025: "Delayed Feedback in Online Non-Convex Optimization: A Non-Stationary Approach with Applications."
 
-6.) *4th International Conference on Variational Analysis and Optimization*, Santiago, Chile, Jan. 14--17, 2025: "Delayed Feedback in Online Non-Convex Optimization."
+6. *4th International Conference on Variational Analysis and Optimization*, Santiago, Chile, Jan. 14--17, 2025: "Delayed Feedback in Online Non-Convex Optimization."
 
-7.) *TraDE-OPT Final Conference*, Sestri Levante, Italy, Sep. 25--28, 2024: "Learning from Data via Overparameterization."
+7. *TraDE-OPT Final Conference*, Sestri Levante, Italy, Sep. 25--28, 2024: "Learning from Data via Overparameterization."
 
-8.) *XXXII COMCA*, Arica, Chile, Jul. 31, 2024: "Learning from Data via Overparameterization."
+8. *XXXII COMCA*, Arica, Chile, Jul. 31, 2024: "Learning from Data via Overparameterization."
 
-9.) *ODS22*, Firenze, Italy, Aug. 30--Sep. 2, 2022: "Fast Iterative Regularization by Reusing Data."
+9. *ODS22*, Firenze, Italy, Aug. 30--Sep. 2, 2022: "Fast Iterative Regularization by Reusing Data."
 
-11.) *TraDE-OPT Workshop*, UCLouvain, Belgium, Jul. 4--8, 2022: "Fast Iterative Regularization by Reusing Data."
+11. *TraDE-OPT Workshop*, UCLouvain, Belgium, Jul. 4--8, 2022: "Fast Iterative Regularization by Reusing Data."
 
-12.) *SIAM IS22*, Minisymposium on Convex Optimization, 2022: "Fast Iterative Regularization by Reusing Data."
+12. *SIAM IS22*, Minisymposium on Convex Optimization, 2022: "Fast Iterative Regularization by Reusing Data."
 
 ### Invited Talks and Seminars
 
-1.) *Seminar, ICTEAM, UCLouvain*, Louvain-la-Neuve, Belgium, Nov. 6, 2025: "Delayed Feedback in Online Non-Convex Optimization: A Non-Stationary Approach with Applications."
+1. *Seminar, ICTEAM, UCLouvain*, Louvain-la-Neuve, Belgium, Nov. 6, 2025: "Delayed Feedback in Online Non-Convex Optimization: A Non-Stationary Approach with Applications."
 
-2.) *CORMSIS Seminar 2025/26 #4*, University of Southampton, Southampton, England, Oct. 30, 2025: "Inertial Nonlinear Forward-Backward algorithms."
+2. *CORMSIS Seminar 2025/26 #4*, University of Southampton, Southampton, England, Oct. 30, 2025: "Inertial Nonlinear Forward-Backward algorithms."
 
-3.) *PhD and Postdocs seminars*, Group SC of IRIT, at ENSEEIHT, INP Toulouse, Toulouse, France, Oct. 23, 2025: "Delayed Feedback in Online Non-Convex Optimization: A Non-Stationary Approach with Applications."
+3. *PhD and Postdocs seminars*, Group SC of IRIT, at ENSEEIHT, INP Toulouse, Toulouse, France, Oct. 23, 2025: "Delayed Feedback in Online Non-Convex Optimization: A Non-Stationary Approach with Applications."
 
-4.) *Seminar, Universidad de Tarapacá*, Arica, Chile, Aug. 7, 2024: "Fast Iterative Regularization by Reusing Data."
+4. *Seminar, Universidad de Tarapacá*, Arica, Chile, Aug. 7, 2024: "Fast Iterative Regularization by Reusing Data."
 
-5.) *Seminar, Universidad Técnica Federico Santa María*, Santiago, Chile, Sep. 12, 2023: "Fast Iterative Regularization by Reusing Data."
+5. *Seminar, Universidad Técnica Federico Santa María*, Santiago, Chile, Sep. 12, 2023: "Fast Iterative Regularization by Reusing Data."
 
-6.) *Malga Optimization Group*, Genova, Italy, Oct. 31, 2021: "Iterative Regularization and the (Stochastic) Chambolle-Pock Algorithm."
+6. *Malga Optimization Group*, Genova, Italy, Oct. 31, 2021: "Iterative Regularization and the (Stochastic) Chambolle-Pock Algorithm."
 
 ### Poster session
 
-1.) TraDE-OPT ITN Summer School 2021, Centrale Supelec, Gif-sur-Yvette, France, 6 - 9 Jul 2021. 
+1. TraDE-OPT ITN Summer School 2021, Centrale Supelec, Gif-sur-Yvette, France, 6 - 9 Jul 2021. 
 
-2.) TraDE-OPT ITN Winter School 2021, TU Braunschweig, Braunschweig, Germany, 15 - 19 Feb 2021.
+2. TraDE-OPT ITN Winter School 2021, TU Braunschweig, Braunschweig, Germany, 15 - 19 Feb 2021.
 
 
 <br>
