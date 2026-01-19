@@ -1,8 +1,59 @@
 ---
 ---
 
-@import "{{ site.theme }}";
+/* ===== COLOR PALETTE (Soft Modern) ===== */
+:root {
+  --bg-color: #fafafa;
+  --text-color: #1f2933;
+  --muted-text: #4b5563;
+  --link-color: #2563eb;
+  --border-color: #e5e7eb;
+}
+
+/* ===== PAGE GEOMETRY ===== */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.page-header {
+  background: #ffffff;
+  padding: 2.5rem 1rem;
+}
 
 .main-content {
-  max-width: 100%;
+  max-width: 1020px;
+  margin: auto;
+  padding: 3rem 1.5rem;
+}
+
+/* ===== HEADINGS ===== */
+.main-content h1,
+.main-content h2,
+.main-content h3 {
+  color: var(--text-color);
+}
+
+/* ===== LINKS ===== */
+a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ===== SECTION DIVIDERS ===== */
+hr {
+  border: none;
+  border-top: 1px solid var(--border-color);
+  margin: 4rem 0;
+}
+
+/* ===== IMAGES (photo geometry) ===== */
+img {
+  max-width: 280px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
 }
