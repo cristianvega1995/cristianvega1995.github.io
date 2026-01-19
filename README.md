@@ -116,24 +116,24 @@ Arica, Arica y Parinacota, Chile.
 ## Talks {#talks}
 
 ### Conferences and Workshops
-- *2nd Latin American Congress on Industrial and Applied Mathematics*, Valparaíso, Chile, Jan. 19--23 ene. 2026: ``Inertial Nonlinear Forward-Backward algorithms.''
-- *XCIII Annual Meeting of the Mathematical Society of Chile*, Vicuña, Chile, Nov. 25--28, 2025: ``Inertial Nonlinear Forward-Backward algorithms.''
-- *PGMO Days 2025*, Paris, France, Nov. 18--19, 2025: ``Inertial Nonlinear Forward-Backward algorithms.''
-- *PGMO Days 2025*, Paris, France, Nov. 18--19, 2025: ``Delayed Feedback in Online Non-Convex Optimization: A Non-Stationary Approach with Applications.''
-- *XXXVII Mathematics Conference of the Southern Zone*, Talca, Chile, Apr. 23--25, 2025: ``Delayed Feedback in Online Non-Convex Optimization: A Non-Stationary Approach with Applications.''
-- *4th International Conference on Variational Analysis and Optimization*, Santiago, Chile, Jan. 14--17, 2025: ``Delayed Feedback in Online Non-Convex Optimization.''
-- *TraDE-OPT Final Conference*, Sestri Levante, Italy, Sep. 25--28, 2024: ``Learning from Data via Overparameterization.''
-- *XXXII COMCA*, Arica, Chile, Jul. 31, 2024: ``Learning from Data via Overparameterization.''
-- *ODS22*, Firenze, Italy, Aug. 30--Sep. 2, 2022: ``Fast Iterative Regularization by Reusing Data.''
-- *TraDE-OPT Workshop*, UCLouvain, Belgium, Jul. 4--8, 2022: ``Fast Iterative Regularization by Reusing Data.''
-- *SIAM IS22*, Minisymposium on Convex Optimization, 2022: ``Fast Iterative Regularization by Reusing Data.''
+- *2nd Latin American Congress on Industrial and Applied Mathematics*, Valparaíso, Chile, Jan. 19--23 ene. 2026: "Inertial Nonlinear Forward-Backward algorithms."
+- *XCIII Annual Meeting of the Mathematical Society of Chile*, Vicuña, Chile, Nov. 25--28, 2025: "Inertial Nonlinear Forward-Backward algorithms."
+- *PGMO Days 2025*, Paris, France, Nov. 18--19, 2025: "Inertial Nonlinear Forward-Backward algorithms."
+- *PGMO Days 2025*, Paris, France, Nov. 18--19, 2025: "Delayed Feedback in Online Non-Convex Optimization: A Non-Stationary Approach with Applications."
+- *XXXVII Mathematics Conference of the Southern Zone*, Talca, Chile, Apr. 23--25, 2025: "Delayed Feedback in Online Non-Convex Optimization: A Non-Stationary Approach with Applications."
+- *4th International Conference on Variational Analysis and Optimization*, Santiago, Chile, Jan. 14--17, 2025: "Delayed Feedback in Online Non-Convex Optimization."
+- *TraDE-OPT Final Conference*, Sestri Levante, Italy, Sep. 25--28, 2024: "Learning from Data via Overparameterization."
+- *XXXII COMCA*, Arica, Chile, Jul. 31, 2024: "Learning from Data via Overparameterization."
+- *ODS22*, Firenze, Italy, Aug. 30--Sep. 2, 2022: "Fast Iterative Regularization by Reusing Data."
+- *TraDE-OPT Workshop*, UCLouvain, Belgium, Jul. 4--8, 2022: "Fast Iterative Regularization by Reusing Data."
+- *SIAM IS22*, Minisymposium on Convex Optimization, 2022: "Fast Iterative Regularization by Reusing Data."
 ### Invited Talks and Seminars
-- *Seminar, ICTEAM, UCLouvain*, Louvain-la-Neuve, Belgium, Nov. 6, 2025: ``Delayed Feedback in Online Non-Convex Optimization: A Non-Stationary Approach with Applications.''}
-- *CORMSIS Seminar 2025/26 #4*, University of Southampton, Southampton, England, Oct. 30, 2025: ``Inertial Nonlinear Forward-Backward algorithms.''
-- *PhD and Postdocs seminars*, Group SC of IRIT, at ENSEEIHT, INP Toulouse, Toulouse, France, Oct. 23, 2025: ``Delayed Feedback in Online Non-Convex Optimization: A Non-Stationary Approach with Applications.''
-- *Seminar, Universidad de Tarapacá*, Arica, Chile, Aug. 7, 2024: ``Fast Iterative Regularization by Reusing Data.''
-- *Seminar, Universidad Técnica Federico Santa María*, Santiago, Chile, Sep. 12, 2023: ``Fast Iterative Regularization by Reusing Data.''
-- *Malga Optimization Group*, Genova, Italy, Oct. 31, 2021: ``Iterative Regularization and the (Stochastic) Chambolle-Pock Algorithm.''
+- *Seminar, ICTEAM, UCLouvain*, Louvain-la-Neuve, Belgium, Nov. 6, 2025: "Delayed Feedback in Online Non-Convex Optimization: A Non-Stationary Approach with Applications."
+- *CORMSIS Seminar 2025/26 #4*, University of Southampton, Southampton, England, Oct. 30, 2025: "Inertial Nonlinear Forward-Backward algorithms."
+- *PhD and Postdocs seminars*, Group SC of IRIT, at ENSEEIHT, INP Toulouse, Toulouse, France, Oct. 23, 2025: "Delayed Feedback in Online Non-Convex Optimization: A Non-Stationary Approach with Applications."
+- *Seminar, Universidad de Tarapacá*, Arica, Chile, Aug. 7, 2024: "Fast Iterative Regularization by Reusing Data."
+- *Seminar, Universidad Técnica Federico Santa María*, Santiago, Chile, Sep. 12, 2023: "Fast Iterative Regularization by Reusing Data."
+- *Malga Optimization Group*, Genova, Italy, Oct. 31, 2021: "Iterative Regularization and the (Stochastic) Chambolle-Pock Algorithm."
 ### Poster session
 - TraDE-OPT ITN Summer School 2021, Centrale Supelec, Gif-sur-Yvette, France, 6 - 9 Jul 2021. 
 
@@ -143,20 +143,16 @@ Arica, Arica y Parinacota, Chile.
 <br>
 ## Teaching {#teach}
 
-### Part-Time Lecturer, Universidad de Tarapacá (2025–1)
-- Statistics  
-- Introduction to Calculus  
-- Introduction to Algebra
+### Part-Time Lecturer, Universidad de Tarapacá 
+- Statistics (2025–1) 
+- Introduction to Calculus (2025–1) 
+- Introduction to Algebra (2025–1)
 
 ### Part-Time Lecturer, Universidad Técnica Federico Santa María (2020)
-- Statistics
-- Integral Calculus
-- Differential Calculus
+- Statistics (2020–2)
+- Integral Calculus (2020–2)
+- Differential Calculus (2020–1)
 
 ### Teaching Assistant, Universidad Técnica Federico Santa María
-- Optimization
-- Functional Analysis
-- Real Analysis
-- Integral Calculus
-- Differential Calculus
+- Optimization, Functional Analysis, Real Analysis, Integral Calculus, and  Differential Calculus
 
