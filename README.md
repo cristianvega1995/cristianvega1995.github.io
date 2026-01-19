@@ -121,8 +121,8 @@ Arica, Arica y Parinacota, Chile.
 - *PGMO Days 2025*, Paris, France, Nov. 18--19, 2025: ``Inertial Nonlinear Forward-Backward algorithms.''
 - *PGMO Days 2025*, Paris, France, Nov. 18--19, 2025: ``Delayed Feedback in Online Non-Convex Optimization: A Non-Stationary Approach with Applications.''
 - *XXXVII Mathematics Conference of the Southern Zone*, Talca, Chile, Apr. 23--25, 2025: ``Delayed Feedback in Online Non-Convex Optimization: A Non-Stationary Approach with Applications.''
-- *4th International Conference on Variational Analysis and Optimization*, Santiago, Chile, Jan. 14--17, 2025: ``Delayed Feedback in Online Non-Convex Optimization.''}
--*TraDE-OPT Final Conference*, Sestri Levante, Italy, Sep. 25--28, 2024: ``Learning from Data via Overparameterization.''
+- *4th International Conference on Variational Analysis and Optimization*, Santiago, Chile, Jan. 14--17, 2025: ``Delayed Feedback in Online Non-Convex Optimization.''
+- *TraDE-OPT Final Conference*, Sestri Levante, Italy, Sep. 25--28, 2024: ``Learning from Data via Overparameterization.''
 - *XXXII COMCA*, Arica, Chile, Jul. 31, 2024: ``Learning from Data via Overparameterization.''
 - *ODS22*, Firenze, Italy, Aug. 30--Sep. 2, 2022: ``Fast Iterative Regularization by Reusing Data.''
 - *TraDE-OPT Workshop*, UCLouvain, Belgium, Jul. 4--8, 2022: ``Fast Iterative Regularization by Reusing Data.''
