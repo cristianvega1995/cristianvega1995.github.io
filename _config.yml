@@ -1,4 +1,7 @@
-theme: jekyll-theme-cayman
-title:  Cristian Vega
-description: My website!!!
-author: Cristian Vega
+theme: jekyll-theme-merlot
+
+title: Cristian Vega
+description: Postdoctoral Researcher in Optimization
+
+# ---- Design tweaks ----
+show_downloads: false
