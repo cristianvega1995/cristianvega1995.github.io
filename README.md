@@ -35,7 +35,7 @@
       I am particularly interested in structured nonconvexity, especially quasar-convexity and quasi-convexity.
     </td>
 
-    <td style="float:right;width:60%;border:none">
+    <td style="float:right;width:120%;border:none">
       <img src="cristian_vega.png" alt="Cristian Vega">
     </td>
   </tr>
