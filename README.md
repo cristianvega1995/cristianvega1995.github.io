@@ -175,3 +175,7 @@ Arica, Arica y Parinacota, Chile.
 ### Teaching Assistant, Universidad Técnica Federico Santa María
 - Optimization, Functional Analysis, Real Analysis, Integral Calculus, and  Differential Calculus
 
+<!-- www.tutiempo.net - Ancho:388px - Alto:118px -->
+<div id="TT_yiJEk1EkEI2Qd8sAZfuJBKbEEWnAMAhlrY1dksCoKEDI3wHJf"><a href="https://www.tutiempo.net/madrid.html">El tiempo en Madrid</a></div>
+<script type="text/javascript" src="https://www.tutiempo.net/s-widget/l_yiJEk1EkEI2Qd8sAZfuJBKbEEWnAMAhlrY1dksCoKEDI3wHJf"></script>
+
