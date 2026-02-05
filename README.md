@@ -176,6 +176,10 @@ Arica, Arica y Parinacota, Chile.
 - Optimization, Functional Analysis, Real Analysis, Integral Calculus, and  Differential Calculus
 
 <!-- www.tutiempo.net - Ancho:388px - Alto:118px -->
-<div id="TT_yiJEk1EkEI2Qd8sAZfuJBKbEEWnAMAhlrY1dksCoKEDI3wHJf"><a href="https://www.tutiempo.net/madrid.html">El tiempo en Madrid</a></div>
-<script type="text/javascript" src="https://www.tutiempo.net/s-widget/l_yiJEk1EkEI2Qd8sAZfuJBKbEEWnAMAhlrY1dksCoKEDI3wHJf"></script>
+<!-- www.tutiempo.net - Ancho:145px - Alto:338px -->
+<div id="TT_JuDoxEkoCpnap8sK0fz11pVkDRlKTprlruYjkci5qkzJbomZv"><a href="https://www.tutiempo.net/puente-alto.html">El tiempo en Puente Alto</a></div>
+<script type="text/javascript" src="https://www.tutiempo.net/s-widget/l_JuDoxEkoCpnap8sK0fz11pVkDRlKTprlruYjkci5qkzJbomZv"></script>
 
+<!-- www.tutiempo.net - Ancho:145px - Alto:338px -->
+<div id="TT_FeGoBEkICUaczesUyfzEkJv1DJnUMza2rudjkcioKEDpLomsV"><a href="https://www.tutiempo.net/arica.html">El tiempo en Arica</a></div>
+<script type="text/javascript" src="https://www.tutiempo.net/s-widget/l_FeGoBEkICUaczesUyfzEkJv1DJnUMza2rudjkcioKEDpLomsV"></script>
