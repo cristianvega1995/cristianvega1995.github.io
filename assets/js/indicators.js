@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', function() {
             items.forEach(item => {
                 html += `<li><strong>${item.name}:</strong> ${item.unit}${item.value.toFixed(2)}</li>`;
             });
-            html += '</ul><p><small>Fuente: <a href="https://mindicador.cl" target="_blank">mindicador.cl</a></small></p>';
             
             container.innerHTML = html;
         })
