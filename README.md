@@ -175,11 +175,9 @@ Arica, Arica y Parinacota, Chile.
 ### Teaching Assistant, Universidad Técnica Federico Santa María
 - Optimization, Functional Analysis, Real Analysis, Integral Calculus, and  Differential Calculus
 
-<!-- www.tutiempo.net - Ancho:388px - Alto:118px -->
-<!-- www.tutiempo.net - Ancho:145px - Alto:338px -->
-<div id="TT_JuDoxEkoCpnap8sK0fz11pVkDRlKTprlruYjkci5qkzJbomZv"><a href="https://www.tutiempo.net/puente-alto.html">El tiempo en Puente Alto</a></div>
-<script type="text/javascript" src="https://www.tutiempo.net/s-widget/l_JuDoxEkoCpnap8sK0fz11pVkDRlKTprlruYjkci5qkzJbomZv"></script>
+<!-- tutiempo.net - Ancho:300px - Alto:411px -->
+<iframe src="https://www.tutiempo.net/s-widget/app/?LocId=55735&sc=1" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:300px; height:411px;" allowtransparency="true"></iframe>
 
 <!-- www.tutiempo.net - Ancho:145px - Alto:338px -->
-<div id="TT_FeGoBEkICUaczesUyfzEkJv1DJnUMza2rudjkcioKEDpLomsV"><a href="https://www.tutiempo.net/arica.html">El tiempo en Arica</a></div>
-<script type="text/javascript" src="https://www.tutiempo.net/s-widget/l_FeGoBEkICUaczesUyfzEkJv1DJnUMza2rudjkcioKEDpLomsV"></script>
+<!-- tutiempo.net - Ancho:300px - Alto:411px -->
+<iframe src="https://www.tutiempo.net/s-widget/app/?LocId=55660&sc=1" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:300px; height:411px;" allowtransparency="true"></iframe>
