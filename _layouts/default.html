@@ -8,7 +8,7 @@
   {% seo %}
   <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
 
-  <!-- Favicon -->
+  <!-- FAVICON – these lines are the fix! -->
   <link rel="icon" href="{{ "/favicon.ico" | relative_url }}" type="image/x-icon">
   <link rel="icon" href="{{ "/Byzantine.png" | relative_url }}" type="image/png">
 
@@ -24,8 +24,6 @@
         <img src="{{site.logo | relative_url}}" alt="Logo" />
       {% endif %}
       <p>{{ site.description | default: site.github.project_tagline }}</p>
-
-      <!-- Optional: add your navigation links here if you want them in the header -->
     </header>
 
     <section>
@@ -37,7 +35,7 @@
     </footer>
   </div>
 
-  <!-- JavaScript for economic indicators -->
+  <!-- Your custom JavaScript -->
   <script src="{{ "/assets/js/indicators.js" | relative_url }}" defer></script>
 </body>
 </html>
