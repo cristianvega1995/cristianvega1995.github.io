@@ -217,27 +217,25 @@ var x = setInterval(function() {
     document.getElementById("demo").innerHTML = "EXPIRED";
   }
 }, 1000);
+<script>
+// Countdown timer
+var countDownDate = new Date("Jan 5, 2030 15:37:25").getTime();
+var x = setInterval(function() {
+  var now = new Date().getTime();
+  var distance = countDownDate - now;
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
 </script>
-<?php
-$apiUrl = 'https://mindicador.cl/api';
-//Es necesario tener habilitada la directiva allow_url_fopen para usar file_get_contents
-if ( ini_get('allow_url_fopen') ) {
-    $json = file_get_contents($apiUrl);
-} else {
-    //De otra forma utilizamos cURL
-    $curl = curl_init($apiUrl);
-    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-    $json = curl_exec($curl);
-    curl_close($curl);
-}
- 
-$dailyIndicators = json_decode($json);
-echo 'El valor actual de la UF es $' . $dailyIndicators->uf->valor;
-echo 'El valor actual del Dólar observado es $' . $dailyIndicators->dolar->valor;
-echo 'El valor actual del Dólar acuerdo es $' . $dailyIndicators->dolar_intercambio->valor;
-echo 'El valor actual del Euro es $' . $dailyIndicators->euro->valor;
-echo 'El valor actual del IPC es ' . $dailyIndicators->ipc->valor;
-echo 'El valor actual de la UTM es $' . $dailyIndicators->utm->valor;
-echo 'El valor actual del IVP es $' . $dailyIndicators->ivp->valor;
-echo 'El valor actual del Imacec es ' . $dailyIndicators->imacec->valor;
-?>
+
+<!-- JavaScript for economic indicators -->
+<script src="script.js"></script>
+</body>
+</html>
