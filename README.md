@@ -1,5 +1,3 @@
-<link rel="icon" href="favicon.ico" type="image/x-icon">
-<link rel="icon" href="Byzantine.png" type="image/png">
 <table>
   <tr>
     <td style="border:none"><a href="#cont"><h3>Contact</h3></a></td>
