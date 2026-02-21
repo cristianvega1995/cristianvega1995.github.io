@@ -8,7 +8,9 @@
     <td style="border:none"><a href="#teach"><h3>Teaching</h3></a></td>
   </tr>
 </table>
-rel="icon" href="Byzantine.png">
+<head>
+  <link rel="icon" href="Byzantine.png" type="image/png">
+</head>
 
 ---
 
