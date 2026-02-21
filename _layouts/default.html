@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  {% seo %}
+  <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
+
+  <!-- Favicon -->
+  <link rel="icon" href="{{ "/favicon.ico" | relative_url }}" type="image/x-icon">
+  <link rel="icon" href="{{ "/Byzantine.png" | relative_url }}" type="image/png">
+
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <h1><a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
+      {% if site.logo %}
+        <img src="{{site.logo | relative_url}}" alt="Logo" />
+      {% endif %}
+      <p>{{ site.description | default: site.github.project_tagline }}</p>
+
+      <!-- Optional: add your navigation links here if you want them in the header -->
+    </header>
+
+    <section>
+      {{ content }}
+    </section>
+
+    <footer>
+      <!-- optional footer -->
+    </footer>
+  </div>
+
+  <!-- JavaScript for economic indicators -->
+  <script src="{{ "/assets/js/indicators.js" | relative_url }}" defer></script>
+</body>
+</html>
