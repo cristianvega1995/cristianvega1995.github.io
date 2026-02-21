@@ -1,3 +1,6 @@
+<head>
+  <link rel="icon" href="Byzantine.png" type="image/png">
+</head>
 <table>
   <tr>
     <td style="border:none"><a href="#cont"><h3>Contact</h3></a></td>
@@ -8,9 +11,6 @@
     <td style="border:none"><a href="#teach"><h3>Teaching</h3></a></td>
   </tr>
 </table>
-<head>
-  <link rel="icon" href="Byzantine.png" type="image/png">
-</head>
 
 ---
 
