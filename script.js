@@ -15,7 +15,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 { name: 'Euro', value: data.euro.valor, unit: '$' },
                 { name: 'IPC', value: data.ipc.valor, unit: '%' },
                 { name: 'UTM', value: data.utm.valor, unit: '$' },
-                { name: 'IVP', value: data.ivp.valor, unit: '$' },
                 { name: 'Imacec', value: data.imacec.valor, unit: '%' }
             ];
 
