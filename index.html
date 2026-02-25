@@ -551,7 +551,25 @@ var x = setInterval(function() {
   }
 }, 1000);
 </script>
+    
+<!-- Countdown timer container -->
+<div id="countdown-timer"></div>
 
+<!-- Include the countdown script -->
+<script src="countdown.js"></script>
+<script>
+    // Initialize the countdown – change the target date as needed
+    initCountdown({
+        targetDate: new Date(2026, 1, 25, 0, 0, 0), // Year, Month (0-11), Day, Hour, Minute, Second
+        containerId: 'countdown-timer',
+        labels: {
+            days: 'days',
+            hours: 'hours',
+            minutes: 'minutes',
+            seconds: 'seconds'
+        }
+    });
+</script>
 <!-- JavaScript for economic indicators -->
 <script src="script.js"></script>
 </body>
