@@ -1,9 +1,9 @@
 const newsList = [
-    " AI revolutionizing the tech industry!",
-    " Global warming concerns rise in 2025.",
-    " New smartphone released with insane features!",
-    " Upcoming blockbuster movie breaks records!",
-    " Football championship finals this weekend!"
+    "AI revolutionizing the tech industry!",
+    "Global warming concerns rise in 2025.",
+    "New smartphone released with insane features!",
+    "Upcoming blockbuster movie breaks records!",
+    "Football championship finals this weekend!"
 ];
 
 function updateNews() {
