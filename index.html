@@ -448,7 +448,7 @@
 <hr>
 
 <!-- Countdown timer -->
-<h1>I will be in Arica in: <p id="demo"></p></h1>
+<h1>I will be in Santiago in: <p id="demo"></p></h1>
 
 
 <!-- Main intro with photo -->
@@ -579,6 +579,8 @@ Arica, Arica y Parinacota, Chile.</p>
 <h2 id="teach">Teaching</h2>
 <h3>Part-Time Lecturer, Universidad de Tarapacá</h3>
 <ul>
+  <li>Statistics (2026–1)</li>
+  <li>Introduction to Calculus (2026–1)</li>
   <li>Statistics (2025–1)</li>
   <li>Introduction to Calculus (2025–1)</li>
   <li>Introduction to Algebra (2025–1)</li>
@@ -588,6 +590,10 @@ Arica, Arica y Parinacota, Chile.</p>
   <li>Statistics (2020–2)</li>
   <li>Integral Calculus (2020–2)</li>
   <li>Differential Calculus (2020–1)</li>
+</ul>
+<h3>Teaching Assistant, Universidad de Tarapacá</h3>
+<ul>
+  <li>Optimization</li>
 </ul>
 <h3>Teaching Assistant, Universidad Técnica Federico Santa María</h3>
 <ul>
@@ -613,7 +619,7 @@ Arica, Arica y Parinacota, Chile.</p>
 <!-- JavaScript for countdown, news ticker, and indicators -->
 <script>
 // Countdown timer
-var countDownDate = new Date("March 16, 2026 02:35:00").getTime();
+var countDownDate = new Date("April 22, 2026 10:32:00").getTime();
 var x = setInterval(function() {
   var now = new Date().getTime();
   var distance = countDownDate - now;
@@ -630,14 +636,14 @@ var x = setInterval(function() {
 
 // News ticker data
 const newsList = [
-    "🚀 I come back to Arica March 16th!!!",
-    "🌍 Now in Santiago.",
+    "🚀 I come back to Santiago April 22nd!!!",
+    "🌍 Now in Arica.",
     " 📰 Cristian Vega will return in JMZS 2026",
     " and also in ICOMALTA 2026",
     //"🎬 Upcoming blockbuster movie breaks records!",
     //"⚽ Football championship finals this weekend!",
     //"🧪 Breakthrough in fusion energy research",
-    //"💻 New optimization algorithms published"
+    "💻 New optimization algorithms incoming!!!"
 ];
 
 function updateNews() {
@@ -652,21 +658,21 @@ updateNews();
 
 // Placeholder for economic indicators (you can replace with real API)
 // For now, just show a message
-document.addEventListener("DOMContentLoaded", function() {
-    const indicatorsDiv = document.getElementById("indicators");
-    if (indicatorsDiv) {
-        indicatorsDiv.innerHTML = `
-            <h3>📊 Chilean Economic Indicators</h3>
-            <ul>
-                <li><strong>UF:</strong> 38,500.23 (approx)</li>
-                <li><strong>Dólar observado:</strong> 950.12 CLP</li>
-                <li><strong>IPC (último mes):</strong> 0.3%</li>
-                <li><strong>Desempleo:</strong> 8.5%</li>
-            </ul>
-            <p><em>Datos simulados - reemplazar con API real</em></p>
-        `;
-    }
-});
+//document.addEventListener("DOMContentLoaded", function() {
+//    const indicatorsDiv = document.getElementById("indicators");
+//    if (indicatorsDiv) {
+//        indicatorsDiv.innerHTML = `
+ //           <h3>📊 Chilean Economic Indicators</h3>
+ //           <ul>
+ //               <li><strong>UF:</strong> 38,500.23 (approx)</li>
+ //               <li><strong>Dólar observado:</strong> 950.12 CLP</li>
+ //               <li><strong>IPC (último mes):</strong> 0.3%</li>
+ //               <li><strong>Desempleo:</strong> 8.5%</li>
+ //           </ul>
+ //           <p><em>Datos simulados - reemplazar con API real</em></p>
+ //       `;
+ //   }
+//});
 </script>
 
 </main>
