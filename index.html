@@ -52,28 +52,16 @@
             margin-left: 1rem;
         }
         @media screen and (min-width: 86em) {
-            .btn {
-                padding: 0.75rem 1rem;
-            }
+            .btn { padding: 0.75rem 1rem; }
         }
         @media screen and (min-width: 42em) and (max-width: 86em) {
-            .btn {
-                padding: 0.6rem 0.9rem;
-                font-size: 0.9rem;
-            }
+            .btn { padding: 0.6rem 0.9rem; font-size: 0.9rem; }
         }
         @media screen and (max-width: 42em) {
-            .btn {
-                display: block;
-                width: 100%;
-                padding: 0.75rem;
-                font-size: 0.9rem;
-            }
-            .btn + .btn {
-                margin-top: 1rem;
-                margin-left: 0;
-            }
+            .btn { display: block; width: 100%; padding: 0.75rem; font-size: 0.9rem; }
+            .btn + .btn { margin-top: 1rem; margin-left: 0; }
         }
+
         .page-header {
             color: #fff;
             text-align: center;
@@ -82,87 +70,82 @@
             padding: 5rem 6rem;
         }
         @media screen and (min-width: 86em) {
-            .page-header {
-                padding: 5rem 6rem;
-            }
+            .page-header { padding: 5rem 6rem; }
         }
         @media screen and (min-width: 42em) and (max-width: 86em) {
-            .page-header {
-                padding: 3rem 4rem;
-            }
+            .page-header { padding: 3rem 4rem; }
         }
         @media screen and (max-width: 42em) {
-            .page-header {
-                padding: 2rem 1rem;
-            }
+            .page-header { padding: 2rem 1rem; }
         }
+
         .project-name {
             margin-top: 0;
             margin-bottom: 0.1rem;
             font-size: 3.25rem;
             font-weight: 700;
         }
-        @media screen and (min-width: 86em) {
-            .project-name {
-                font-size: 3.25rem;
-            }
-        }
-        @media screen and (min-width: 42em) and (max-width: 86em) {
-            .project-name {
-                font-size: 2.25rem;
-            }
-        }
-        @media screen and (max-width: 42em) {
-            .project-name {
-                font-size: 1.75rem;
-            }
-        }
+        @media screen and (min-width: 86em) { .project-name { font-size: 3.25rem; } }
+        @media screen and (min-width: 42em) and (max-width: 86em) { .project-name { font-size: 2.25rem; } }
+        @media screen and (max-width: 42em) { .project-name { font-size: 1.75rem; } }
+
         .project-tagline {
             margin-bottom: 2rem;
             font-weight: normal;
             opacity: 0.7;
             font-size: 1.25rem;
         }
+        @media screen and (min-width: 86em) { .project-tagline { font-size: 1.25rem; } }
+        @media screen and (min-width: 42em) and (max-width: 86em) { .project-tagline { font-size: 1.15rem; } }
+        @media screen and (max-width: 42em) { .project-tagline { font-size: 1rem; } }
+
+        /* ===== FIXED: scoped nav styles so they don't affect page lists ===== */
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333333;
+        }
+        nav ul li {
+            float: left;
+        }
+        nav ul li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        nav ul li a:hover {
+            background-color: #111111;
+        }
+        nav ul li a h3 {
+            margin: 0;
+            font-size: 1rem;
+            font-weight: normal;
+        }
+
+        /* ===== Main content: full width, no margins ===== */
+        .main-content {
+            width: 100%;
+            max-width: 100%;
+            padding: 2rem;
+            margin: 0;
+            font-size: 1.1rem;
+            background: #fff;
+            box-shadow: none;
+        }
         @media screen and (min-width: 86em) {
-            .project-tagline {
-                font-size: 1.25rem;
-            }
+            .main-content { max-width: 100%; padding: 2rem; }
         }
         @media screen and (min-width: 42em) and (max-width: 86em) {
-            .project-tagline {
-                font-size: 1.15rem;
-            }
+            .main-content { padding: 2rem; }
         }
         @media screen and (max-width: 42em) {
-            .project-tagline {
-                font-size: 1rem;
-            }
+            .main-content { padding: 1rem; }
         }
- .main-content {
-    width: 100%;
-    max-width: 100%;
-    padding: 2rem;
-    margin: 0;
-    font-size: 1.1rem;
-    background: #fff;
-    box-shadow: none;
-}
-@media screen and (min-width: 86em) {
-    .main-content {
-        max-width: 100%;
-        padding: 2rem;
-    }
-}
-@media screen and (min-width: 42em) and (max-width: 86em) {
-    .main-content {
-        padding: 2rem;
-    }
-}
-@media screen and (max-width: 42em) {
-    .main-content {
-        padding: 1rem;
-    }
-}
+
         .main-content h1,
         .main-content h2,
         .main-content h3,
@@ -174,9 +157,7 @@
             font-weight: normal;
             color: #159957;
         }
-        .main-content p {
-            margin-bottom: 1em;
-        }
+        .main-content p { margin-bottom: 1em; }
         .main-content code {
             padding: 2px 4px;
             font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
@@ -197,243 +178,91 @@
             border-radius: 0.3rem;
         }
         .main-content pre > code {
-            padding: 0;
-            margin: 0;
-            font-size: 0.9rem;
-            color: #567482;
-            word-break: normal;
-            white-space: pre;
-            background: transparent;
-            border: 0;
+            padding: 0; margin: 0; font-size: 0.9rem; color: #567482;
+            word-break: normal; white-space: pre; background: transparent; border: 0;
         }
-        .main-content .highlight {
-            margin-bottom: 1rem;
-        }
-        .main-content .highlight pre {
-            margin-bottom: 0;
-            word-break: normal;
-        }
+        .main-content .highlight { margin-bottom: 1rem; }
+        .main-content .highlight pre { margin-bottom: 0; word-break: normal; }
         .main-content .highlight pre,
         .main-content pre {
-            padding: 0.8rem;
-            overflow: auto;
-            font-size: 0.9rem;
-            line-height: 1.45;
-            border-radius: 0.3rem;
-            -webkit-overflow-scrolling: touch;
+            padding: 0.8rem; overflow: auto; font-size: 0.9rem;
+            line-height: 1.45; border-radius: 0.3rem; -webkit-overflow-scrolling: touch;
         }
         .main-content pre code,
         .main-content pre tt {
-            display: inline;
-            max-width: initial;
-            padding: 0;
-            margin: 0;
-            overflow: initial;
-            line-height: inherit;
-            word-wrap: normal;
-            background-color: transparent;
-            border: 0;
+            display: inline; max-width: initial; padding: 0; margin: 0;
+            overflow: initial; line-height: inherit; word-wrap: normal;
+            background-color: transparent; border: 0;
         }
-        .main-content pre code:before,
-        .main-content pre code:after,
-        .main-content pre tt:before,
-        .main-content pre tt:after {
-            content: normal;
-        }
-        .main-content ul,
-        .main-content ol {
-            margin-top: 0;
-        }
+        .main-content pre code:before, .main-content pre code:after,
+        .main-content pre tt:before, .main-content pre tt:after { content: normal; }
+        .main-content ul, .main-content ol { margin-top: 0; }
         .main-content blockquote {
-            padding: 0 1rem;
-            margin-left: 0;
-            color: #819198;
+            padding: 0 1rem; margin-left: 0; color: #819198;
             border-left: 0.3rem solid #dce6f0;
         }
-        .main-content blockquote > :first-child {
-            margin-top: 0;
-        }
-        .main-content blockquote > :last-child {
-            margin-bottom: 0;
-        }
+        .main-content blockquote > :first-child { margin-top: 0; }
+        .main-content blockquote > :last-child { margin-bottom: 0; }
         .main-content table {
-            display: block;
-            width: 100%;
-            overflow: auto;
-            word-break: normal;
-            word-break: keep-all;
-            -webkit-overflow-scrolling: touch;
+            display: block; width: 100%; overflow: auto;
+            word-break: keep-all; -webkit-overflow-scrolling: touch;
         }
-        .main-content table th {
-            font-weight: bold;
+        .main-content table th { font-weight: bold; }
+        .main-content table th, .main-content table td {
+            padding: 0.5rem 1rem; border: 1px solid #e9ebec;
         }
-        .main-content table th,
-        .main-content table td {
-            padding: 0.5rem 1rem;
-            border: 1px solid #e9ebec;
-        }
-        .main-content dl {
-            padding: 0;
-        }
-        .main-content dl dt {
-            padding: 0;
-            margin-top: 1rem;
-            font-size: 1rem;
-            font-weight: bold;
-        }
-        .main-content dl dd {
-            padding: 0;
-            margin-bottom: 1rem;
-        }
+        .main-content dl { padding: 0; }
+        .main-content dl dt { padding: 0; margin-top: 1rem; font-size: 1rem; font-weight: bold; }
+        .main-content dl dd { padding: 0; margin-bottom: 1rem; }
         .main-content hr {
-            height: 2px;
-            padding: 0;
-            margin: 1rem 0;
-            background-color: #eff0f1;
-            border: 0;
+            height: 2px; padding: 0; margin: 1rem 0;
+            background-color: #eff0f1; border: 0;
         }
+
         .site-footer {
-            padding-top: 2rem;
-            margin-top: 2rem;
-            border-top: solid 1px #eff0f1;
-            color: #819198;
-            text-align: center;
+            padding-top: 2rem; margin-top: 2rem;
+            border-top: solid 1px #eff0f1; color: #819198; text-align: center;
         }
-        .site-footer a {
-            color: #819198;
-        }
-        .site-footer a:hover {
-            color: #606c71;
-        }
-        @media screen and (min-width: 86em) {
-            .site-footer {
-                padding-top: 2rem;
-                margin-top: 2rem;
-                font-size: 1rem;
-            }
-        }
-        @media screen and (min-width: 42em) and (max-width: 86em) {
-            .site-footer {
-                padding-top: 1.5rem;
-                margin-top: 1.5rem;
-                font-size: 1rem;
-            }
-        }
-        @media screen and (max-width: 42em) {
-            .site-footer {
-                padding-top: 1rem;
-                margin-top: 1rem;
-                font-size: 0.9rem;
-            }
-        }
-        /* Custom table for navigation */
-        .nav-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 1rem;
-        }
-        .nav-table td {
-            border: none;
-            text-align: center;
-            padding: 0.5rem;
-        }
-        .nav-table a {
-            color: #1e6bb8;
-        }
+        .site-footer a { color: #819198; }
+        .site-footer a:hover { color: #606c71; }
+        @media screen and (min-width: 86em) { .site-footer { padding-top: 2rem; margin-top: 2rem; font-size: 1rem; } }
+        @media screen and (min-width: 42em) and (max-width: 86em) { .site-footer { padding-top: 1.5rem; margin-top: 1.5rem; font-size: 1rem; } }
+        @media screen and (max-width: 42em) { .site-footer { padding-top: 1rem; margin-top: 1rem; font-size: 0.9rem; } }
+
         /* Intro image styling */
-        .intro-table img {
-            max-width: 100%;
-            border-radius: 5px;
-        }
-        #demo {
-            font-size: 1.5em;
-            font-weight: bold;
-            color: #e67e22;
-        }
-        
+        .intro-table img { max-width: 100%; border-radius: 5px; }
+
+        #demo { font-size: 1.5em; font-weight: bold; color: #e67e22; }
+
         /* ===== News Ticker Styles ===== */
         .news-container {
-            width: 100%;
-            max-width: 100%;
-            overflow: hidden;
-            background: linear-gradient(120deg, #42ab6d, #42aba9); /* matches header */
-            padding: 10px 0;
-            position: relative;
-            border-radius: 5px;
-            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
-            margin: 20px 0;
+            width: 100%; max-width: 100%; overflow: hidden;
+            background: linear-gradient(120deg, #42ab6d, #42aba9);
+            padding: 10px 0; position: relative; border-radius: 5px;
+            box-shadow: 0px 5px 10px rgba(0,0,0,0.2); margin: 20px 0;
         }
         .news-title {
-            position: absolute;
-            left: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 16px;
-            font-weight: bold;
-            color: white;
-            background: #2a7f6e; /* darker shade from gradient */
-            padding: 5px 10px;
-            border-radius: 3px;
-            z-index: 2;
+            position: absolute; left: 10px; top: 50%; transform: translateY(-50%);
+            font-size: 16px; font-weight: bold; color: white;
+            background: #2a7f6e; padding: 5px 10px; border-radius: 3px; z-index: 2;
         }
         .news-ticker-wrapper {
-            display: flex;
-            overflow: hidden;
-            width: 100%;
-            margin-left: 130px; /* space for fixed title */
+            display: flex; overflow: hidden; width: 100%; margin-left: 130px;
         }
         .news-ticker {
-            display: flex;
-            white-space: nowrap;
+            display: flex; white-space: nowrap;
             animation: scroll 25s linear infinite;
         }
-        .news-ticker span {
-            padding: 0 30px;
-            color: white;
-            font-size: 16px;
-            font-weight: 500;
-        }
+        .news-ticker span { padding: 0 30px; color: white; font-size: 16px; font-weight: 500; }
         @keyframes scroll {
             from { transform: translateX(0); }
             to { transform: translateX(-50%); }
         }
-        /* Responsive fix for small screens */
         @media screen and (max-width: 42em) {
-            .news-ticker-wrapper {
-                margin-left: 100px;
-            }
-            .news-title {
-                font-size: 14px;
-                padding: 4px 8px;
-            }
-            .news-ticker span {
-                padding: 0 20px;
-                font-size: 14px;
-            }
+            .news-ticker-wrapper { margin-left: 100px; }
+            .news-title { font-size: 14px; padding: 4px 8px; }
+            .news-ticker span { padding: 0 20px; font-size: 14px; }
         }
-        ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333333;
-}
-
-ul li {
-  float: left;
-}
-
-ul li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-ul li a:hover {
-  background-color: #111111;
-}
     </style>
 </head>
 <body>
@@ -441,51 +270,38 @@ ul li a:hover {
 <header class="page-header">
     <h1 class="project-name">Cristian Vega</h1>
     <h2 class="project-tagline">Researcher in Optimization</h2>
-    <!-- Optional buttons – you can add links later if you want -->
-    <!--
-    <a href="#" class="btn">CV</a>
-    <a href="#" class="btn">Publications</a>
-    -->
 </header>
- <nav>
+
+<!-- ===== FIXED: nav li closing tags were </li> not <li>, and h3 margins cleaned up ===== -->
+<nav>
     <ul>
-    <li><a href="#cont"><h3>Contact</h3></a><li>
-    <li><a href="#cv"><h3>CV</h3></a><li>
-    <li><a href="#publ"><h3>Publications</h3></a><li>
-    <li><a href="#research"><h3>Research Projects</h3></a><li>
-    <li><a href="#talks"><h3>Talks</h3></a><li>
-    <li><a href="#teach"><h3>Teaching</h3></a><li>
-    <li><a href="#others"><h3>Others</h3></a><li>
+        <li><a href="#cont"><h3>Contact</h3></a></li>
+        <li><a href="#cv"><h3>CV</h3></a></li>
+        <li><a href="#publ"><h3>Publications</h3></a></li>
+        <li><a href="#research"><h3>Research Projects</h3></a></li>
+        <li><a href="#talks"><h3>Talks</h3></a></li>
+        <li><a href="#teach"><h3>Teaching</h3></a></li>
+        <li><a href="#others"><h3>Others</h3></a></li>
     </ul>
-  </nav>
-<!--table>
-  <tr>
-    <td style="border:none"><a href="#cont"><h3>Contact</h3></a></td>
-    <td style="border:none"><a href="#cv"><h3>CV</h3></a></td>
-    <td style="border:none"><a href="#publ"><h3>Publications</h3></a></td>
-    <td style="border:none"><a href="#research"><h3>Research Projects</h3></a></td>
-    <td style="border:none"><a href="#talks"><h3>Talks</h3></a></td>
-    <td style="border:none"><a href="#teach"><h3>Teaching</h3></a></td>
-    <td style="border:none"><a href="#others"><h3>Others</h3></a></td>
-  </tr>
-</table>
+</nav>
+
+<!-- ===== FIXED: <main> was trapped inside a broken HTML comment ===== -->
 <main class="main-content">
-<!-- Navigation -->
-<!-- ===== NEWS TICKER (integrated) ===== -->
+
+<!-- ===== NEWS TICKER ===== -->
 <div class="news-container">
     <span class="news-title">Where am I?</span>
     <div class="news-ticker-wrapper">
         <div class="news-ticker" id="news-ticker"></div>
     </div>
-</div>    
+</div>
+
 <hr>
 
 <!-- Countdown timer -->
-<h1>I will be in Santiago in: <p id="demo"></p></h1>
-
+<h1>I will be in Santiago in: <span id="demo"></span></h1>
 
 <!-- Main intro with photo -->
-<!-- Fixed intro with flexbox (responsive, no layout errors) -->
 <div style="display: flex; gap: 2rem; align-items: flex-start; flex-wrap: wrap;">
     <div style="flex: 2; min-width: 280px;">
         <b>Welcome to my webpage!</b><br><br>
@@ -509,30 +325,31 @@ ul li a:hover {
 </div>
 
 <br>
+
 <!-- Contact info -->
-<span I will be in Arica</span>
 <h2 id="cont">Contact info</h2>
 <p><strong>Current address:</strong><br>
 Departamento de Matemática, Universidad de Tarapacá,<br>
 Facultad de Ciencias, 18 de Septiembre 2222,<br>
 Arica, Arica y Parinacota, Chile.</p>
 <ul>
-  <li><strong>E-mail:</strong> cristianvegacereno6(dot)gmail(dot)com</li>
-  <li><a href="https://www.linkedin.com/in/cristian-jes%C3%BAs-vega-cere%C3%B1o-447258104/">LinkedIn</a></li>
-  <li><a href="https://www.researchgate.net/profile/Cristian-Vega">ResearchGate</a></li>
-  <li><a href="https://scholar.google.com/citations?user=kOTvx6oAAAAJ&hl=es">Google Scholar</a></li>
-  <li><a href="https://orcid.org/0000-0001-7792-0137">ORCID</a></li>
-  <li><a href="https://github.com/cristianvega1995">GitHub</a></li>
+    <li><strong>E-mail:</strong> cristianvegacereno6(dot)gmail(dot)com</li>
+    <li><a href="https://www.linkedin.com/in/cristian-jes%C3%BAs-vega-cere%C3%B1o-447258104/">LinkedIn</a></li>
+    <li><a href="https://www.researchgate.net/profile/Cristian-Vega">ResearchGate</a></li>
+    <li><a href="https://scholar.google.com/citations?user=kOTvx6oAAAAJ&hl=es">Google Scholar</a></li>
+    <li><a href="https://orcid.org/0000-0001-7792-0137">ORCID</a></li>
+    <li><a href="https://github.com/cristianvega1995">GitHub</a></li>
 </ul>
 
 <br>
 
 <!-- Brief CV -->
 <h2 id="cv">Brief CV</h2>
-<ul
-  <li><strong>03/2021 – 06/2024:</strong> PhD in Mathematics and Applications, MaLGa Machine Learning Genoa Center, Università di Genova. Supervisors: <a href="https://rubrica.unige.it/personale/UkNHXVlo">Silvia Villa</a> and <a href="https://web.mit.edu/lrosasco/www/">Lorenzo Rosasco</a>. Thesis: <a href="https://tesidottorato.depositolegale.it/bitstream/20.500.14242/157194/1/phdunige_4963312.pdf">Implicit Regularization: Insights from Iterative Regularization and Overparameterization</a>.</li>
-  <li><strong>04/2020 – 11/2020:</strong> MSc in Applied Mathematics, Universidad Técnica Federico Santa María. Supervisors: <a href="http://lbriceno.mat.utfsm.cl/">Luis Briceño-Arias</a> and <a href="https://sites.google.com/view/deride-home">Julio Deride</a>. Thesis: <a href="https://repositorio.usm.cl/server/api/core/bitstreams/93020de3-e1d0-42fe-9b58-7c2486c1930f/content">Stochastic primal-dual splitting for composite monotone inclusions</a>. <strong>Score:</strong> 100/100.</li>
-  <li><strong>03/2014 – 04/2020:</strong> Mathematical Engineering, Universidad Técnica Federico Santa María. Thesis: <a href="https://repositorio.usm.cl/server/api/core/bitstreams/93020de3-e1d0-42fe-9b58-7c2486c1930f/content">Alternating and randomized projections in convex optimization</a>. <strong>Score:</strong> 100/100.</li>
+<!-- FIXED: was <ul missing the closing > -->
+<ul>
+    <li><strong>03/2021 – 06/2024:</strong> PhD in Mathematics and Applications, MaLGa Machine Learning Genoa Center, Università di Genova. Supervisors: <a href="https://rubrica.unige.it/personale/UkNHXVlo">Silvia Villa</a> and <a href="https://web.mit.edu/lrosasco/www/">Lorenzo Rosasco</a>. Thesis: <a href="https://tesidottorato.depositolegale.it/bitstream/20.500.14242/157194/1/phdunige_4963312.pdf">Implicit Regularization: Insights from Iterative Regularization and Overparameterization</a>.</li>
+    <li><strong>04/2020 – 11/2020:</strong> MSc in Applied Mathematics, Universidad Técnica Federico Santa María. Supervisors: <a href="http://lbriceno.mat.utfsm.cl/">Luis Briceño-Arias</a> and <a href="https://sites.google.com/view/deride-home">Julio Deride</a>. Thesis: <a href="https://repositorio.usm.cl/server/api/core/bitstreams/93020de3-e1d0-42fe-9b58-7c2486c1930f/content">Stochastic primal-dual splitting for composite monotone inclusions</a>. <strong>Score:</strong> 100/100.</li>
+    <li><strong>03/2014 – 04/2020:</strong> Mathematical Engineering, Universidad Técnica Federico Santa María. Thesis: <a href="https://repositorio.usm.cl/server/api/core/bitstreams/93020de3-e1d0-42fe-9b58-7c2486c1930f/content">Alternating and randomized projections in convex optimization</a>. <strong>Score:</strong> 100/100.</li>
 </ul>
 
 <br>
@@ -541,23 +358,23 @@ Arica, Arica y Parinacota, Chile.</p>
 <h2 id="publ">Publications</h2>
 <h3>Journal publications</h3>
 <ol>
-  <li>F. Lara and C. Vega.: "<a href="https://arxiv.org/pdf/2412.14506">Delayed Feedback in Online Non-Convex Optimization: A Non-Stationary Approach with Applications</a>", <em>Numerical Algorithms</em>, 2025.</li>
-  <li>F. Roldán and C. Vega.: "<a href="https://link.springer.com/article/10.1007/s10957-025-02694-5">Relaxed and Inertial Nonlinear Forward-Backward with Momentum</a>", <em>Journal of Optimization Theory and Applications</em>, 206 (2), 2025.</li>
-  <li>C. Vega, C. Molinari, S. Villa, and L. Rosasco.: "<a href="https://www.degruyter.com/document/doi/10.1515/jiip-2023-0009/html">Fast iterative regularization by reusing data</a>", <em>Journal of Inverse and Ill-posed Problems</em>, 32(4), pp. 733--759, 2024.</li>
-  <li>L. Briceno-Arias, J. Deride, and C. Vega.: "<a href="https://link.springer.com/article/10.1007/s10957-021-01944-6">Random activations in primal-dual splittings for monotone inclusions with a priori information</a>", <em>Journal of Optimization Theory and Applications</em>, 192 (1), pp. 56--81, 2022.</li>
+    <li>F. Lara and C. Vega.: "<a href="https://arxiv.org/pdf/2412.14506">Delayed Feedback in Online Non-Convex Optimization: A Non-Stationary Approach with Applications</a>", <em>Numerical Algorithms</em>, 2025.</li>
+    <li>F. Roldán and C. Vega.: "<a href="https://link.springer.com/article/10.1007/s10957-025-02694-5">Relaxed and Inertial Nonlinear Forward-Backward with Momentum</a>", <em>Journal of Optimization Theory and Applications</em>, 206 (2), 2025.</li>
+    <li>C. Vega, C. Molinari, S. Villa, and L. Rosasco.: "<a href="https://www.degruyter.com/document/doi/10.1515/jiip-2023-0009/html">Fast iterative regularization by reusing data</a>", <em>Journal of Inverse and Ill-posed Problems</em>, 32(4), pp. 733--759, 2024.</li>
+    <li>L. Briceno-Arias, J. Deride, and C. Vega.: "<a href="https://link.springer.com/article/10.1007/s10957-021-01944-6">Random activations in primal-dual splittings for monotone inclusions with a priori information</a>", <em>Journal of Optimization Theory and Applications</em>, 192 (1), pp. 56--81, 2022.</li>
 </ol>
 
 <h3>Articles Submitted</h3>
 <ol start="5">
-  <li>A. Beck, F. Lara, and C. Vega.: "Block descent type methods for quasar-convex minimization", 2025.</li>
-  <li>J.J. Maulén, F. Roldán, and C. Vega.: "<a href="https://arxiv.org/pdf/2507.18856">Relaxed and inertial nonlinear Forward-Backward algorithm</a>", arXiv preprint arXiv:2507.18856, 2025.</li>
-  <li>H. Labarriére, C. Molinari, L. Rosasco, C. Vega, and S. Villa.: "<a href="https://arxiv.org/pdf/2412.16765">Optimization Insights into Deep Diagonal Linear Networks</a>", arXiv preprint arXiv:2412.16765, 2024.</li>
+    <li>A. Beck, F. Lara, and C. Vega.: "Block descent type methods for quasar-convex minimization", 2025.</li>
+    <li>J.J. Maulén, F. Roldán, and C. Vega.: "<a href="https://arxiv.org/pdf/2507.18856">Relaxed and inertial nonlinear Forward-Backward algorithm</a>", arXiv preprint arXiv:2507.18856, 2025.</li>
+    <li>H. Labarriére, C. Molinari, L. Rosasco, C. Vega, and S. Villa.: "<a href="https://arxiv.org/pdf/2412.16765">Optimization Insights into Deep Diagonal Linear Networks</a>", arXiv preprint arXiv:2412.16765, 2024.</li>
 </ol>
 
 <h3>Articles in preparation</h3>
 <ol start="8">
-  <li>V.S. Amaral, F. Lara, and C. Vega.: "Block Coordinate Descent Methods for Nonconvex Nonsmooth Optimization with Applications", in preparation, 2026.</li>
-  <li>F. Lara, and C. Vega.: "QuAdam: A Variant of Adam for Quasar Convex Functions", in preparation, 2026.</li>
+    <li>V.S. Amaral, F. Lara, and C. Vega.: "Block Coordinate Descent Methods for Nonconvex Nonsmooth Optimization with Applications", in preparation, 2026.</li>
+    <li>F. Lara, and C. Vega.: "QuAdam: A Variant of Adam for Quasar Convex Functions", in preparation, 2026.</li>
 </ol>
 
 <br>
@@ -565,10 +382,10 @@ Arica, Arica y Parinacota, Chile.</p>
 <!-- Research Projects -->
 <h2 id="research">Research Projects</h2>
 <ol>
-  <li>UTA research project: "Fortalecimiento de Grupos de Investigación", Code 8802-25, 2026, Assistant researcher.</li>
-  <li>ECOS-Sud-France and ANID-Chile (ECOS240031): "Dynamical systems associated to nonconvex optimization problems", Apr. 2025--Mar. 2028. Member of Chilean team.</li>
-  <li>Marie Sklodowska-Curie grant agreement No. 861137, EU Horizon 2020 programme, Mar. 2021--Mar. 2024. PhD student.</li>
-  <li>FONDECYT 1190871, Regular 2019, "Fast primal-dual splitting algorithms for solving coupled inclusions". Apr. 2020--Nov. 2020. Master student.</li>
+    <li>UTA research project: "Fortalecimiento de Grupos de Investigación", Code 8802-25, 2026, Assistant researcher.</li>
+    <li>ECOS-Sud-France and ANID-Chile (ECOS240031): "Dynamical systems associated to nonconvex optimization problems", Apr. 2025--Mar. 2028. Member of Chilean team.</li>
+    <li>Marie Sklodowska-Curie grant agreement No. 861137, EU Horizon 2020 programme, Mar. 2021--Mar. 2024. PhD student.</li>
+    <li>FONDECYT 1190871, Regular 2019, "Fast primal-dual splitting algorithms for solving coupled inclusions". Apr. 2020--Nov. 2020. Master student.</li>
 </ol>
 
 <br>
@@ -577,33 +394,33 @@ Arica, Arica y Parinacota, Chile.</p>
 <h2 id="talks">Talks</h2>
 <h3>Conferences and Workshops</h3>
 <ol>
-  <li><em>2nd Latin American Congress on Industrial and Applied Mathematics</em>, Valparaíso, Chile, Jan. 19--23, 2026: "Inertial Nonlinear Forward-Backward algorithms."</li>
-  <li><em>XCIII Annual Meeting of the Mathematical Society of Chile</em>, Vicuña, Chile, Nov. 25--28, 2025: "Inertial Nonlinear Forward-Backward algorithms."</li>
-  <li><em>PGMO Days 2025</em>, Paris, France, Nov. 18--19, 2025: "Inertial Nonlinear Forward-Backward algorithms."</li>
-  <li><em>PGMO Days 2025</em>, Paris, France, Nov. 18--19, 2025: "Delayed Feedback in Online Non-Convex Optimization: A Non-Stationary Approach with Applications."</li>
-  <li><em>XXXVII Mathematics Conference of the Southern Zone</em>, Talca, Chile, Apr. 23--25, 2025: "Delayed Feedback in Online Non-Convex Optimization: A Non-Stationary Approach with Applications."</li>
-  <li><em>4th International Conference on Variational Analysis and Optimization</em>, Santiago, Chile, Jan. 14--17, 2025: "Delayed Feedback in Online Non-Convex Optimization."</li>
-  <li><em>TraDE-OPT Final Conference</em>, Sestri Levante, Italy, Sep. 25--28, 2024: "Learning from Data via Overparameterization."</li>
-  <li><em>XXXII COMCA</em>, Arica, Chile, Jul. 31, 2024: "Learning from Data via Overparameterization."</li>
-  <li><em>ODS22</em>, Firenze, Italy, Aug. 30--Sep. 2, 2022: "Fast Iterative Regularization by Reusing Data."</li>
-  <li><em>TraDE-OPT Workshop</em>, UCLouvain, Belgium, Jul. 4--8, 2022: "Fast Iterative Regularization by Reusing Data."</li>
-  <li><em>SIAM IS22</em>, Minisymposium on Convex Optimization, 2022: "Fast Iterative Regularization by Reusing Data."</li>
+    <li><em>2nd Latin American Congress on Industrial and Applied Mathematics</em>, Valparaíso, Chile, Jan. 19--23, 2026: "Inertial Nonlinear Forward-Backward algorithms."</li>
+    <li><em>XCIII Annual Meeting of the Mathematical Society of Chile</em>, Vicuña, Chile, Nov. 25--28, 2025: "Inertial Nonlinear Forward-Backward algorithms."</li>
+    <li><em>PGMO Days 2025</em>, Paris, France, Nov. 18--19, 2025: "Inertial Nonlinear Forward-Backward algorithms."</li>
+    <li><em>PGMO Days 2025</em>, Paris, France, Nov. 18--19, 2025: "Delayed Feedback in Online Non-Convex Optimization: A Non-Stationary Approach with Applications."</li>
+    <li><em>XXXVII Mathematics Conference of the Southern Zone</em>, Talca, Chile, Apr. 23--25, 2025: "Delayed Feedback in Online Non-Convex Optimization: A Non-Stationary Approach with Applications."</li>
+    <li><em>4th International Conference on Variational Analysis and Optimization</em>, Santiago, Chile, Jan. 14--17, 2025: "Delayed Feedback in Online Non-Convex Optimization."</li>
+    <li><em>TraDE-OPT Final Conference</em>, Sestri Levante, Italy, Sep. 25--28, 2024: "Learning from Data via Overparameterization."</li>
+    <li><em>XXXII COMCA</em>, Arica, Chile, Jul. 31, 2024: "Learning from Data via Overparameterization."</li>
+    <li><em>ODS22</em>, Firenze, Italy, Aug. 30--Sep. 2, 2022: "Fast Iterative Regularization by Reusing Data."</li>
+    <li><em>TraDE-OPT Workshop</em>, UCLouvain, Belgium, Jul. 4--8, 2022: "Fast Iterative Regularization by Reusing Data."</li>
+    <li><em>SIAM IS22</em>, Minisymposium on Convex Optimization, 2022: "Fast Iterative Regularization by Reusing Data."</li>
 </ol>
 
 <h3>Invited Talks and Seminars</h3>
 <ol>
-  <li><em>Seminar, ICTEAM, UCLouvain</em>, Louvain-la-Neuve, Belgium, Nov. 6, 2025: "Delayed Feedback in Online Non-Convex Optimization: A Non-Stationary Approach with Applications."</li>
-  <li><em>CORMSIS Seminar 2025/26 #4</em>, University of Southampton, Southampton, England, Oct. 30, 2025: "Inertial Nonlinear Forward-Backward algorithms."</li>
-  <li><em>PhD and Postdocs seminars</em>, Group SC of IRIT, at ENSEEIHT, INP Toulouse, Toulouse, France, Oct. 23, 2025: "Delayed Feedback in Online Non-Convex Optimization: A Non-Stationary Approach with Applications."</li>
-  <li><em>Seminar, Universidad de Tarapacá</em>, Arica, Chile, Aug. 7, 2024: "Fast Iterative Regularization by Reusing Data."</li>
-  <li><em>Seminar, Universidad Técnica Federico Santa María</em>, Santiago, Chile, Sep. 12, 2023: "Fast Iterative Regularization by Reusing Data."</li>
-  <li><em>Malga Optimization Group</em>, Genova, Italy, Oct. 31, 2021: "Iterative Regularization and the (Stochastic) Chambolle-Pock Algorithm."</li>
+    <li><em>Seminar, ICTEAM, UCLouvain</em>, Louvain-la-Neuve, Belgium, Nov. 6, 2025: "Delayed Feedback in Online Non-Convex Optimization: A Non-Stationary Approach with Applications."</li>
+    <li><em>CORMSIS Seminar 2025/26 #4</em>, University of Southampton, Southampton, England, Oct. 30, 2025: "Inertial Nonlinear Forward-Backward algorithms."</li>
+    <li><em>PhD and Postdocs seminars</em>, Group SC of IRIT, at ENSEEIHT, INP Toulouse, Toulouse, France, Oct. 23, 2025: "Delayed Feedback in Online Non-Convex Optimization: A Non-Stationary Approach with Applications."</li>
+    <li><em>Seminar, Universidad de Tarapacá</em>, Arica, Chile, Aug. 7, 2024: "Fast Iterative Regularization by Reusing Data."</li>
+    <li><em>Seminar, Universidad Técnica Federico Santa María</em>, Santiago, Chile, Sep. 12, 2023: "Fast Iterative Regularization by Reusing Data."</li>
+    <li><em>Malga Optimization Group</em>, Genova, Italy, Oct. 31, 2021: "Iterative Regularization and the (Stochastic) Chambolle-Pock Algorithm."</li>
 </ol>
 
 <h3>Poster session</h3>
 <ul>
-  <li>TraDE-OPT ITN Summer School 2021, Centrale Supelec, Gif-sur-Yvette, France, 6-9 Jul 2021.</li>
-  <li>TraDE-OPT ITN Winter School 2021, TU Braunschweig, Braunschweig, Germany, 15-19 Feb 2021.</li>
+    <li>TraDE-OPT ITN Summer School 2021, Centrale Supelec, Gif-sur-Yvette, France, 6-9 Jul 2021.</li>
+    <li>TraDE-OPT ITN Winter School 2021, TU Braunschweig, Braunschweig, Germany, 15-19 Feb 2021.</li>
 </ul>
 
 <br>
@@ -612,70 +429,67 @@ Arica, Arica y Parinacota, Chile.</p>
 <h2 id="teach">Teaching</h2>
 <h3>Part-Time Lecturer, Universidad de Tarapacá</h3>
 <ul>
-  <li>Statistics (2026–1)</li>
-  <li>Introduction to Calculus (2026–1)</li>
-  <li>Statistics (2025–1)</li>
-  <li>Introduction to Calculus (2025–1)</li>
-  <li>Introduction to Algebra (2025–1)</li>
+    <li>Statistics (2026–1)</li>
+    <li>Introduction to Calculus (2026–1)</li>
+    <li>Statistics (2025–1)</li>
+    <li>Introduction to Calculus (2025–1)</li>
+    <li>Introduction to Algebra (2025–1)</li>
 </ul>
 <h3>Part-Time Lecturer, Universidad Técnica Federico Santa María (2020)</h3>
 <ul>
-  <li>Statistics (2020–2)</li>
-  <li>Integral Calculus (2020–2)</li>
-  <li>Differential Calculus (2020–1)</li>
+    <li>Statistics (2020–2)</li>
+    <li>Integral Calculus (2020–2)</li>
+    <li>Differential Calculus (2020–1)</li>
 </ul>
 <h3>Teaching Assistant, Universidad de Tarapacá</h3>
 <ul>
-  <li>Optimization</li>
+    <li>Optimization</li>
 </ul>
 <h3>Teaching Assistant, Universidad Técnica Federico Santa María</h3>
 <ul>
-  <li>Optimization, Functional Analysis, Real Analysis, Integral Calculus, and Differential Calculus</li>
+    <li>Optimization, Functional Analysis, Real Analysis, Integral Calculus, and Differential Calculus</li>
 </ul>
+
 <h2 id="others">Others</h2>
 
 <!-- Weather widgets -->
 <div style="display: flex; gap: 20px; margin: 20px 0;">
     <iframe src="https://www.tutiempo.net/s-widget/app/?LocId=55735&sc=1" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:300px; height:411px;" allowtransparency="true"></iframe>
 </div>
-<div style="display: flex; gap: 20px; margin: 20px 0;">  
+<div style="display: flex; gap: 20px; margin: 20px 0;">
     <iframe src="https://www.tutiempo.net/s-widget/app/?LocId=55660&sc=1" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:300px; height:411px;" allowtransparency="true"></iframe>
 </div>
 
-
-<!-- Economic Indicators – will be filled by JavaScript -->
+<!-- Economic Indicators -->
 <div id="indicators" class="indicators">
     <h3>📊 Chilean Economic Indicators</h3>
     <p>Cargando...</p>
 </div>
 
-<!-- JavaScript for countdown, news ticker, and indicators -->
+<!-- JavaScript for countdown, news ticker -->
 <script>
 // Countdown timer
 var countDownDate = new Date("April 2, 2026 02:35:00").getTime();
 var x = setInterval(function() {
-  var now = new Date().getTime();
-  var distance = countDownDate - now;
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-  document.getElementById("demo").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
-  if (distance < 0) {
-    clearInterval(x);
-    document.getElementById("demo").innerHTML = "EXPIRED";
-  }
+    var now = new Date().getTime();
+    var distance = countDownDate - now;
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    document.getElementById("demo").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+    if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("demo").innerHTML = "EXPIRED";
+    }
 }, 1000);
 
 // News ticker data
 const newsList = [
     "🚀 I come back to Santiago April 22nd!!!",
     "🌍 Now in Arica.",
-    " 📰 Cristian Vega will return in JMZS 2026",
-    " and also in ICOMALTA 2026",
-    //"🎬 Upcoming blockbuster movie breaks records!",
-    //"⚽ Football championship finals this weekend!",
-    //"🧪 Breakthrough in fusion energy research",
+    "📰 Cristian Vega will return in JMZS 2026",
+    "and also in ICOMALTA 2026",
     "💻 New optimization algorithms incoming!!!"
 ];
 
@@ -683,29 +497,10 @@ function updateNews() {
     const ticker = document.getElementById("news-ticker");
     if (ticker) {
         const newsItems = newsList.map(news => `<span>${news}</span>`).join("");
-        // Duplicate content to ensure smooth looping
         ticker.innerHTML = newsItems + newsItems;
     }
 }
 updateNews();
-
-// Placeholder for economic indicators (you can replace with real API)
-// For now, just show a message
-//document.addEventListener("DOMContentLoaded", function() {
-//    const indicatorsDiv = document.getElementById("indicators");
-//    if (indicatorsDiv) {
-//        indicatorsDiv.innerHTML = `
- //           <h3>📊 Chilean Economic Indicators</h3>
- //           <ul>
- //               <li><strong>UF:</strong> 38,500.23 (approx)</li>
- //               <li><strong>Dólar observado:</strong> 950.12 CLP</li>
- //               <li><strong>IPC (último mes):</strong> 0.3%</li>
- //               <li><strong>Desempleo:</strong> 8.5%</li>
- //           </ul>
- //           <p><em>Datos simulados - reemplazar con API real</em></p>
- //       `;
- //   }
-//});
 </script>
 
 </main>
