@@ -19,7 +19,22 @@
 
         a { color: #1e6bb8; text-decoration: none; }
         a:hover { text-decoration: underline; }
+    .welcome-box {
+      flex: 2;
+      background: white;
+      padding: 1.5rem;
+      margin-right: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
 
+    .contact-box {
+      flex: 1;
+      background: white;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
         /* ── Header ── */
     header {
       display: flex;
@@ -89,7 +104,6 @@
     </style>
 </head>
 <body>
-
 <header class="page-header">
     <div style="display:flex; gap:2rem; align-items:flex-start; flex-wrap:wrap;">
     <div style="flex:2; min-width:280px;">
@@ -130,7 +144,7 @@
 <h3>I will be in Santiago in: <span id="demo"></span></h3>
 
 <!-- Intro -->
-<div style="display:flex; gap:2rem; align-items:flex-start; flex-wrap:wrap;">
+<div class="welcome-box"; style="display:flex; gap:2rem; align-items:flex-start; flex-wrap:wrap;">
     <div style="flex:2; min-width:280px;">
         <b>Welcome to my webpage!</b><br><br>
         I am a part-time lecturer at the University of Tarapacá.
@@ -147,7 +161,7 @@
         </ul>
         I am particularly interested in structured nonconvexity, especially quasar-convexity and quasi-convexity.
     </div>
-    <div style="flex:1; min-width:200px; text-align:center;">
+    <div class="welcome-box"; style="flex:1; min-width:200px; text-align:center;">
         <br>
 
 <!-- Contact -->
