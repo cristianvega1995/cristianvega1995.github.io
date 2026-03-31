@@ -1,223 +1,415 @@
-<link rel="icon" href="favicon.ico" type="image/x-icon">
-<link rel="icon" href="Byzantine.png" type="image/png">
-<table>
-  <tr>
-    <td style="border:none"><a href="#cont"><h3>Contact</h3></a></td>
-    <td style="border:none"><a href="#cv"><h3>CV</h3></a></td>
-    <td style="border:none"><a href="#publ"><h3>Publications</h3></a></td>
-    <td style="border:none"><a href="#research"><h3>Research Projects</h3></a></td>
-    <td style="border:none"><a href="#talks"><h3>Talks</h3></a></td>
-    <td style="border:none"><a href="#teach"><h3>Teaching</h3></a></td>
-  </tr>
-</table>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cristian Vega – Academic Webpage</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="Byzantine.png" type="image/png">
 
----
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
 
-<br/>
+        body {
+            font-family: "Open Sans", Helvetica, Arial, sans-serif;
+            font-size: 16px; line-height: 1.5;
+            color: #000; background: #fafafa;
+        }
 
-<table>
-  <tr>
-    <td style="border:none;">
-      <b>Welcome to my webpage!</b><br><br>
+        a { color: #1e6bb8; text-decoration: none; }
+        a:hover { text-decoration: underline; }
 
-      I am a postdoctoral researcher at the University of Tarapacá under the supervision of Felipe Lara.
-      Before joining UTA, I completed my PhD in Applied Mathematics at the Università di Genova (UniGe),
-      within the Machine Learning Genoa Center (MaLGa), under the supervision of Silvia Villa and Lorenzo Rosasco.
+        /* ── Header ── */
+        .page-header {
+            background-image: linear-gradient(120deg, #a967ab, #662445);
+            padding: 0.75rem 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
 
-      <br><br>
-      My current research interests include:
-      <ul>
-        <li>Nonconvex optimization</li>
-        <li>Splitting algorithms</li>
-        <li>Inertial and stochastic methods</li>
-        <li>Inverse problems</li>
-        <li>Overparameterization</li>
-      </ul>
+        .page-header img {
+            width: 70px;
+            height: 70px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid rgba(255,255,255,0.5);
+            flex-shrink: 0;
+        }
 
-      I am particularly interested in structured nonconvexity, especially quasar-convexity and quasi-convexity.
-    </td>
+        .page-header-text h1 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #fff;
+            margin: 0;
+        }
 
-    <td style="float:right;width:120%;border: 2px solid #2c7be5;">
-      <img src="cristian_vega.png" alt="Cristian Vega">
-    </td>
-  </tr>
-</table>
+        .page-header-text h2 {
+            font-size: 0.95rem;
+            font-weight: normal;
+            color: rgba(255,255,255,0.75);
+            margin: 0;
+        }
 
-<br>
+        /* ── Nav ── */
+        nav {
+            background: #333;
+            position: relative;
+        }
 
-## Contact info {#cont}
+        /* Desktop nav */
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+        }
 
-**Current address:**  
-Departamento de Matemática, Universidad de Tarapacá,  
-Facultad de Ciencias, 18 de Septiembre 2222,  
-Arica, Arica y Parinacota, Chile.
+        nav ul li a {
+            display: block;
+            color: #fff;
+            padding: 10px 14px;
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
 
-- **E-mail:** cristianvegacereno6(dot)gmail(dot)com  
-- [LinkedIn](https://www.linkedin.com/in/cristian-jes%C3%BAs-vega-cere%C3%B1o-447258104/)  
-- [ResearchGate](https://www.researchgate.net/profile/Cristian-Vega)  
-- [Google Scholar](https://scholar.google.com/citations?user=kOTvx6oAAAAJ&hl=es)  
-- [ORCID](https://orcid.org/0000-0001-7792-0137)  
-- [GitHub](https://github.com/cristianvega1995)
+        nav ul li a:hover { background: #111; text-decoration: none; }
 
-<br>
+        /* Hamburger button — hidden on desktop */
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 10px 16px;
+            width: 100%;
+            text-align: left;
+        }
 
-## Brief CV {#cv}
+        /* ── Mobile nav ── */
+        @media (max-width: 600px) {
+            .nav-toggle { display: block; }
 
-- **07/2024 – present:** Postdoctoral Fellow, University of Tarapacá.  
-  Supervisor: *[Felipe Lara](https://felipelara.cl/#about)*.
+            nav ul {
+                flex-direction: column;
+                display: none;
+            }
 
-- **03/2021 – 06/2024:** PhD in Mathematics and Applications,  
-  MaLGa Machine Learning Genoa Center, Università di Genova.  
-  Supervisors: *[Silvia Villa](https://rubrica.unige.it/personale/UkNHXVlo)* and *[Lorenzo Rosasco](https://web.mit.edu/lrosasco/www/)*.  
-  Thesis: *[Implicit Regularization: Insights from Iterative Regularization and Overparameterization](https://tesidottorato.depositolegale.it/bitstream/20.500.14242/157194/1/phdunige_4963312.pdf)*.
+            nav ul.open { display: flex; }
 
-- **04/2020 – 11/2020:** MSc in Applied Mathematics, Universidad Técnica Federico Santa María.  
-  Supervisors: *[Luis Briceño-Arias](http://lbriceno.mat.utfsm.cl/)* and *[Julio Deride](https://sites.google.com/view/deride-home)*.  
-  Thesis: *[Stochastic primal-dual splitting for composite monotone inclusions](https://repositorio.usm.cl/server/api/core/bitstreams/93020de3-e1d0-42fe-9b58-7c2486c1930f/content)*.  
-  **Score:** 100/100.
+            nav ul li a { padding: 12px 16px; border-top: 1px solid #444; }
+        }
 
-- **03/2014 – 04/2020:** Mathematical Engineering, Universidad Técnica Federico Santa María.  
-  Thesis: *[Alternating and randomized projections in convex optimization](https://repositorio.usm.cl/server/api/core/bitstreams/93020de3-e1d0-42fe-9b58-7c2486c1930f/content)*.  
-  **Score:** 100/100.
+        /* ── Main content ── */
+        main { padding: 1.5rem 2rem; background: #fff; }
+        @media (max-width: 600px) { main { padding: 1rem; } }
 
-<br>
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: normal; color: #159957; margin: 1.5rem 0 0.75rem;
+        }
+        p { margin-bottom: 1em; }
+        ul, ol { margin-top: 0; padding-left: 1.5rem; }
+        li { margin-bottom: 0.25rem; }
+        hr { height: 2px; border: 0; background: #eff0f1; margin: 1.25rem 0; }
 
-## Publications {#publ}
+        blockquote {
+            padding: 0 1rem; margin-left: 0;
+            color: #819198; border-left: 0.3rem solid #dce6f0;
+        }
 
-### Journal publications
-1. F. Lara and C. Vega.: "*[Delayed Feedback in Online Non-Convex Optimization: A Non-Stationary Approach with Applications](https://arxiv.org/pdf/2412.14506)*", *Numerical Algorithms*, 2025.
-2. F. Roldán and C. Vega.: "*[Relaxed and Inertial Nonlinear Forward-Backward with Momentum](https://link.springer.com/article/10.1007/s10957-025-02694-5)*", *Journal of Optimization Theory and Applications*, 206 (2), 2025.
-3. C. Vega, C. Molinari, S. Villa, and L. Rosasco.: "*[Fast iterative regularization by reusing data](https://www.degruyter.com/document/doi/10.1515/jiip-2023-0009/html)*", *Journal of Inverse and Ill-posed Problems*, 32(4), pp. 733--759, 2024.
-4. L. Briceno-Arias, J. Deride, and C. Vega.: "*[Random activations in primal-dual splittings for monotone inclusions with a priori information](https://link.springer.com/article/10.1007/s10957-021-01944-6)*", *Journal of Optimization Theory and Applications*, 192 (1), pp. 56--81, 2022.
+        code {
+            padding: 2px 4px; font-size: 0.9rem; color: #567482;
+            background: #f3f6fa; border-radius: 0.3rem;
+            font-family: Consolas, Menlo, monospace;
+        }
+        pre {
+            padding: 0.8rem; overflow: auto; font-size: 0.9rem;
+            color: #567482; background: #f3f6fa;
+            border: 1px solid #dce6f0; border-radius: 0.3rem;
+        }
+        pre code { background: transparent; padding: 0; border: 0; }
 
-### Articles Submitted
+        /* ── Two-column intro boxes ── */
+        .intro-row {
+            display: flex;
+            gap: 1.5rem;
+            align-items: stretch;
+            margin-bottom: 1.5rem;
+        }
 
-5. A. Beck, F. Lara, and C. Vega.: "*Block descent type methods for quasar-convex minimization*", 2025.
-6. J.J. Maulén, F. Roldán, and C. Vega.: "*[Relaxed and inertial nonlinear Forward-Backward algorithm](https://arxiv.org/pdf/2507.18856)*", arXiv preprint arXiv:2507.18856, 2025.
-7. H. Labarriére, C. Molinari, L. Rosasco, C. Vega, and S. Villa.: "*[Optimization Insights into Deep Diagonal Linear Networks]({https://arxiv.org/pdf/2412.16765)*", arXiv preprint arXiv:2412.16765, 2024.
+        .welcome-box, .contact-box {
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 1.25rem 1.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
 
-### Articles in preparation
-8. V.S. Amaral, F. Lara, and C. Vega.: "*Block Coordinate Descent Methods for Nonconvex Nonsmooth Optimization with Applications*", in preparation, 2026.
-9. F. Lara, and C. Vega.: "*QuAdam: A Variant of Adam for Quasar Convex Functions*", in preparation, 2026.
-<br>
+        .welcome-box { flex: 2; }
+        .contact-box { flex: 1; min-width: 220px; }
 
+        .contact-box h3 { margin-top: 0; }
 
-## Research Projects {#research}
+        @media (max-width: 640px) {
+            .intro-row { flex-direction: column; }
+        }
 
+        /* ── News Ticker ── */
+        .news-container {
+            position: relative; overflow: hidden;
+            background: linear-gradient(120deg, #42ab6d, #42aba9);
+            padding: 10px 0; border-radius: 5px;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.2); margin-bottom: 1.25rem;
+        }
+        .news-title {
+            position: absolute; left: 10px; top: 50%; transform: translateY(-50%);
+            font-size: 15px; font-weight: bold; color: #fff;
+            background: #2a7f6e; padding: 5px 10px; border-radius: 3px; z-index: 2;
+        }
+        .news-ticker-wrapper { display: flex; overflow: hidden; margin-left: 130px; }
+        .news-ticker { display: flex; white-space: nowrap; animation: ticker 25s linear infinite; }
+        .news-ticker span { padding: 0 30px; color: #fff; font-size: 15px; font-weight: 500; }
+        @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
-1. UTA research project: "*Fortalecimiento de Grupos de Investigación*", Code 8802-25, 2026, Postdoctoral researcher. 
-2. ECOS-Sud-France and ANID-Chile (ECOS240031): "*Dynamical systems associated to nonconvex optimization problems*", Apr. 2025--Mar. 2028. Member of Chilean team.
-3. Marie Sklodowska-Curie grant agreement No. 861137, EU Horizon 2020 programme. , Mar. 2021--Mar. 2024. PhD student.
-4. FONDECYT 1190871, Regular 2019,  "*Fast primal-dual splitting algorithms for solving coupled inclusions*". Apr. 2020--Nov. 2020. Master student.
+        /* ── Countdown ── */
+        #demo { font-size: 1.2em; font-weight: bold; color: #e67e22; }
+    </style>
+</head>
+<body>
 
+<!-- Header with smaller photo -->
+<header class="page-header">
+    <img src="cristian_vega.png" alt="Cristian Vega">
+    <div class="page-header-text">
+        <h1>Cristian Vega</h1>
+        <h2>Researcher in Optimization</h2>
+    </div>
+</header>
 
-<br>
-<br>
+<!-- Nav with hamburger on mobile -->
+<nav>
+    <button class="nav-toggle" onclick="document.querySelector('nav ul').classList.toggle('open')">☰ Menu</button>
+    <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#cont">Contact</a></li>
+        <li><a href="#cv">CV</a></li>
+        <li><a href="#publ">Publications</a></li>
+        <li><a href="#research">Research Projects</a></li>
+        <li><a href="#talks">Talks</a></li>
+        <li><a href="#teach">Teaching</a></li>
+        <li><a href="#others">Others</a></li>
+    </ul>
+</nav>
 
+<main>
 
-## Talks {#talks}
+    <!-- News Ticker -->
+    <div class="news-container">
+        <span class="news-title">Where am I?</span>
+        <div class="news-ticker-wrapper">
+            <div class="news-ticker" id="news-ticker"></div>
+        </div>
+    </div>
 
-### Conferences and Workshops
-1. *2nd Latin American Congress on Industrial and Applied Mathematics*, Valparaíso, Chile, Jan. 19--23 ene. 2026: "Inertial Nonlinear Forward-Backward algorithms."
+    <!-- Countdown -->
+    <p>⏱ I will be in Santiago in: <span id="demo"></span></p>
 
-2. *XCIII Annual Meeting of the Mathematical Society of Chile*, Vicuña, Chile, Nov. 25--28, 2025: "Inertial Nonlinear Forward-Backward algorithms."
+    <hr>
 
-3. *PGMO Days 2025*, Paris, France, Nov. 18--19, 2025: "Inertial Nonlinear Forward-Backward algorithms."
+    <!-- Two aligned boxes -->
+    <div class="intro-row">
 
-4. *PGMO Days 2025*, Paris, France, Nov. 18--19, 2025: "Delayed Feedback in Online Non-Convex Optimization: A Non-Stationary Approach with Applications."
+        <!-- Welcome box -->
+        <div class="welcome-box" id="about">
+            <h3 style="margin-top:0;">Welcome!</h3>
+            I am a part-time lecturer at the University of Tarapacá.
+            Before joining UTA, I completed my PhD in Applied Mathematics at the Università di Genova (UniGe),
+            within the Machine Learning Genoa Center (MaLGa), under the supervision of Silvia Villa and Lorenzo Rosasco.
+            <br><br>
+            My current research interests include:
+            <ul>
+                <li>Nonconvex optimization</li>
+                <li>Splitting algorithms</li>
+                <li>Inertial and stochastic methods</li>
+                <li>Inverse problems</li>
+                <li>Overparameterization</li>
+            </ul>
+            I am particularly interested in structured nonconvexity, especially quasar-convexity and quasi-convexity.
+        </div>
 
-5. *XXXVII Mathematics Conference of the Southern Zone*, Talca, Chile, Apr. 23--25, 2025: "Delayed Feedback in Online Non-Convex Optimization: A Non-Stationary Approach with Applications."
+        <!-- Contact box -->
+        <div class="contact-box" id="cont">
+            <h3>Contact info</h3>
+            <p><strong>Address:</strong><br>
+            Departamento de Matemática, Universidad de Tarapacá,<br>
+            Facultad de Ciencias, 18 de Septiembre 2222,<br>
+            Arica, Chile.</p>
+            <ul>
+                <li><strong>E-mail:</strong> cristianvegacereno6(dot)gmail(dot)com</li>
+                <li><a href="https://www.linkedin.com/in/cristian-jes%C3%BAs-vega-cere%C3%B1o-447258104/">LinkedIn</a></li>
+                <li><a href="https://www.researchgate.net/profile/Cristian-Vega">ResearchGate</a></li>
+                <li><a href="https://scholar.google.com/citations?user=kOTvx6oAAAAJ&hl=es">Google Scholar</a></li>
+                <li><a href="https://orcid.org/0000-0001-7792-0137">ORCID</a></li>
+                <li><a href="https://github.com/cristianvega1995">GitHub</a></li>
+            </ul>
+        </div>
 
-6. *4th International Conference on Variational Analysis and Optimization*, Santiago, Chile, Jan. 14--17, 2025: "Delayed Feedback in Online Non-Convex Optimization."
+    </div>
 
-7. *TraDE-OPT Final Conference*, Sestri Levante, Italy, Sep. 25--28, 2024: "Learning from Data via Overparameterization."
+    <hr>
 
-8. *XXXII COMCA*, Arica, Chile, Jul. 31, 2024: "Learning from Data via Overparameterization."
+    <!-- CV -->
+    <h2 id="cv">Brief CV</h2>
+    <ul>
+        <li><strong>03/2021 – 06/2024:</strong> PhD in Mathematics and Applications, MaLGa Machine Learning Genoa Center, Università di Genova. Supervisors: <a href="https://rubrica.unige.it/personale/UkNHXVlo">Silvia Villa</a> and <a href="https://web.mit.edu/lrosasco/www/">Lorenzo Rosasco</a>. Thesis: <a href="https://tesidottorato.depositolegale.it/bitstream/20.500.14242/157194/1/phdunige_4963312.pdf">Implicit Regularization: Insights from Iterative Regularization and Overparameterization</a>.</li>
+        <li><strong>04/2020 – 11/2020:</strong> MSc in Applied Mathematics, Universidad Técnica Federico Santa María. Supervisors: <a href="http://lbriceno.mat.utfsm.cl/">Luis Briceño-Arias</a> and <a href="https://sites.google.com/view/deride-home">Julio Deride</a>. Thesis: <a href="https://repositorio.usm.cl/server/api/core/bitstreams/93020de3-e1d0-42fe-9b58-7c2486c1930f/content">Stochastic primal-dual splitting for composite monotone inclusions</a>. <strong>Score:</strong> 100/100.</li>
+        <li><strong>03/2014 – 04/2020:</strong> Mathematical Engineering, Universidad Técnica Federico Santa María. Thesis: <a href="https://repositorio.usm.cl/server/api/core/bitstreams/93020de3-e1d0-42fe-9b58-7c2486c1930f/content">Alternating and randomized projections in convex optimization</a>. <strong>Score:</strong> 100/100.</li>
+    </ul>
 
-9. *ODS22*, Firenze, Italy, Aug. 30--Sep. 2, 2022: "Fast Iterative Regularization by Reusing Data."
+    <hr>
 
-11. *TraDE-OPT Workshop*, UCLouvain, Belgium, Jul. 4--8, 2022: "Fast Iterative Regularization by Reusing Data."
+    <!-- Publications -->
+    <h2 id="publ">Publications</h2>
+    <h3>Journal publications</h3>
+    <ol>
+        <li>F. Lara and C. Vega.: "<a href="https://arxiv.org/pdf/2412.14506">Delayed Feedback in Online Non-Convex Optimization: A Non-Stationary Approach with Applications</a>", <em>Numerical Algorithms</em>, 2025.</li>
+        <li>F. Roldán and C. Vega.: "<a href="https://link.springer.com/article/10.1007/s10957-025-02694-5">Relaxed and Inertial Nonlinear Forward-Backward with Momentum</a>", <em>Journal of Optimization Theory and Applications</em>, 206 (2), 2025.</li>
+        <li>C. Vega, C. Molinari, S. Villa, and L. Rosasco.: "<a href="https://www.degruyter.com/document/doi/10.1515/jiip-2023-0009/html">Fast iterative regularization by reusing data</a>", <em>Journal of Inverse and Ill-posed Problems</em>, 32(4), pp. 733--759, 2024.</li>
+        <li>L. Briceno-Arias, J. Deride, and C. Vega.: "<a href="https://link.springer.com/article/10.1007/s10957-021-01944-6">Random activations in primal-dual splittings for monotone inclusions with a priori information</a>", <em>Journal of Optimization Theory and Applications</em>, 192 (1), pp. 56--81, 2022.</li>
+    </ol>
 
-12. *SIAM IS22*, Minisymposium on Convex Optimization, 2022: "Fast Iterative Regularization by Reusing Data."
+    <h3>Articles Submitted</h3>
+    <ol start="5">
+        <li>A. Beck, F. Lara, and C. Vega.: "Block descent type methods for quasar-convex minimization", 2025.</li>
+        <li>J.J. Maulén, F. Roldán, and C. Vega.: "<a href="https://arxiv.org/pdf/2507.18856">Relaxed and inertial nonlinear Forward-Backward algorithm</a>", arXiv preprint arXiv:2507.18856, 2025.</li>
+        <li>H. Labarriére, C. Molinari, L. Rosasco, C. Vega, and S. Villa.: "<a href="https://arxiv.org/pdf/2412.16765">Optimization Insights into Deep Diagonal Linear Networks</a>", arXiv preprint arXiv:2412.16765, 2024.</li>
+    </ol>
 
-### Invited Talks and Seminars
+    <h3>Articles in preparation</h3>
+    <ol start="8">
+        <li>V.S. Amaral, F. Lara, and C. Vega.: "Block Coordinate Descent Methods for Nonconvex Nonsmooth Optimization with Applications", in preparation, 2026.</li>
+        <li>F. Lara, and C. Vega.: "QuAdam: A Variant of Adam for Quasar Convex Functions", in preparation, 2026.</li>
+    </ol>
 
-1. *Seminar, ICTEAM, UCLouvain*, Louvain-la-Neuve, Belgium, Nov. 6, 2025: "Delayed Feedback in Online Non-Convex Optimization: A Non-Stationary Approach with Applications."
+    <hr>
 
-2. *CORMSIS Seminar 2025/26 #4*, University of Southampton, Southampton, England, Oct. 30, 2025: "Inertial Nonlinear Forward-Backward algorithms."
+    <!-- Research Projects -->
+    <h2 id="research">Research Projects</h2>
+    <ol>
+        <li>UTA research project: "Fortalecimiento de Grupos de Investigación", Code 8802-25, 2026, Assistant researcher.</li>
+        <li>ECOS-Sud-France and ANID-Chile (ECOS240031): "Dynamical systems associated to nonconvex optimization problems", Apr. 2025--Mar. 2028. Member of Chilean team.</li>
+        <li>Marie Sklodowska-Curie grant agreement No. 861137, EU Horizon 2020 programme, Mar. 2021--Mar. 2024. PhD student.</li>
+        <li>FONDECYT 1190871, Regular 2019, "Fast primal-dual splitting algorithms for solving coupled inclusions". Apr. 2020--Nov. 2020. Master student.</li>
+    </ol>
 
-3. *PhD and Postdocs seminars*, Group SC of IRIT, at ENSEEIHT, INP Toulouse, Toulouse, France, Oct. 23, 2025: "Delayed Feedback in Online Non-Convex Optimization: A Non-Stationary Approach with Applications."
+    <hr>
 
-4. *Seminar, Universidad de Tarapacá*, Arica, Chile, Aug. 7, 2024: "Fast Iterative Regularization by Reusing Data."
+    <!-- Talks -->
+    <h2 id="talks">Talks</h2>
+    <h3>Conferences and Workshops</h3>
+    <ol>
+        <li><em>2nd Latin American Congress on Industrial and Applied Mathematics</em>, Valparaíso, Chile, Jan. 19--23, 2026: "Inertial Nonlinear Forward-Backward algorithms."</li>
+        <li><em>XCIII Annual Meeting of the Mathematical Society of Chile</em>, Vicuña, Chile, Nov. 25--28, 2025: "Inertial Nonlinear Forward-Backward algorithms."</li>
+        <li><em>PGMO Days 2025</em>, Paris, France, Nov. 18--19, 2025: "Inertial Nonlinear Forward-Backward algorithms."</li>
+        <li><em>PGMO Days 2025</em>, Paris, France, Nov. 18--19, 2025: "Delayed Feedback in Online Non-Convex Optimization: A Non-Stationary Approach with Applications."</li>
+        <li><em>XXXVII Mathematics Conference of the Southern Zone</em>, Talca, Chile, Apr. 23--25, 2025: "Delayed Feedback in Online Non-Convex Optimization: A Non-Stationary Approach with Applications."</li>
+        <li><em>4th International Conference on Variational Analysis and Optimization</em>, Santiago, Chile, Jan. 14--17, 2025: "Delayed Feedback in Online Non-Convex Optimization."</li>
+        <li><em>TraDE-OPT Final Conference</em>, Sestri Levante, Italy, Sep. 25--28, 2024: "Learning from Data via Overparameterization."</li>
+        <li><em>XXXII COMCA</em>, Arica, Chile, Jul. 31, 2024: "Learning from Data via Overparameterization."</li>
+        <li><em>ODS22</em>, Firenze, Italy, Aug. 30--Sep. 2, 2022: "Fast Iterative Regularization by Reusing Data."</li>
+        <li><em>TraDE-OPT Workshop</em>, UCLouvain, Belgium, Jul. 4--8, 2022: "Fast Iterative Regularization by Reusing Data."</li>
+        <li><em>SIAM IS22</em>, Minisymposium on Convex Optimization, 2022: "Fast Iterative Regularization by Reusing Data."</li>
+    </ol>
 
-5. *Seminar, Universidad Técnica Federico Santa María*, Santiago, Chile, Sep. 12, 2023: "Fast Iterative Regularization by Reusing Data."
+    <h3>Invited Talks and Seminars</h3>
+    <ol>
+        <li><em>Seminar, ICTEAM, UCLouvain</em>, Louvain-la-Neuve, Belgium, Nov. 6, 2025: "Delayed Feedback in Online Non-Convex Optimization: A Non-Stationary Approach with Applications."</li>
+        <li><em>CORMSIS Seminar 2025/26 #4</em>, University of Southampton, Southampton, England, Oct. 30, 2025: "Inertial Nonlinear Forward-Backward algorithms."</li>
+        <li><em>PhD and Postdocs seminars</em>, Group SC of IRIT, at ENSEEIHT, INP Toulouse, Toulouse, France, Oct. 23, 2025: "Delayed Feedback in Online Non-Convex Optimization: A Non-Stationary Approach with Applications."</li>
+        <li><em>Seminar, Universidad de Tarapacá</em>, Arica, Chile, Aug. 7, 2024: "Fast Iterative Regularization by Reusing Data."</li>
+        <li><em>Seminar, Universidad Técnica Federico Santa María</em>, Santiago, Chile, Sep. 12, 2023: "Fast Iterative Regularization by Reusing Data."</li>
+        <li><em>Malga Optimization Group</em>, Genova, Italy, Oct. 31, 2021: "Iterative Regularization and the (Stochastic) Chambolle-Pock Algorithm."</li>
+    </ol>
 
-6. *Malga Optimization Group*, Genova, Italy, Oct. 31, 2021: "Iterative Regularization and the (Stochastic) Chambolle-Pock Algorithm."
+    <h3>Poster session</h3>
+    <ul>
+        <li>TraDE-OPT ITN Summer School 2021, Centrale Supelec, Gif-sur-Yvette, France, 6-9 Jul 2021.</li>
+        <li>TraDE-OPT ITN Winter School 2021, TU Braunschweig, Braunschweig, Germany, 15-19 Feb 2021.</li>
+    </ul>
 
-### Poster session
+    <hr>
 
-1. TraDE-OPT ITN Summer School 2021, Centrale Supelec, Gif-sur-Yvette, France, 6 - 9 Jul 2021. 
+    <!-- Teaching -->
+    <h2 id="teach">Teaching</h2>
+    <h3>Part-Time Lecturer, Universidad de Tarapacá</h3>
+    <ul>
+        <li>Statistics (2026–1)</li>
+        <li>Introduction to Calculus (2026–1)</li>
+        <li>Statistics (2025–1)</li>
+        <li>Introduction to Calculus (2025–1)</li>
+        <li>Introduction to Algebra (2025–1)</li>
+    </ul>
+    <h3>Part-Time Lecturer, Universidad Técnica Federico Santa María (2020)</h3>
+    <ul>
+        <li>Statistics (2020–2)</li>
+        <li>Integral Calculus (2020–2)</li>
+        <li>Differential Calculus (2020–1)</li>
+    </ul>
+    <h3>Teaching Assistant, Universidad de Tarapacá</h3>
+    <ul>
+        <li>Optimization</li>
+    </ul>
+    <h3>Teaching Assistant, Universidad Técnica Federico Santa María</h3>
+    <ul>
+        <li>Optimization, Functional Analysis, Real Analysis, Integral Calculus, and Differential Calculus</li>
+    </ul>
 
-2. TraDE-OPT ITN Winter School 2021, TU Braunschweig, Braunschweig, Germany, 15 - 19 Feb 2021.
+    <hr>
 
+    <!-- Others -->
+    <h2 id="others">Others</h2>
+    <div style="display:flex; gap:20px; margin:20px 0; flex-wrap:wrap;">
+        <iframe src="https://www.tutiempo.net/s-widget/app/?LocId=55735&sc=1" scrolling="no" frameborder="0" style="border:none; width:300px; height:411px;" allowtransparency="true"></iframe>
+        <iframe src="https://www.tutiempo.net/s-widget/app/?LocId=55660&sc=1" scrolling="no" frameborder="0" style="border:none; width:300px; height:411px;" allowtransparency="true"></iframe>
+    </div>
 
-<br>
-## Teaching {#teach}
+    <div id="indicators">
+        <h3>📊 Chilean Economic Indicators</h3>
+        <p>Cargando...</p>
+    </div>
 
-### Part-Time Lecturer, Universidad de Tarapacá 
-- Statistics (2025–1) 
-- Introduction to Calculus (2025–1) 
-- Introduction to Algebra (2025–1)
-
-### Part-Time Lecturer, Universidad Técnica Federico Santa María (2020)
-- Statistics (2020–2)
-- Integral Calculus (2020–2)
-- Differential Calculus (2020–1)
-
-### Teaching Assistant, Universidad Técnica Federico Santa María
-- Optimization, Functional Analysis, Real Analysis, Integral Calculus, and  Differential Calculus
-
-<!-- tutiempo.net - Ancho:300px - Alto:411px -->
-<iframe src="https://www.tutiempo.net/s-widget/app/?LocId=55735&sc=1" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:300px; height:411px;" allowtransparency="true"></iframe>
-
-<!-- www.tutiempo.net - Ancho:145px - Alto:338px -->
-<!-- tutiempo.net - Ancho:300px - Alto:411px -->
-<iframe src="https://www.tutiempo.net/s-widget/app/?LocId=55660&sc=1" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:300px; height:411px;" allowtransparency="true"></iframe>
-
-
-<!-- Display the countdown timer in an element -->
-<p id="demo"></p>
+</main>
 
 <script>
-// Set the date we're counting down to
-var countDownDate = new Date("Jan 5, 2030 15:37:25").getTime();
-
-// Update the count down every 1 second
+// Countdown
+var countDownDate = new Date("April 2, 2026 02:35:00").getTime();
 var x = setInterval(function() {
-
-  // Get today's date and time
-  var now = new Date().getTime();
-
-  // Find the distance between now and the count down date
-  var distance = countDownDate - now;
-
-  // Time calculations for days, hours, minutes and seconds
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-  // Display the result in the element with id="demo"
-  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-  + minutes + "m " + seconds + "s ";
-
-  // If the count down is finished, write some text
-  if (distance < 0) {
-    clearInterval(x);
-    document.getElementById("demo").innerHTML = "EXPIRED";
-  }
+    var now = new Date().getTime();
+    var distance = countDownDate - now;
+    if (distance < 0) { clearInterval(x); document.getElementById("demo").innerHTML = "EXPIRED"; return; }
+    document.getElementById("demo").innerHTML =
+        Math.floor(distance / 86400000) + "d " +
+        Math.floor((distance % 86400000) / 3600000) + "h " +
+        Math.floor((distance % 3600000) / 60000) + "m " +
+        Math.floor((distance % 60000) / 1000) + "s";
 }, 1000);
+
+// News ticker
+const newsList = [
+    "🚀 I come back to Santiago April 22nd!!!",
+    "🌍 Now in Arica.",
+    "📰 Cristian Vega will return in JMZS 2026",
+    "and also in ICOMALTA 2026",
+    "💻 New optimization algorithms incoming!!!"
+];
+(function() {
+    const ticker = document.getElementById("news-ticker");
+    const items = newsList.map(n => `<span>${n}</span>`).join("");
+    ticker.innerHTML = items + items;
+})();
 </script>
 
-<!-- JavaScript for economic indicators -->
-<script src="script.js"></script>
+</body>
+</html>
