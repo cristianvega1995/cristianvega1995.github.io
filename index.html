@@ -138,31 +138,31 @@
                 font-size: 1rem;
             }
         }
-        .main-content {
-            
-            max-width: 80rem;   /* or 90% for fluid width */
-            padding: 2rem 6rem;
-            margin: 0 auto;
-            font-size: 1.1rem;
-            background: #fff;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        @media screen and (min-width: 86em) {
-            .main-content {
-                max-width: 64rem;
-                padding: 2rem 6rem;
-            }
-        }
-        @media screen and (min-width: 42em) and (max-width: 86em) {
-            .main-content {
-                padding: 2rem 4rem;
-            }
-        }
-        @media screen and (max-width: 42em) {
-            .main-content {
-                padding: 2rem 1rem;
-            }
-        }
+ .main-content {
+    width: 100%;
+    max-width: 100%;
+    padding: 2rem;
+    margin: 0;
+    font-size: 1.1rem;
+    background: #fff;
+    box-shadow: none;
+}
+@media screen and (min-width: 86em) {
+    .main-content {
+        max-width: 100%;
+        padding: 2rem;
+    }
+}
+@media screen and (min-width: 42em) and (max-width: 86em) {
+    .main-content {
+        padding: 2rem;
+    }
+}
+@media screen and (max-width: 42em) {
+    .main-content {
+        padding: 1rem;
+    }
+}
         .main-content h1,
         .main-content h2,
         .main-content h3,
