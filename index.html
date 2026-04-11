@@ -505,8 +505,9 @@ const newsList = [
     const items = newsList.map(n => `<span>${n}</span>`).join("");
     ticker.innerHTML = items + items;
 })();
-</script>
-function tick() {
+
+// 
+    function tick() {
   var diff = new Date("June 11, 2026 18:00:00 GMT-0600") - new Date();
   if (diff <= 0) return;
   document.getElementById("fc-d").textContent = String(Math.floor(diff/86400000)).padStart(2,"0");
@@ -529,5 +530,6 @@ function updateFIFACountdown() {
 
 updateFIFACountdown();
 setInterval(updateFIFACountdown, 1000);
+</script>
 </body>
 </html>
