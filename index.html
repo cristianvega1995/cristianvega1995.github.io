@@ -18,7 +18,39 @@
 
         a { color: #1e6bb8; text-decoration: none; }
         a:hover { text-decoration: underline; }
-
+.fc-wrap {
+  display: flex; align-items: center; justify-content: space-between;
+  background: linear-gradient(120deg, #a967ab, #662445);
+  border-radius: 12px; padding: 1rem 1.5rem;
+  gap: 1rem; flex-wrap: wrap; margin-bottom: 1.25rem;
+}
+.fc-left { display: flex; flex-direction: column; gap: 0.2rem; }
+.fc-badge {
+  display: inline-block; background: rgba(255,255,255,0.18);
+  color: #fff; font-size: 11px; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  border-radius: 4px; padding: 3px 8px; width: fit-content;
+}
+.fc-title { font-size: 1.05rem; font-weight: 700; color: #fff; margin: 0; }
+.fc-subtitle { font-size: 0.78rem; color: rgba(255,255,255,0.6); margin: 0; }
+.fc-right { display: flex; align-items: center; gap: 1.2rem; flex-wrap: wrap; }
+.fc-clock { display: flex; align-items: center; gap: 0.6rem; }
+.fc-unit { text-align: center; min-width: 52px; }
+.fc-val { font-size: 2.6rem; font-weight: 800; color: #fff; line-height: 1; display: block; font-variant-numeric: tabular-nums; }
+.fc-lbl { font-size: 0.62rem; color: rgba(255,255,255,0.55); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 3px; display: block; }
+.fc-sep { font-size: 2.2rem; font-weight: 800; color: rgba(255,255,255,0.5); margin-bottom: 14px; }
+.fc-cta {
+  background: #fff; color: #662445; padding: 0.45rem 1.1rem;
+  border-radius: 20px; font-size: 0.82rem; font-weight: 700;
+  text-decoration: none; white-space: nowrap;
+}
+.fc-cta:hover { background: #f0e0f0; text-decoration: none; }
+@media (max-width: 520px) {
+  .fc-wrap { justify-content: center; text-align: center; }
+  .fc-left { align-items: center; }
+  .fc-right { justify-content: center; }
+  .fc-val { font-size: 1.9rem; }
+}
         /* ── Header ── */
         .page-header {
             background-image: linear-gradient(120deg, #a967ab, #662445);
@@ -421,6 +453,25 @@
         <iframe src="https://www.tutiempo.net/s-widget/app/?LocId=55735&sc=1" scrolling="no" frameborder="0" style="border:none; width:300px; height:411px;" allowtransparency="true"></iframe>
         <iframe src="https://www.tutiempo.net/s-widget/app/?LocId=55660&sc=1" scrolling="no" frameborder="0" style="border:none; width:300px; height:411px;" allowtransparency="true"></iframe>
     </div>
+    <section class="fc-wrap">
+  <div class="fc-left">
+    <span class="fc-badge">FIFA World Cup 2026</span>
+    <p class="fc-title">Copa Mundial de la FIFA 2026™</p>
+    <p class="fc-subtitle">11 de junio – 19 de julio &nbsp;·&nbsp; Canada · Mexico · USA</p>
+  </div>
+  <div class="fc-right">
+    <div class="fc-clock">
+      <div class="fc-unit"><span class="fc-val" id="fc-d">00</span><span class="fc-lbl">Días</span></div>
+      <span class="fc-sep">:</span>
+      <div class="fc-unit"><span class="fc-val" id="fc-h">00</span><span class="fc-lbl">Horas</span></div>
+      <span class="fc-sep">:</span>
+      <div class="fc-unit"><span class="fc-val" id="fc-m">00</span><span class="fc-lbl">Min</span></div>
+      <span class="fc-sep">:</span>
+      <div class="fc-unit"><span class="fc-val" id="fc-s">00</span><span class="fc-lbl">Seg.</span></div>
+    </div>
+    <a class="fc-cta" href="https://www.fifa.com/es/tournaments/mens/worldcup/canadamexicousa2026/scores-fixtures" target="_blank">Ver partidos</a>
+  </div>
+</section>
   <footer>
     &copy;  © Copyright 2026 Cristian Vega
   </footer>
@@ -455,6 +506,14 @@ const newsList = [
     ticker.innerHTML = items + items;
 })();
 </script>
-
+function tick() {
+  var diff = new Date("June 11, 2026 18:00:00 GMT-0600") - new Date();
+  if (diff <= 0) return;
+  document.getElementById("fc-d").textContent = String(Math.floor(diff/86400000)).padStart(2,"0");
+  document.getElementById("fc-h").textContent = String(Math.floor(diff/3600000)%24).padStart(2,"0");
+  document.getElementById("fc-m").textContent = String(Math.floor(diff/60000)%60).padStart(2,"0");
+  document.getElementById("fc-s").textContent = String(Math.floor(diff/1000)%60).padStart(2,"0");
+}
+tick(); setInterval(tick, 1000);
 </body>
 </html>
