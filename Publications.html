@@ -318,19 +318,6 @@
 </main>
 
 <script>
-// Countdown
-var countDownDate = new Date("April 11, 2026 12:31:00").getTime();
-var x = setInterval(function() {
-    var now = new Date().getTime();
-    var distance = countDownDate - now;
-    if (distance < 0) { clearInterval(x); document.getElementById("demo").innerHTML = "EXPIRED"; return; }
-    document.getElementById("demo").innerHTML =
-        Math.floor(distance / 86400000) + "d " +
-        Math.floor((distance % 86400000) / 3600000) + "h " +
-        Math.floor((distance % 3600000) / 60000) + "m " +
-        Math.floor((distance % 60000) / 1000) + "s";
-}, 1000);
-
 // News ticker
 const newsList = [
     "🚀 I come back to Santiago April 11st!!!",
@@ -345,30 +332,6 @@ const newsList = [
     ticker.innerHTML = items + items;
 })();
 
-// 
-    function tick() {
-  var diff = new Date("June 11, 2026 18:00:00 GMT-0600") - new Date();
-  if (diff <= 0) return;
-  document.getElementById("fc-d").textContent = String(Math.floor(diff/86400000)).padStart(2,"0");
-  document.getElementById("fc-h").textContent = String(Math.floor(diff/3600000)%24).padStart(2,"0");
-  document.getElementById("fc-m").textContent = String(Math.floor(diff/60000)%60).padStart(2,"0");
-  document.getElementById("fc-s").textContent = String(Math.floor(diff/1000)%60).padStart(2,"0");
-}
-tick(); setInterval(tick, 1000);
-function updateFIFACountdown() {
-    const target = new Date("June 11, 2026 18:00:00 GMT-0600");
-    const diff = target - new Date();
-
-    if (diff <= 0) return;
-
-    document.getElementById("fc-days").textContent  = String(Math.floor(diff / 86400000)).padStart(2,"0");
-    document.getElementById("fc-hours").textContent = String(Math.floor(diff / 3600000) % 24).padStart(2,"0");
-    document.getElementById("fc-min").textContent   = String(Math.floor(diff / 60000) % 60).padStart(2,"0");
-    document.getElementById("fc-sec").textContent   = String(Math.floor(diff / 1000) % 60).padStart(2,"0");
-}
-
-updateFIFACountdown();
-setInterval(updateFIFACountdown, 1000);
 </script>
 </body>
 </html>
