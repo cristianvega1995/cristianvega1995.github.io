@@ -97,8 +97,30 @@
             width: 100%;
             text-align: left;
         }
-
+        
         /* ── Mobile nav ── */
+        @media (max-width: 600px) {
+    .page-header {
+        flex-wrap: wrap;        /* allow items to wrap to next line */
+        padding: 0.75rem 1rem;
+    }
+
+    .page-header-text {
+        flex: 1;                /* text takes all space next to photo */
+    }
+
+    .social-icons {
+        width: 100%;            /* forces icons onto their own row */
+        justify-content: center;
+        gap: 0.6rem;
+    }
+
+    .social-icons img {
+        width: 22px;
+        height: 22px;
+        transform: none;        /* remove scale, use real size */
+    }
+}
         @media (max-width: 600px) {
             .nav-toggle { display: block; }
 
