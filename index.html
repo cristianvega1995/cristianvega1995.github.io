@@ -515,5 +515,19 @@ function tick() {
   document.getElementById("fc-s").textContent = String(Math.floor(diff/1000)%60).padStart(2,"0");
 }
 tick(); setInterval(tick, 1000);
+function updateFIFACountdown() {
+    const target = new Date("June 11, 2026 18:00:00 GMT-0600");
+    const diff = target - new Date();
+
+    if (diff <= 0) return;
+
+    document.getElementById("fc-days").textContent  = String(Math.floor(diff / 86400000)).padStart(2,"0");
+    document.getElementById("fc-hours").textContent = String(Math.floor(diff / 3600000) % 24).padStart(2,"0");
+    document.getElementById("fc-min").textContent   = String(Math.floor(diff / 60000) % 60).padStart(2,"0");
+    document.getElementById("fc-sec").textContent   = String(Math.floor(diff / 1000) % 60).padStart(2,"0");
+}
+
+updateFIFACountdown();
+setInterval(updateFIFACountdown, 1000);
 </body>
 </html>
