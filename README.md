@@ -63,7 +63,7 @@ Arica, Arica y Parinacota, Chile.
 
 ## Brief CV {#cv}
 
-- **07/2024 – present:** Postdoctoral Fellow, University of Tarapacá.  
+- **07/2024 – present:** Research assistant, University of Tarapacá.  
   Supervisor: *[Felipe Lara](https://felipelara.cl/#about)*.
 
 - **03/2021 – 06/2024:** PhD in Mathematics and Applications,  
@@ -95,9 +95,9 @@ Arica, Arica y Parinacota, Chile.
 5. A. Beck, F. Lara, and C. Vega.: "*Block descent type methods for quasar-convex minimization*", 2025.
 6. J.J. Maulén, F. Roldán, and C. Vega.: "*[Relaxed and inertial nonlinear Forward-Backward algorithm](https://arxiv.org/pdf/2507.18856)*", arXiv preprint arXiv:2507.18856, 2025.
 7. H. Labarriére, C. Molinari, L. Rosasco, C. Vega, and S. Villa.: "*[Optimization Insights into Deep Diagonal Linear Networks]({https://arxiv.org/pdf/2412.16765)*", arXiv preprint arXiv:2412.16765, 2024.
-
+8. V.S. Amaral, F. Lara, and C. Vega.: "*Block Coordinate Descent Methods for Nonconvex Nonsmooth Optimization with Applications*", 2026.
+   
 ### Articles in preparation
-8. V.S. Amaral, F. Lara, and C. Vega.: "*Block Coordinate Descent Methods for Nonconvex Nonsmooth Optimization with Applications*", in preparation, 2026.
 9. F. Lara, and C. Vega.: "*QuAdam: A Variant of Adam for Quasar Convex Functions*", in preparation, 2026.
 <br>
 
@@ -118,27 +118,30 @@ Arica, Arica y Parinacota, Chile.
 ## Talks {#talks}
 
 ### Conferences and Workshops
-1. *2nd Latin American Congress on Industrial and Applied Mathematics*, Valparaíso, Chile, Jan. 19--23 ene. 2026: "Inertial Nonlinear Forward-Backward algorithms."
+1. International Conference on Optimization and Machine Learning, Theory and Applications (ICOMaLTA-2026)</em>, Arica, Chile, May 10--15, 2026: "Randomized Block Descent type Methods for Quasar-Convex Minimization."
+2. XXXVIII Mathematics Conference of the Southern Zone</em>, Concepción, Chile, Apr. 22--24, 2026: "Block Descent type Methods for Quasar-Convex Minimization."
 
-2. *XCIII Annual Meeting of the Mathematical Society of Chile*, Vicuña, Chile, Nov. 25--28, 2025: "Inertial Nonlinear Forward-Backward algorithms."
+3. *2nd Latin American Congress on Industrial and Applied Mathematics*, Valparaíso, Chile, Jan. 19--23 ene. 2026: "Inertial Nonlinear Forward-Backward algorithms."
 
-3. *PGMO Days 2025*, Paris, France, Nov. 18--19, 2025: "Inertial Nonlinear Forward-Backward algorithms."
+4. *XCIII Annual Meeting of the Mathematical Society of Chile*, Vicuña, Chile, Nov. 25--28, 2025: "Inertial Nonlinear Forward-Backward algorithms."
 
-4. *PGMO Days 2025*, Paris, France, Nov. 18--19, 2025: "Delayed Feedback in Online Non-Convex Optimization: A Non-Stationary Approach with Applications."
+5. *PGMO Days 2025*, Paris, France, Nov. 18--19, 2025: "Inertial Nonlinear Forward-Backward algorithms."
 
-5. *XXXVII Mathematics Conference of the Southern Zone*, Talca, Chile, Apr. 23--25, 2025: "Delayed Feedback in Online Non-Convex Optimization: A Non-Stationary Approach with Applications."
+6. *PGMO Days 2025*, Paris, France, Nov. 18--19, 2025: "Delayed Feedback in Online Non-Convex Optimization: A Non-Stationary Approach with Applications."
 
-6. *4th International Conference on Variational Analysis and Optimization*, Santiago, Chile, Jan. 14--17, 2025: "Delayed Feedback in Online Non-Convex Optimization."
+7. *XXXVII Mathematics Conference of the Southern Zone*, Talca, Chile, Apr. 23--25, 2025: "Delayed Feedback in Online Non-Convex Optimization: A Non-Stationary Approach with Applications."
 
-7. *TraDE-OPT Final Conference*, Sestri Levante, Italy, Sep. 25--28, 2024: "Learning from Data via Overparameterization."
+8. *4th International Conference on Variational Analysis and Optimization*, Santiago, Chile, Jan. 14--17, 2025: "Delayed Feedback in Online Non-Convex Optimization."
 
-8. *XXXII COMCA*, Arica, Chile, Jul. 31, 2024: "Learning from Data via Overparameterization."
+9. *TraDE-OPT Final Conference*, Sestri Levante, Italy, Sep. 25--28, 2024: "Learning from Data via Overparameterization."
 
-9. *ODS22*, Firenze, Italy, Aug. 30--Sep. 2, 2022: "Fast Iterative Regularization by Reusing Data."
+10. *XXXII COMCA*, Arica, Chile, Jul. 31, 2024: "Learning from Data via Overparameterization."
 
-11. *TraDE-OPT Workshop*, UCLouvain, Belgium, Jul. 4--8, 2022: "Fast Iterative Regularization by Reusing Data."
+11. *ODS22*, Firenze, Italy, Aug. 30--Sep. 2, 2022: "Fast Iterative Regularization by Reusing Data."
 
-12. *SIAM IS22*, Minisymposium on Convex Optimization, 2022: "Fast Iterative Regularization by Reusing Data."
+12. *TraDE-OPT Workshop*, UCLouvain, Belgium, Jul. 4--8, 2022: "Fast Iterative Regularization by Reusing Data."
+
+13. *SIAM IS22*, Minisymposium on Convex Optimization, 2022: "Fast Iterative Regularization by Reusing Data."
 
 ### Invited Talks and Seminars
 
