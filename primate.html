@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Primate Phylogenetic Cladogram</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #faf9f6;
+    --surface: #f2f0ea;
+    --text: #1a1a18;
+    --muted: #6b6b65;
+    --border: #d8d5cc;
+    --font: 'Georgia', 'Times New Roman', serif;
+    --mono: 'SF Mono', 'Fira Code', monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #141412;
+      --surface: #1e1d1a;
+      --text: #e8e6df;
+      --muted: #8a8880;
+      --border: #2e2d28;
+    }
+  }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font);
+    font-size: 14px;
+    min-height: 100vh;
+  }
+  header {
+    padding: 28px 32px 20px;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface);
+  }
+  header h1 {
+    font-size: 22px;
+    font-weight: normal;
+    letter-spacing: -0.3px;
+    color: var(--text);
+  }
+  header p {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 4px;
+    font-family: var(--mono);
+    letter-spacing: 0.3px;
+  }
+  #legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+    padding: 14px 32px;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface);
+  }
+  .leg-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--muted);
+  }
+  .leg-dot {
+    width: 10px; height: 10px;
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+  #tree-wrap {
+    overflow: auto;
+    padding: 20px 32px 32px;
+  }
+  svg text {
+    font-family: var(--font);
+  }
+  .sci { font-style: italic; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Primate Phylogenetic Cladogram</h1>
+  <p>Order Primates · 46 species across 2 suborders, 4 infraorders, 16 families</p>
+</header>
+
+<div id="legend">
+  <div class="leg-item"><div class="leg-dot" style="background:#1D9E75"></div>Lemuriformes</div>
+  <div class="leg-item"><div class="leg-dot" style="background:#085041"></div>Lorisiformes</div>
+  <div class="leg-item"><div class="leg-dot" style="background:#AFA9EC"></div>Tarsiiformes</div>
+  <div class="leg-item"><div class="leg-dot" style="background:#7F77DD"></div>Platyrrhini</div>
+  <div class="leg-item"><div class="leg-dot" style="background:#EF9F27"></div>Cercopithecoidea</div>
+  <div class="leg-item"><div class="leg-dot" style="background:#993C1D"></div>Hominoidea</div>
+</div>
+
+<div id="tree-wrap">
+  <svg id="ts"></svg>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<script>
+const TREE = {name:"Primates",g:"root",children:[
+  {name:"Strepsirrhini",g:"str",children:[
+    {name:"Lemuriformes",g:"lem",children:[
+      {name:"Lemuridae",g:"lemuridae",children:[
+        {name:"Lemur catta",c:"ring-tailed lemur"},
+        {name:"Varecia variegata",c:"ruffed lemur"},
+        {name:"Eulemur fulvus",c:"brown lemur"}]},
+      {name:"Indriidae",g:"indriidae",children:[
+        {name:"Indri indri",c:"indri"},
+        {name:"Propithecus verreauxi",c:"Verreaux's sifaka"}]},
+      {name:"Daubentoniidae",g:"daub",children:[
+        {name:"Daubentonia madagascariensis",c:"aye-aye"}]},
+      {name:"Cheirogaleidae",g:"chei",children:[
+        {name:"Microcebus murinus",c:"grey mouse lemur"},
+        {name:"Cheirogaleus medius",c:"fat-tailed dwarf lemur"}]},
+      {name:"Lepilemuridae",g:"lepi",children:[
+        {name:"Lepilemur mustelinus",c:"weasel sportive lemur"}]}]},
+    {name:"Lorisiformes",g:"lor",children:[
+      {name:"Lorisidae",g:"lorisidae",children:[
+        {name:"Loris tardigradus",c:"slender loris"},
+        {name:"Nycticebus coucang",c:"slow loris"},
+        {name:"Perodicticus potto",c:"potto"}]},
+      {name:"Galagidae",g:"gal",children:[
+        {name:"Galago senegalensis",c:"Senegal bushbaby"},
+        {name:"Otolemur crassicaudatus",c:"greater galago"}]}]}]},
+  {name:"Haplorhini",g:"hap",children:[
+    {name:"Tarsiiformes",g:"tar",children:[
+      {name:"Tarsiidae",g:"tarsiidae",children:[
+        {name:"Tarsius syrichta",c:"Philippine tarsier"},
+        {name:"Tarsius bancanus",c:"western tarsier"}]}]},
+    {name:"Simiiformes",g:"sim",children:[
+      {name:"Platyrrhini",g:"pla",children:[
+        {name:"Cebidae",g:"cebidae",children:[
+          {name:"Cebus capucinus",c:"white-headed capuchin"},
+          {name:"Saimiri sciureus",c:"common squirrel monkey"},
+          {name:"Callithrix jacchus",c:"common marmoset"},
+          {name:"Saguinus oedipus",c:"cotton-top tamarin"}]},
+        {name:"Atelidae",g:"atelidae",children:[
+          {name:"Ateles geoffroyi",c:"black-handed spider monkey"},
+          {name:"Alouatta seniculus",c:"red howler monkey"},
+          {name:"Lagothrix lagotricha",c:"common woolly monkey"}]},
+        {name:"Pitheciidae",g:"pitheciidae",children:[
+          {name:"Pithecia pithecia",c:"white-faced saki"},
+          {name:"Cacajao calvus",c:"bald uakari"},
+          {name:"Callicebus moloch",c:"dusky titi"}]},
+        {name:"Aotidae",g:"aotidae",children:[
+          {name:"Aotus trivirgatus",c:"night monkey"}]}]},
+      {name:"Catarrhini",g:"cat",children:[
+        {name:"Cercopithecoidea",g:"cercp",children:[
+          {name:"Cercopithecidae",g:"cercopithecidae",children:[
+            {name:"Cercopithecinae",g:"cercinae",children:[
+              {name:"Macaca mulatta",c:"rhesus macaque"},
+              {name:"Papio hamadryas",c:"hamadryas baboon"},
+              {name:"Cercocebus atys",c:"sooty mangabey"},
+              {name:"Cercopithecus mitis",c:"blue monkey"},
+              {name:"Chlorocebus aethiops",c:"vervet monkey"}]},
+            {name:"Colobinae",g:"colobinae",children:[
+              {name:"Colobus guereza",c:"mantled guereza"},
+              {name:"Presbytis melalophos",c:"banded langur"},
+              {name:"Nasalis larvatus",c:"proboscis monkey"},
+              {name:"Pygathrix nemaeus",c:"red-shanked douc"}]}]}]},
+        {name:"Hominoidea",g:"hom",children:[
+          {name:"Hylobatidae",g:"hylobatidae",children:[
+            {name:"Hylobates lar",c:"lar gibbon"},
+            {name:"Nomascus leucogenys",c:"white-cheeked gibbon"},
+            {name:"Symphalangus syndactylus",c:"siamang"}]},
+          {name:"Hominidae",g:"hominidae",children:[
+            {name:"Pongo pygmaeus",c:"Bornean orangutan"},
+            {name:"Pongo abelii",c:"Sumatran orangutan"},
+            {name:"Gorilla gorilla",c:"western gorilla"},
+            {name:"Gorilla beringei",c:"eastern gorilla"},
+            {name:"Pan troglodytes",c:"common chimpanzee"},
+            {name:"Pan paniscus",c:"bonobo"},
+            {name:"Homo sapiens",c:"human"}]}]}]}]}]}]};
+
+const COL = {
+  root:"#888780", str:"#1D9E75",  lem:"#1D9E75",     lemuridae:"#5DCAA5",
+  indriidae:"#1D9E75", daub:"#0F6E56", chei:"#9FE1CB", lepi:"#9FE1CB",
+  lor:"#085041", lorisidae:"#0F6E56", gal:"#5DCAA5",
+  hap:"#7F77DD", tar:"#AFA9EC",  tarsiidae:"#AFA9EC",
+  sim:"#534AB7", pla:"#7F77DD",  cebidae:"#CECBF6",
+  atelidae:"#AFA9EC", pitheciidae:"#7F77DD", aotidae:"#534AB7",
+  cat:"#534AB7", cercp:"#BA7517", cercopithecidae:"#EF9F27",
+  cercinae:"#FAC775", colobinae:"#BA7517",
+  hom:"#993C1D", hylobatidae:"#F0997B", hominidae:"#993C1D"
+};
+
+function gc(d) {
+  for (const a of d.ancestors())
+    if (a.data.g && COL[a.data.g]) return COL[a.data.g];
+  return "#888780";
+}
+
+const N = 46, R = 22, TH = (N - 1) * R, TW = 340;
+const ML = 20, MT = 16, MB = 32, MR = 24;
+const dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+const textPrimary   = dark ? "#e8e6df" : "#1a1a18";
+const textSecondary = dark ? "#8a8880" : "#6b6b65";
+
+const SW = ML + TW + 560 + MR;
+const SH = MT + TH + MB;
+
+const svg = d3.select("#ts").attr("width", SW).attr("height", SH);
+const g = svg.append("g").attr("transform", `translate(${ML},${MT})`);
+
+const root = d3.hierarchy(TREE);
+d3.cluster().size([TH, TW])(root);
+
+// Links — elbow (right-angle) connectors
+g.selectAll("path.lk").data(root.links()).join("path")
+  .attr("fill", "none")
+  .attr("d", d => `M${d.source.y},${d.source.x}V${d.target.x}H${d.target.y}`)
+  .attr("stroke", d => gc(d.target))
+  .attr("stroke-width", 1.6)
+  .attr("opacity", 0.85);
+
+const nd = g.selectAll("g.nd").data(root.descendants()).join("g")
+  .attr("class", "nd")
+  .attr("transform", d => `translate(${d.y},${d.x})`);
+
+// Node circles
+nd.append("circle")
+  .attr("r", d => d.children ? 2.8 : 2)
+  .attr("fill", d => gc(d))
+  .attr("stroke", "none");
+
+// ── Leaf labels ──
+const lf = nd.filter(d => !d.children);
+const lt = lf.append("text").attr("x", 8).attr("dy", "0.36em");
+
+lt.append("tspan")
+  .attr("fill", textPrimary)
+  .attr("font-size", "11.5")
+  .attr("font-style", "italic")
+  .text(d => d.data.name);
+
+lt.append("tspan")
+  .attr("fill", textSecondary)
+  .attr("font-size", "10")
+  .attr("font-style", "normal")
+  .attr("dx", 5)
+  .text(d => `(${d.data.c})`);
+
+// ── Internal node labels ──
+const FAM = new Set([
+  "Lemuridae","Indriidae","Daubentoniidae","Cheirogaleidae","Lepilemuridae",
+  "Lorisidae","Galagidae","Tarsiidae","Cebidae","Atelidae","Pitheciidae","Aotidae",
+  "Cercopithecinae","Colobinae","Cercopithecidae","Hylobatidae","Hominidae"
+]);
+const HIGH = new Set([
+  "Lemuriformes","Lorisiformes","Platyrrhini","Cercopithecoidea","Hominoidea",
+  "Strepsirrhini","Haplorhini","Simiiformes","Catarrhini"
+]);
+
+nd.filter(d => d.children && FAM.has(d.data.name))
+  .append("text")
+  .attr("x", 3).attr("dy", "-0.55em")
+  .attr("fill", d => gc(d))
+  .attr("font-size", "9.5")
+  .attr("font-weight", "bold")
+  .text(d => d.data.name);
+
+nd.filter(d => d.children && HIGH.has(d.data.name))
+  .append("text")
+  .attr("x", 3).attr("dy", "-0.55em")
+  .attr("fill", d => gc(d))
+  .attr("font-size", "8.5")
+  .attr("font-weight", "bold")
+  .attr("opacity", 0.8)
+  .text(d => d.data.name);
+</script>
+</body>
+</html>
