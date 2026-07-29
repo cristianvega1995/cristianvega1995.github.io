@@ -20,21 +20,20 @@
     <td style="border:none;">
       <b>Welcome to my webpage!</b><br><br>
 
-      I am a postdoctoral researcher at the University of Tarapacá under the supervision of Felipe Lara.
-      Before joining UTA, I completed my PhD in Applied Mathematics at the Università di Genova (UniGe),
-      within the Machine Learning Genoa Center (MaLGa), under the supervision of Silvia Villa and Lorenzo Rosasco.
-
-      <br><br>
-      My current research interests include:
-      <ul>
-        <li>Nonconvex optimization</li>
-        <li>Splitting algorithms</li>
-        <li>Inertial and stochastic methods</li>
-        <li>Inverse problems</li>
-        <li>Overparameterization</li>
-      </ul>
-
-      I am particularly interested in structured nonconvexity, especially quasar-convexity and quasi-convexity.
+            I am a postdoctoral researcher at the Universidad Técnica Federico Santa María under the supervision of <a href="http://lbriceno.mat.utfsm.cl/">Luis Briceño</a>.
+            Before joining UTFSM, I completed my PhD in Applied Mathematics at the Università di Genova (UniGe),
+            within the Machine Learning Genoa Center (MaLGa), under the supervision of <a href="https://rubrica.unige.it/personale/UkNHXVlo">Silvia Villa</a> and <a href="https://web.mit.edu/lrosasco/www/">Lorenzo Rosasco</a>.
+            Then, I spent two years researching with Felipe Lara in the University of Tarapacá.
+            <br><br>
+            My current research interests include:
+            <ul>
+                <li>Nonconvex optimization</li>
+                <li>Splitting algorithms</li>
+                <li>Inertial and stochastic methods</li>
+                <li>Inverse problems</li>
+                <li>Overparameterization</li>
+            </ul>
+            I am particularly interested in structured nonconvexity and splitting algorithms for solving monotone inclusions.
     </td>
 
     <td style="float:right;width:120%;border: 2px solid #2c7be5;">
