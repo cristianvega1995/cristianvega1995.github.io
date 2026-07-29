@@ -48,8 +48,10 @@ Then, I spent two years researching with Felipe Lara in the University of Tarapa
 <br>
 
 ## Brief CV {#cv}
-
-- **07/2024 – present:** Research assistant, University of Tarapacá.  
+- **07/2026 – present:** Postdoctoral researcher, Universidad Técnica Federico Santa María.
+  Supervisor: *[Luis Briceño-Arias](http://lbriceno.mat.utfsm.cl/)*
+  
+- **07/2024 – 06/2026:** Research, University of Tarapacá.  
   Supervisor: *[Felipe Lara](https://felipelara.cl/#about)*.
 
 - **03/2021 – 06/2024:** PhD in Mathematics and Applications,  
