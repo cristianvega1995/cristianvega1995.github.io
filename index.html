@@ -293,7 +293,7 @@
     </div>
 
     <!-- Countdown -->
-    <p>⏱ I will be in Santiago in: <span id="demo"></span></p>
+    <p>⏱ I will be in Santiago until: <span id="demo"></span></p>
 
     <hr>
 
@@ -303,9 +303,9 @@
         <!-- Welcome box -->
         <div class="welcome-box" id="about">
             <h3 style="margin-top:0;">Welcome!</h3>
-            I am a part-time lecturer at the University of Tarapacá.
-            Before joining UTA, I completed my PhD in Applied Mathematics at the Università di Genova (UniGe),
-            within the Machine Learning Genoa Center (MaLGa), under the supervision of Silvia Villa and Lorenzo Rosasco.
+            I am a postdoctoral researcher at the Universidad Técnica Federico Santa María under the supervision of Luis Briceño.
+            Before joining UTFSM, I completed my PhD in Applied Mathematics at the Università di Genova (UniGe),
+            within the Machine Learning Genoa Center (MaLGa), under the supervision of Silvia Villa and Lorenzo Rosasco. Then, I spent two years researching with Felipe Lara in the University of Tarapacá.
             <br><br>
             My current research interests include:
             <ul>
@@ -322,11 +322,12 @@
         <div class="contact-box" id="cont">
             <h3>Contact info</h3>
             <p><strong>Address:</strong><br>
-            Departamento de Matemática, Universidad de Tarapacá,<br>
-            Facultad de Ciencias, 18 de Septiembre 2222,<br>
-            Arica, Chile.</p>
+            Departamento de Matemática, Universidad Técnica Federico Santa María,<br>
+            Av. Vicuña Mackenna 3939, 8940897 San Joaquín, Región Metropolitana,<br>
+            Santiago, Chile.</p>
             <ul>
                 <li><strong>E-mail:</strong> cristianvegacereno6(at)gmail(dot)com</li>
+                <li><strong>E-mail:</strong> cristian.vegac(at)usm(dot)cl</li>
                 <li><a href="https://www.linkedin.com/in/cristian-jes%C3%BAs-vega-cere%C3%B1o-447258104/">LinkedIn</a></li>
                 <li><a href="https://www.researchgate.net/profile/Cristian-Vega">ResearchGate</a></li>
                 <li><a href="https://scholar.google.com/citations?user=kOTvx6oAAAAJ&hl=es">Google Scholar</a></li>
@@ -345,7 +346,7 @@
 
 <script>
 // Countdown
-var countDownDate = new Date("June 30, 2026 02:35:00").getTime();
+var countDownDate = new Date("October 27, 2026 14:35:00").getTime();
 var x = setInterval(function() {
     var now = new Date().getTime();
     var distance = countDownDate - now;
@@ -359,10 +360,10 @@ var x = setInterval(function() {
 
 // News ticker
 const newsList = [
-    "🚀 I come back to Santiago June 27th!!!",
-    "🌍 Now in Arica.",
-    //"📰 ICOMALTA 2026 will be soon!!!",
-    "📰 Cristian Vega will be in COMCA 2026",
+    //"🚀 I will not travel for now",
+    "🌍 Now in Santiago.",
+    "📰 I started my postdoc in the UTFSM",
+    "🚀 Cristian Vega will be in COMCA 2026",
     "💻 New optimization algorithms incoming!!!"
 ];
 (function() {
@@ -370,31 +371,6 @@ const newsList = [
     const items = newsList.map(n => `<span>${n}</span>`).join("");
     ticker.innerHTML = items + items;
 })();
-
-// 
-    function tick() {
-  var diff = new Date("June 11, 2026 18:00:00 GMT-0600") - new Date();
-  if (diff <= 0) return;
-  document.getElementById("fc-d").textContent = String(Math.floor(diff/86400000)).padStart(2,"0");
-  document.getElementById("fc-h").textContent = String(Math.floor(diff/3600000)%24).padStart(2,"0");
-  document.getElementById("fc-m").textContent = String(Math.floor(diff/60000)%60).padStart(2,"0");
-  document.getElementById("fc-s").textContent = String(Math.floor(diff/1000)%60).padStart(2,"0");
-}
-tick(); setInterval(tick, 1000);
-function updateFIFACountdown() {
-    const target = new Date("June 11, 2026 18:00:00 GMT-0600");
-    const diff = target - new Date();
-
-    if (diff <= 0) return;
-
-    document.getElementById("fc-days").textContent  = String(Math.floor(diff / 86400000)).padStart(2,"0");
-    document.getElementById("fc-hours").textContent = String(Math.floor(diff / 3600000) % 24).padStart(2,"0");
-    document.getElementById("fc-min").textContent   = String(Math.floor(diff / 60000) % 60).padStart(2,"0");
-    document.getElementById("fc-sec").textContent   = String(Math.floor(diff / 1000) % 60).padStart(2,"0");
-}
-
-updateFIFACountdown();
-setInterval(updateFIFACountdown, 1000);
 </script>
 </body>
 </html>
