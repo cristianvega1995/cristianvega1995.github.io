@@ -290,21 +290,6 @@
 
 </main>
 
-<script>
-// News ticker
-const newsList = [
-    //"🚀 I will not travel for now",
-    "🌍 Now in Santiago.",
-    "📰 I started my postdoc in the UTFSM",
-    "🚀 Cristian Vega will be in COMCA 2026",
-    "💻 New optimization algorithms incoming!!!"
-];
-(function() {
-    const ticker = document.getElementById("news-ticker");
-    const items = newsList.map(n => `<span>${n}</span>`).join("");
-    ticker.innerHTML = items + items;
-})();
-
-</script>
+<script src="assets/js/news-ticker.js"></script>
 </body>
 </html>
