@@ -15,42 +15,29 @@
 
 <br/>
 
-<table>
-  <tr>
-    <td style="border:none;">
-      <b>Welcome to my webpage!</b><br><br>
 
-            I am a postdoctoral researcher at the Universidad Técnica Federico Santa María under the supervision of <a href="http://lbriceno.mat.utfsm.cl/">Luis Briceño</a>.
-            Before joining UTFSM, I completed my PhD in Applied Mathematics at the Università di Genova (UniGe),
-            within the Machine Learning Genoa Center (MaLGa), under the supervision of <a href="https://rubrica.unige.it/personale/UkNHXVlo">Silvia Villa</a> and <a href="https://web.mit.edu/lrosasco/www/">Lorenzo Rosasco</a>.
-            Then, I spent two years researching with Felipe Lara in the University of Tarapacá.
-            <br><br>
-            My current research interests include:
-            <ul>
-                <li>Nonconvex optimization</li>
-                <li>Splitting algorithms</li>
-                <li>Inertial and stochastic methods</li>
-                <li>Inverse problems</li>
-                <li>Overparameterization</li>
-            </ul>
-            I am particularly interested in structured nonconvexity and splitting algorithms for solving monotone inclusions.
-    </td>
 
-    <td style="float:right;width:120%;border: 2px solid #2c7be5;">
-      <img src="cristian_vega.png" alt="Cristian Vega">
-    </td>
-  </tr>
-</table>
+I am a postdoctoral researcher at the Universidad Técnica Federico Santa María under the supervision of Luis Briceño.
+Before joining UTFSM, I completed my PhD in Applied Mathematics at the Università di Genova (UniGe),
+within the Machine Learning Genoa Center (MaLGa), under the supervision of Silvia Villa and Lorenzo Rosasco.
+Then, I spent two years researching with Felipe Lara in the University of Tarapacá.
+    
+  My current research interests include:
+    -Nonconvex optimization
+    -Splitting algorithms
+    -Inertial and stochastic methods
+    -Inverse problems
+    -Overparameterization
+                 
+  I am particularly interested in structured nonconvexity and splitting algorithms for solving monotone inclusions.
 
 <br>
 
 ## Contact info {#cont}
 
 **Current address:**  
-Departamento de Matemática, Universidad de Tarapacá,  
-Facultad de Ciencias, 18 de Septiembre 2222,  
-Arica, Arica y Parinacota, Chile.
-
+ Departamento de Matemática, Universidad Técnica Federico Santa María.
+ Av. Vicuña Mackenna 3939, 8940897 San Joaquín, Región Metropolitana, Santiago, Chile.
 - **E-mail:** cristianvegacereno6(dot)gmail(dot)com  
 - [LinkedIn](https://www.linkedin.com/in/cristian-jes%C3%BAs-vega-cere%C3%B1o-447258104/)  
 - [ResearchGate](https://www.researchgate.net/profile/Cristian-Vega)  
