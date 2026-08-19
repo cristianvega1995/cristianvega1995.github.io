@@ -1,0 +1,366 @@
+<!--
+  ============================================================
+  Premier League — Matchweek 1  (real data, 21–24 August 2026 · times in Chile)
+  Paste inside <main>. No header, no nav, no footer.
+  All CSS scoped to .sb-premierleague so nothing global is touched.
+  To update: edit WEEK / DATES / MATCHES below.
+  ============================================================
+-->
+
+<style>
+/* ── Premier League scoreboard ─────────────────────────────── */
+.sb-premierleague {
+    --tone: #14235B;      /* flag primary             */
+    --deep: #0B173F;      /* darker shade, headings   */
+    --tint: #EAECF4;      /* pale wash, score panel   */
+    --accent: #CE1124;  /* flag second colour       */
+    --flag: linear-gradient(90deg,#CE1124 0 33.33%,#F4F5F0 33.33% 66.66%,#CE1124 66.66% 100%);      /* flag stripe              */
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    color: #16181c;
+    margin: 0 0 1.5rem;
+}
+
+/* League bar */
+.sb-premierleague .sb-bar {
+    position: relative; overflow: hidden;
+    display: flex; align-items: center; flex-wrap: wrap; gap: 0.7rem;
+    background: linear-gradient(100deg, var(--deep), var(--tone));
+    border-radius: 8px; padding: 0.6rem 0.9rem; margin-bottom: 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+.sb-premierleague .sb-bar::before {
+    content: ""; position: absolute; top: 0; left: 0; right: 0; height: 5px; background: var(--flag);
+}
+.sb-premierleague .sb-bar b {
+    color: #fff; font-size: 1rem; font-weight: 800;
+    letter-spacing: 0.1em; text-transform: uppercase;
+}
+.sb-premierleague .sb-week {
+    color: var(--deep); background: #fff; border-radius: 999px;
+    font-size: 0.68rem; font-weight: 800; letter-spacing: 0.06em;
+    text-transform: uppercase; padding: 3px 10px;
+}
+.sb-premierleague .sb-dates { color: rgba(255,255,255,0.85); font-size: 0.76rem; }
+.sb-premierleague .sb-all {
+    margin-left: auto; font: inherit; font-size: 0.68rem; font-weight: 800;
+    letter-spacing: 0.06em; text-transform: uppercase; color: #fff;
+    background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.55);
+    border-radius: 5px; padding: 4px 10px; cursor: pointer;
+}
+.sb-premierleague .sb-all:hover { background: rgba(255,255,255,0.28); }
+
+/* 2 x 5 grid */
+.sb-premierleague .sb-grid {
+    display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px; align-items: start;
+}
+
+.sb-premierleague .sb-card {
+    background: #fff; border: 1px solid #e3e5e8; border-radius: 8px;
+    overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
+/* Coloured strip: stadium, day, extra info */
+.sb-premierleague .sb-head {
+    position: relative; background: var(--tone); color: #fff; padding: calc(0.4rem + 4px) 0.75rem 0.4rem;
+    font-size: 0.7rem; line-height: 1.55; letter-spacing: 0.02em;
+    display: flex; flex-wrap: wrap; gap: 0.35rem 0.6rem; align-items: baseline;
+}
+.sb-premierleague .sb-head::before {
+    content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--flag);
+}
+.sb-premierleague .sb-head b { font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; }
+.sb-premierleague .sb-head span { color: rgba(255,255,255,0.85); }
+.sb-premierleague .sb-head .sb-flag {
+    margin-left: auto; background: rgba(0,0,0,0.22); border-radius: 3px;
+    padding: 1px 6px; font-weight: 800; letter-spacing: 0.06em; color: #fff;
+}
+
+/* Score panel */
+.sb-premierleague .sb-score { background: var(--tint); padding: 0.55rem 0.75rem; border-bottom: 2px solid var(--accent); }
+.sb-premierleague .sb-row { display: flex; align-items: center; justify-content: space-between; gap: 0.6rem; }
+.sb-premierleague .sb-team {
+    font-size: 0.95rem; font-weight: 700; color: #5b6068;
+    text-transform: uppercase; letter-spacing: 0.02em; line-height: 1.35;
+}
+.sb-premierleague .sb-num {
+    font-size: 1.3rem; font-weight: 800; font-variant-numeric: tabular-nums;
+    color: #9aa0a8; min-width: 1.1ch; text-align: right;
+}
+.sb-premierleague .win-h .sb-row.h .sb-team, .sb-premierleague .win-a .sb-row.a .sb-team,
+.sb-premierleague .draw .sb-team { color: var(--deep); }
+.sb-premierleague .win-h .sb-row.h .sb-num, .sb-premierleague .win-a .sb-row.a .sb-num,
+.sb-premierleague .draw .sb-num { color: var(--tone); }
+
+/* Goals / cards */
+.sb-premierleague .sb-foot { padding: 0.55rem 0.75rem 0.6rem; font-size: 0.78rem; line-height: 1.65; color: #4a4e54; }
+.sb-premierleague .sb-foot .lbl {
+    font-size: 0.62rem; font-weight: 800; letter-spacing: 0.07em;
+    text-transform: uppercase; color: var(--tone); margin-right: 5px;
+}
+.sb-premierleague .sb-foot b { color: var(--deep); font-variant-numeric: tabular-nums; }
+.sb-premierleague .sb-foot .it + .it::before { content: " \00B7 "; color: #c3c7cc; }
+
+/* Lineups */
+.sb-premierleague details { border-top: 1px solid #eceef0; }
+.sb-premierleague summary {
+    cursor: pointer; list-style: none; padding: 0.45rem 0.75rem;
+    font-size: 0.68rem; font-weight: 800; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--tone); background: #fbfbfc;
+}
+.sb-premierleague summary::-webkit-details-marker { display: none; }
+.sb-premierleague summary::before { content: "\25B8  "; }
+.sb-premierleague details[open] summary::before { content: "\25BE  "; }
+.sb-premierleague .sb-xi { display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; padding: 0.5rem 0.75rem 0.7rem; }
+.sb-premierleague .sb-side h4 {
+    all: unset; display: block; font-size: 0.7rem; font-weight: 800;
+    text-transform: uppercase; letter-spacing: 0.05em; color: #fff;
+    background: var(--deep); border-radius: 4px; padding: 3px 7px; margin-bottom: 0.35rem;
+}
+.sb-premierleague .sb-p {
+    display: flex; align-items: center; gap: 5px; font-size: 0.75rem;
+    line-height: 1.9; color: #33363a; border-bottom: 1px solid #f2f3f5;
+}
+.sb-premierleague .sb-pos {
+    flex: none; min-width: 26px; text-align: center; font-size: 0.58rem; font-weight: 800;
+    letter-spacing: 0.04em; color: var(--deep); background: var(--tint);
+    border: 1px solid color-mix(in srgb, var(--tone) 30%, #fff); border-radius: 3px; padding: 1px 3px;
+}
+.sb-premierleague .sb-no {
+    flex: none; width: 22px; text-align: center; font-size: 0.64rem; font-weight: 800;
+    font-variant-numeric: tabular-nums; color: #fff; background: var(--tone);
+    border: 1px solid transparent; border-radius: 3px; padding: 1px 0;
+}
+/* number not filled in yet — the slot stays, so every row keeps the same grid */
+.sb-premierleague .sb-no.tbd {
+    background: #fff; color: transparent;
+    border: 1px dashed #dfe2e6; border-color: color-mix(in srgb, var(--tone) 35%, #fff);
+}
+.sb-premierleague .sb-pn { flex: 1 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.sb-premierleague .sb-subs {
+    margin-top: 0.55rem; font-size: 0.62rem; font-weight: 800; letter-spacing: 0.07em;
+    text-transform: uppercase; color: var(--tone); border-top: 2px solid var(--accent); padding-top: 0.3rem;
+}
+.sb-premierleague .sb-mgr { margin-top: 0.4rem; font-size: 0.72rem; color: #4a4e54; }
+.sb-premierleague .sb-mgr b { color: var(--tone); font-weight: 800; font-size: 0.62rem; letter-spacing: 0.06em; text-transform: uppercase; }
+
+/* Markers */
+.sb-premierleague .mk { flex: none; font-size: 0.62rem; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.sb-premierleague .mk.on  { color: #1a8a3f; }
+.sb-premierleague .mk.off { color: #c0392b; }
+.sb-premierleague .mk.gl  { color: var(--deep); font-weight: 800; }
+.sb-premierleague .mk.gl::before {
+    content: ""; display: inline-block; width: 7px; height: 7px; margin-right: 2px;
+    border-radius: 50%; background: var(--tone); vertical-align: middle;
+}
+.sb-premierleague .mk.yc::before, .sb-premierleague .mk.rc::before {
+    content: ""; display: inline-block; width: 6px; height: 9px; margin-right: 2px;
+    border-radius: 1px; vertical-align: -1px;
+}
+.sb-premierleague .mk.yc::before { background: #f2c200; }
+.sb-premierleague .mk.rc::before { background: #d63031; }
+.sb-premierleague .mk.yc, .sb-premierleague .mk.rc { color: #7d828a; }
+
+/* empty lineup slots, ready to be filled in */
+.sb-premierleague .sb-pos.tbd, .sb-premierleague .sb-pn.tbd, .sb-premierleague .sb-mgr .tbd {
+    border: 0; background: #fff; color: transparent;
+}
+.sb-premierleague .sb-pos.tbd {
+    border: 1px dashed #dfe2e6; border-color: color-mix(in srgb, var(--tone) 35%, #fff);
+}
+.sb-premierleague .sb-pn.tbd { height: 0.95rem; border-bottom: 1px dashed #e6e8ea; }
+.sb-premierleague .sb-mgr .tbd { display: block; height: 0.95rem; border-bottom: 1px dashed #e6e8ea; }
+
+/* not played yet: empty boxes, nothing written in them */
+.sb-premierleague .sb-num.tbd {
+    display: inline-block; width: 26px; height: 21px; border: 1px dashed #dfe2e6;
+    border-color: color-mix(in srgb, var(--tone) 35%, #fff); border-radius: 3px; background: #fff;
+}
+.sb-premierleague .sb-blank { display: flex; flex-direction: column; gap: 0.75rem; padding-top: 0.8rem; padding-bottom: 0.8rem; }
+.sb-premierleague .sb-blank i { display: block; height: 0; border-bottom: 1px dashed #e6e8ea; }
+
+.sb-premierleague .sb-note { padding: 0 0.75rem 0.6rem; font-size: 0.68rem; color: #8b9097; letter-spacing: 0.02em; }
+
+@media (max-width: 640px) {
+    .sb-premierleague .sb-grid { grid-template-columns: 1fr; }
+    .sb-premierleague .sb-xi { grid-template-columns: 1fr; gap: 0.55rem; }
+    .sb-premierleague .sb-all { margin-left: 0; }
+}
+</style>
+
+<section class="sb-premierleague" id="sb-premierleague"></section>
+
+<script>
+(function () {
+
+const LEAGUE = "Premier League";
+const WEEK   = "Matchweek 1";
+const DATES  = "21–24 August 2026 · times in Chile";
+
+/* ── Matches: 2 x 5 grid. Edit this block each week ──────
+   Played:   { home, away, hs, as, stadium, day, goals, cards, xi, bench, manager, note }
+   Upcoming: { home, away, status:"pending", stadium, day }
+             -> renders empty: no score, no text. To fill it in, drop
+                status and add hs, as, goals, cards, xi, bench, manager.
+   Player:   ["GK","Name"] · ["FW","Name",{g:["73'"],y:"48'",r:"88'",off:"70'",on:"70'",n:9}]
+   ------------------------------------------------------- */
+const MATCHES = [
+      {
+            "home": "Arsenal",
+            "away": "Coventry City",
+            "status": "pending",
+            "stadium": "Emirates Stadium",
+            "day": "Fri 21 Aug, 15:00 (CL)"
+      },
+      {
+            "home": "Hull City",
+            "away": "Manchester United",
+            "status": "pending",
+            "stadium": "MKM Stadium",
+            "day": "Sat 22 Aug, 07:30 (CL)"
+      },
+      {
+            "home": "Everton",
+            "away": "Crystal Palace",
+            "status": "pending",
+            "stadium": "Hill Dickinson Stadium",
+            "day": "Sat 22 Aug, 10:00 (CL)"
+      },
+      {
+            "home": "Ipswich Town",
+            "away": "Sunderland",
+            "status": "pending",
+            "stadium": "Portman Road",
+            "day": "Sat 22 Aug, 10:00 (CL)"
+      },
+      {
+            "home": "Nottingham Forest",
+            "away": "Leeds United",
+            "status": "pending",
+            "stadium": "City Ground",
+            "day": "Sat 22 Aug, 10:00 (CL)"
+      },
+      {
+            "home": "Brentford",
+            "away": "Tottenham",
+            "status": "pending",
+            "stadium": "Gtech Community Stadium",
+            "day": "Sat 22 Aug, 12:30 (CL)"
+      },
+      {
+            "home": "Brighton",
+            "away": "Aston Villa",
+            "status": "pending",
+            "stadium": "Amex Stadium",
+            "day": "Sun 23 Aug, 09:00 (CL)"
+      },
+      {
+            "home": "Manchester City",
+            "away": "Bournemouth",
+            "status": "pending",
+            "stadium": "Etihad Stadium",
+            "day": "Sun 23 Aug, 09:00 (CL)"
+      },
+      {
+            "home": "Newcastle",
+            "away": "Liverpool",
+            "status": "pending",
+            "stadium": "St James' Park",
+            "day": "Sun 23 Aug, 11:30 (CL)"
+      },
+      {
+            "home": "Fulham",
+            "away": "Chelsea",
+            "status": "pending",
+            "stadium": "Craven Cottage",
+            "day": "Mon 24 Aug, 15:00 (CL)"
+      }
+];
+
+/* ── Renderer ───────────────────────────────────────────── */
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;" }[c]));
+
+const marks = (x = {}) =>
+    (x.g || []).map(t => `<span class="mk gl">${esc(t)}</span>`).join("") +
+    (x.y ? `<span class="mk yc">${esc(x.y)}</span>` : "") +
+    (x.r ? `<span class="mk rc">${esc(x.r)}</span>` : "") +
+    (x.off ? `<span class="mk off">&#9660;${esc(x.off)}</span>` : "") +
+    (x.on ? `<span class="mk on">&#9650;${esc(x.on)}</span>` : "");
+
+const player = p => {
+    const [pos, name, x = {}] = p;
+    const no = (x.n || x.n === 0)
+        ? `<span class="sb-no">${esc(x.n)}</span>`
+        : `<span class="sb-no tbd">0</span>`;   /* empty slot, ready for the shirt number */
+    return `<div class="sb-p"><span class="sb-pos">${esc(pos)}</span>${no}` +
+           `<span class="sb-pn">${esc(name)}</span>${marks(x)}</div>`;
+};
+
+const blank = n => `<div class="sb-p"><span class="sb-pos tbd">0</span>` +
+    `<span class="sb-no tbd">0</span><span class="sb-pn tbd"></span></div>`.repeat(n);
+
+const side = (m, k) => {
+    const xi    = (m.xi    && m.xi[k])    || [];
+    const bench = (m.bench && m.bench[k]) || [];
+    const boss  = (m.manager && m.manager[k]) || "";
+    return `<div class="sb-side">
+        <h4>${esc(k === "home" ? m.home : m.away)}</h4>
+        ${xi.length ? xi.map(player).join("") : blank(11)}
+        <div class="sb-subs">Substitutes</div>
+        ${bench.length ? bench.map(player).join("") : blank(5)}
+        <div class="sb-mgr"><b>Manager</b>${boss ? `<br>${esc(boss)}` : `<span class="tbd"></span>`}</div>
+    </div>`;
+};
+
+const card = m => {
+    const pending = m.status === "pending" || m.hs == null;
+    const state = pending ? "" : (m.hs > m.as ? "win-h" : m.hs < m.as ? "win-a" : "draw");
+
+    const goals = (m.goals && m.goals.length)
+        ? `<div><span class="lbl">Goals</span>${m.goals.map(g =>
+              `<span class="it"><b>${esc(g[0])}</b> ${esc(g[1])} ${esc(g[2])}</span>`).join("")}</div>` : "";
+    const cards = (m.cards && m.cards.length)
+        ? `<div><span class="lbl">Cards</span>${m.cards.map(c =>
+              `<span class="it"><span class="mk ${c[0] === "r" ? "rc" : "yc"}"></span>${esc(c[1])}${c[2] ? " " + esc(c[2]) : ""}</span>`).join("")}</div>` : "";
+    const foot = pending
+        ? `<div class="sb-foot sb-blank"><i></i><i></i></div>`
+        : `<div class="sb-foot">${goals}${cards}</div>`;
+
+    /* the panel is always there — empty slots when the match has no data yet */
+    const xi = `<details><summary>Lineups</summary><div class="sb-xi">${side(m, "home")}${side(m, "away")}</div></details>`;
+
+    return `<article class="sb-card ${state}">
+        <div class="sb-head">
+            ${m.stadium ? `<b>${esc(m.stadium)}</b>` : ""}
+            ${m.day ? `<span>${esc(m.day)}</span>` : ""}
+            ${pending ? "" : `<span class="sb-flag">Full time</span>`}
+        </div>
+        <div class="sb-score">
+            <div class="sb-row h"><span class="sb-team">${esc(m.home)}</span><span class="sb-num${pending ? " tbd" : ""}">${pending ? "" : m.hs}</span></div>
+            <div class="sb-row a"><span class="sb-team">${esc(m.away)}</span><span class="sb-num${pending ? " tbd" : ""}">${pending ? "" : m.as}</span></div>
+        </div>
+        ${foot}${xi}
+        ${m.note ? `<div class="sb-note">${esc(m.note)}</div>` : ""}
+    </article>`;
+};
+
+const root = document.getElementById("sb-premierleague");
+root.innerHTML = `
+    <div class="sb-bar">
+        <b>${esc(LEAGUE)}</b>
+        <span class="sb-week">${esc(WEEK)}</span>
+        <span class="sb-dates">${esc(DATES)}</span>
+        <button type="button" class="sb-all">Show all lineups</button>
+    </div>
+    <div class="sb-grid">${MATCHES.map(card).join("")}</div>`;
+
+const btn = root.querySelector(".sb-all");
+btn.addEventListener("click", () => {
+    const open = btn.dataset.open !== "1";
+    root.querySelectorAll("details").forEach(d => d.open = open);
+    btn.dataset.open = open ? "1" : "0";
+    btn.textContent = open ? "Hide all lineups" : "Show all lineups";
+});
+
+})();
+</script>

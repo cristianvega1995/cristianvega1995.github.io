@@ -1,0 +1,1709 @@
+<!--
+  ============================================================
+  La Liga — Jornada 1  (real data, 15–27 August 2026)
+  Paste inside <main>. No header, no nav, no footer.
+  All CSS scoped to .sb-laliga so nothing global is touched.
+  To update: edit WEEK / DATES / MATCHES below.
+  ============================================================
+-->
+
+<style>
+/* ── La Liga scoreboard ─────────────────────────────── */
+.sb-laliga {
+    --tone: #AA151B;      /* flag primary             */
+    --deep: #7A0F14;      /* darker shade, headings   */
+    --tint: #FCF3DC;      /* pale wash, score panel   */
+    --accent: #F1BF00;  /* flag second colour       */
+    --flag: linear-gradient(90deg,#AA151B 0 25%,#F1BF00 25% 75%,#AA151B 75% 100%);      /* flag stripe              */
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    color: #16181c;
+    margin: 0 0 1.5rem;
+}
+
+/* League bar */
+.sb-laliga .sb-bar {
+    position: relative; overflow: hidden;
+    display: flex; align-items: center; flex-wrap: wrap; gap: 0.7rem;
+    background: linear-gradient(100deg, var(--deep), var(--tone));
+    border-radius: 8px; padding: 0.6rem 0.9rem; margin-bottom: 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+.sb-laliga .sb-bar::before {
+    content: ""; position: absolute; top: 0; left: 0; right: 0; height: 5px; background: var(--flag);
+}
+.sb-laliga .sb-bar b {
+    color: #fff; font-size: 1rem; font-weight: 800;
+    letter-spacing: 0.1em; text-transform: uppercase;
+}
+.sb-laliga .sb-week {
+    color: var(--deep); background: #fff; border-radius: 999px;
+    font-size: 0.68rem; font-weight: 800; letter-spacing: 0.06em;
+    text-transform: uppercase; padding: 3px 10px;
+}
+.sb-laliga .sb-dates { color: rgba(255,255,255,0.85); font-size: 0.76rem; }
+.sb-laliga .sb-all {
+    margin-left: auto; font: inherit; font-size: 0.68rem; font-weight: 800;
+    letter-spacing: 0.06em; text-transform: uppercase; color: #fff;
+    background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.55);
+    border-radius: 5px; padding: 4px 10px; cursor: pointer;
+}
+.sb-laliga .sb-all:hover { background: rgba(255,255,255,0.28); }
+
+/* 2 x 5 grid */
+.sb-laliga .sb-grid {
+    display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px; align-items: start;
+}
+
+.sb-laliga .sb-card {
+    background: #fff; border: 1px solid #e3e5e8; border-radius: 8px;
+    overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
+/* Coloured strip: stadium, day, extra info */
+.sb-laliga .sb-head {
+    position: relative; background: var(--tone); color: #fff; padding: calc(0.4rem + 4px) 0.75rem 0.4rem;
+    font-size: 0.7rem; line-height: 1.55; letter-spacing: 0.02em;
+    display: flex; flex-wrap: wrap; gap: 0.35rem 0.6rem; align-items: baseline;
+}
+.sb-laliga .sb-head::before {
+    content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--flag);
+}
+.sb-laliga .sb-head b { font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; }
+.sb-laliga .sb-head span { color: rgba(255,255,255,0.85); }
+.sb-laliga .sb-head .sb-flag {
+    margin-left: auto; background: rgba(0,0,0,0.22); border-radius: 3px;
+    padding: 1px 6px; font-weight: 800; letter-spacing: 0.06em; color: #fff;
+}
+
+/* Score panel */
+.sb-laliga .sb-score { background: var(--tint); padding: 0.55rem 0.75rem; border-bottom: 2px solid var(--accent); }
+.sb-laliga .sb-row { display: flex; align-items: center; justify-content: space-between; gap: 0.6rem; }
+.sb-laliga .sb-team {
+    font-size: 0.95rem; font-weight: 700; color: #5b6068;
+    text-transform: uppercase; letter-spacing: 0.02em; line-height: 1.35;
+}
+.sb-laliga .sb-num {
+    font-size: 1.3rem; font-weight: 800; font-variant-numeric: tabular-nums;
+    color: #9aa0a8; min-width: 1.1ch; text-align: right;
+}
+.sb-laliga .win-h .sb-row.h .sb-team, .sb-laliga .win-a .sb-row.a .sb-team,
+.sb-laliga .draw .sb-team { color: var(--deep); }
+.sb-laliga .win-h .sb-row.h .sb-num, .sb-laliga .win-a .sb-row.a .sb-num,
+.sb-laliga .draw .sb-num { color: var(--tone); }
+
+/* Goals / cards */
+.sb-laliga .sb-foot { padding: 0.55rem 0.75rem 0.6rem; font-size: 0.78rem; line-height: 1.65; color: #4a4e54; }
+.sb-laliga .sb-foot .lbl {
+    font-size: 0.62rem; font-weight: 800; letter-spacing: 0.07em;
+    text-transform: uppercase; color: var(--tone); margin-right: 5px;
+}
+.sb-laliga .sb-foot b { color: var(--deep); font-variant-numeric: tabular-nums; }
+.sb-laliga .sb-foot .it + .it::before { content: " \00B7 "; color: #c3c7cc; }
+
+/* Lineups */
+.sb-laliga details { border-top: 1px solid #eceef0; }
+.sb-laliga summary {
+    cursor: pointer; list-style: none; padding: 0.45rem 0.75rem;
+    font-size: 0.68rem; font-weight: 800; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--tone); background: #fbfbfc;
+}
+.sb-laliga summary::-webkit-details-marker { display: none; }
+.sb-laliga summary::before { content: "\25B8  "; }
+.sb-laliga details[open] summary::before { content: "\25BE  "; }
+.sb-laliga .sb-xi { display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; padding: 0.5rem 0.75rem 0.7rem; }
+.sb-laliga .sb-side h4 {
+    all: unset; display: block; font-size: 0.7rem; font-weight: 800;
+    text-transform: uppercase; letter-spacing: 0.05em; color: #fff;
+    background: var(--deep); border-radius: 4px; padding: 3px 7px; margin-bottom: 0.35rem;
+}
+.sb-laliga .sb-p {
+    display: flex; align-items: center; gap: 5px; font-size: 0.75rem;
+    line-height: 1.9; color: #33363a; border-bottom: 1px solid #f2f3f5;
+}
+.sb-laliga .sb-pos {
+    flex: none; min-width: 26px; text-align: center; font-size: 0.58rem; font-weight: 800;
+    letter-spacing: 0.04em; color: var(--deep); background: var(--tint);
+    border: 1px solid color-mix(in srgb, var(--tone) 30%, #fff); border-radius: 3px; padding: 1px 3px;
+}
+.sb-laliga .sb-no {
+    flex: none; width: 22px; text-align: center; font-size: 0.64rem; font-weight: 800;
+    font-variant-numeric: tabular-nums; color: #fff; background: var(--tone);
+    border: 1px solid transparent; border-radius: 3px; padding: 1px 0;
+}
+/* number not filled in yet — the slot stays, so every row keeps the same grid */
+.sb-laliga .sb-no.tbd {
+    background: #fff; color: transparent;
+    border: 1px dashed #dfe2e6; border-color: color-mix(in srgb, var(--tone) 35%, #fff);
+}
+.sb-laliga .sb-pn { flex: 1 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.sb-laliga .sb-subs {
+    margin-top: 0.55rem; font-size: 0.62rem; font-weight: 800; letter-spacing: 0.07em;
+    text-transform: uppercase; color: var(--tone); border-top: 2px solid var(--accent); padding-top: 0.3rem;
+}
+.sb-laliga .sb-mgr { margin-top: 0.4rem; font-size: 0.72rem; color: #4a4e54; }
+.sb-laliga .sb-mgr b { color: var(--tone); font-weight: 800; font-size: 0.62rem; letter-spacing: 0.06em; text-transform: uppercase; }
+
+/* Markers */
+.sb-laliga .mk { flex: none; font-size: 0.62rem; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.sb-laliga .mk.on  { color: #1a8a3f; }
+.sb-laliga .mk.off { color: #c0392b; }
+.sb-laliga .mk.gl  { color: var(--deep); font-weight: 800; }
+.sb-laliga .mk.gl::before {
+    content: ""; display: inline-block; width: 7px; height: 7px; margin-right: 2px;
+    border-radius: 50%; background: var(--tone); vertical-align: middle;
+}
+.sb-laliga .mk.yc::before, .sb-laliga .mk.rc::before {
+    content: ""; display: inline-block; width: 6px; height: 9px; margin-right: 2px;
+    border-radius: 1px; vertical-align: -1px;
+}
+.sb-laliga .mk.yc::before { background: #f2c200; }
+.sb-laliga .mk.rc::before { background: #d63031; }
+.sb-laliga .mk.yc, .sb-laliga .mk.rc { color: #7d828a; }
+
+/* empty lineup slots, ready to be filled in */
+.sb-laliga .sb-pos.tbd, .sb-laliga .sb-pn.tbd, .sb-laliga .sb-mgr .tbd {
+    border: 0; background: #fff; color: transparent;
+}
+.sb-laliga .sb-pos.tbd {
+    border: 1px dashed #dfe2e6; border-color: color-mix(in srgb, var(--tone) 35%, #fff);
+}
+.sb-laliga .sb-pn.tbd { height: 0.95rem; border-bottom: 1px dashed #e6e8ea; }
+.sb-laliga .sb-mgr .tbd { display: block; height: 0.95rem; border-bottom: 1px dashed #e6e8ea; }
+
+/* not played yet: empty boxes, nothing written in them */
+.sb-laliga .sb-num.tbd {
+    display: inline-block; width: 26px; height: 21px; border: 1px dashed #dfe2e6;
+    border-color: color-mix(in srgb, var(--tone) 35%, #fff); border-radius: 3px; background: #fff;
+}
+.sb-laliga .sb-blank { display: flex; flex-direction: column; gap: 0.75rem; padding-top: 0.8rem; padding-bottom: 0.8rem; }
+.sb-laliga .sb-blank i { display: block; height: 0; border-bottom: 1px dashed #e6e8ea; }
+
+.sb-laliga .sb-note { padding: 0 0.75rem 0.6rem; font-size: 0.68rem; color: #8b9097; letter-spacing: 0.02em; }
+
+@media (max-width: 640px) {
+    .sb-laliga .sb-grid { grid-template-columns: 1fr; }
+    .sb-laliga .sb-xi { grid-template-columns: 1fr; gap: 0.55rem; }
+    .sb-laliga .sb-all { margin-left: 0; }
+}
+</style>
+
+<section class="sb-laliga" id="sb-laliga"></section>
+
+<script>
+(function () {
+
+const LEAGUE = "La Liga";
+const WEEK   = "Jornada 1";
+const DATES  = "15–27 August 2026";
+
+/* ── Matches: 2 x 5 grid. Edit this block each week ──────
+   Played:   { home, away, hs, as, stadium, day, goals, cards, xi, bench, manager, note }
+   Upcoming: { home, away, status:"pending", stadium, day }
+             -> renders empty: no score, no text. To fill it in, drop
+                status and add hs, as, goals, cards, xi, bench, manager.
+   Player:   ["GK","Name"] · ["FW","Name",{g:["73'"],y:"48'",r:"88'",off:"70'",on:"70'",n:9}]
+   ------------------------------------------------------- */
+const MATCHES = [
+      {
+            "home": "Alavés",
+            "away": "Getafe",
+            "hs": 3,
+            "as": 0,
+            "stadium": "Mendizorroza",
+            "day": "Sat 15 Aug",
+            "note": "Referee: Orellana Cid · 13,923",
+            "goals": [
+                  [
+                        "1-0",
+                        "Tenaglia",
+                        "73'"
+                  ],
+                  [
+                        "2-0",
+                        "Mariano",
+                        "90'+1"
+                  ],
+                  [
+                        "3-0",
+                        "Mikel Rodríguez",
+                        "90'+4"
+                  ]
+            ],
+            "cards": [
+                  [
+                        "y",
+                        "Denis Suárez",
+                        "48'"
+                  ],
+                  [
+                        "y",
+                        "Rebbach",
+                        "66'"
+                  ],
+                  [
+                        "y",
+                        "Blanco",
+                        "85'"
+                  ],
+                  [
+                        "y",
+                        "Davinchi",
+                        "10'"
+                  ],
+                  [
+                        "y",
+                        "Mario Martín",
+                        "23'"
+                  ],
+                  [
+                        "y",
+                        "Djené",
+                        "77'"
+                  ],
+                  [
+                        "r",
+                        "Femenía",
+                        "42'"
+                  ]
+            ],
+            "xi": {
+                  "home": [
+                        [
+                              "GK",
+                              "Sivera"
+                        ],
+                        [
+                              "DF",
+                              "Ángel Pérez",
+                              {
+                                    "off": "65'"
+                              }
+                        ],
+                        [
+                              "DF",
+                              "Tenaglia",
+                              {
+                                    "g": [
+                                          "73'"
+                                    ]
+                              }
+                        ],
+                        [
+                              "DF",
+                              "Koski"
+                        ],
+                        [
+                              "DF",
+                              "Jonny"
+                        ],
+                        [
+                              "MF",
+                              "Rebbach",
+                              {
+                                    "y": "66'",
+                                    "off": "90'+4"
+                              }
+                        ],
+                        [
+                              "MF",
+                              "Ibáñez"
+                        ],
+                        [
+                              "MF",
+                              "Blanco",
+                              {
+                                    "y": "85'",
+                                    "off": "90'+4"
+                              }
+                        ],
+                        [
+                              "MF",
+                              "Denis Suárez",
+                              {
+                                    "y": "48'",
+                                    "off": "57'"
+                              }
+                        ],
+                        [
+                              "FW",
+                              "Toni Martínez"
+                        ],
+                        [
+                              "FW",
+                              "Mañas",
+                              {
+                                    "off": "57'"
+                              }
+                        ]
+                  ],
+                  "away": [
+                        [
+                              "GK",
+                              "Soria"
+                        ],
+                        [
+                              "DF",
+                              "Femenía",
+                              {
+                                    "r": "42'"
+                              }
+                        ],
+                        [
+                              "DF",
+                              "Djené",
+                              {
+                                    "y": "77'",
+                                    "off": "81'"
+                              }
+                        ],
+                        [
+                              "DF",
+                              "Zaid Romero"
+                        ],
+                        [
+                              "DF",
+                              "Abqar"
+                        ],
+                        [
+                              "DF",
+                              "Davinchi",
+                              {
+                                    "y": "10'",
+                                    "off": "46'"
+                              }
+                        ],
+                        [
+                              "MF",
+                              "Andrés García",
+                              {
+                                    "off": "81'"
+                              }
+                        ],
+                        [
+                              "MF",
+                              "Mario Martín",
+                              {
+                                    "y": "23'",
+                                    "off": "66'"
+                              }
+                        ],
+                        [
+                              "MF",
+                              "Mangala"
+                        ],
+                        [
+                              "MF",
+                              "Terrats"
+                        ],
+                        [
+                              "FW",
+                              "Satriano",
+                              {
+                                    "off": "73'"
+                              }
+                        ]
+                  ]
+            },
+            "bench": {
+                  "home": [
+                        [
+                              "MF",
+                              "Mikel Rodríguez",
+                              {
+                                    "on": "57'",
+                                    "g": [
+                                          "90'+4"
+                                    ]
+                              }
+                        ],
+                        [
+                              "FW",
+                              "Mariano",
+                              {
+                                    "on": "57'",
+                                    "g": [
+                                          "90'+1"
+                                    ]
+                              }
+                        ],
+                        [
+                              "DF",
+                              "Yusi",
+                              {
+                                    "on": "65'"
+                              }
+                        ],
+                        [
+                              "MF",
+                              "Aleñá",
+                              {
+                                    "on": "90'+4"
+                              }
+                        ],
+                        [
+                              "MF",
+                              "Guevara",
+                              {
+                                    "on": "90'+4"
+                              }
+                        ]
+                  ],
+                  "away": [
+                        [
+                              "FW",
+                              "Enes Ünal",
+                              {
+                                    "on": "46'"
+                              }
+                        ],
+                        [
+                              "MF",
+                              "Risco",
+                              {
+                                    "on": "66'"
+                              }
+                        ],
+                        [
+                              "DF",
+                              "Valou",
+                              {
+                                    "on": "73'"
+                              }
+                        ],
+                        [
+                              "FW",
+                              "Boselli",
+                              {
+                                    "on": "81'"
+                              }
+                        ],
+                        [
+                              "DF",
+                              "Sazonov",
+                              {
+                                    "on": "81'"
+                              }
+                        ]
+                  ]
+            },
+            "manager": {
+                  "home": "Quique Sánchez Flores",
+                  "away": "José Bordalás"
+            }
+      },
+      {
+            "home": "Sevilla",
+            "away": "Rayo Vallecano",
+            "hs": 2,
+            "as": 1,
+            "stadium": "Ramón Sánchez-Pizjuán",
+            "day": "Sat 15 Aug",
+            "note": "Referee: De Burgos Bengoetxea · 36,777",
+            "goals": [
+                  [
+                        "0-1",
+                        "Álvaro García",
+                        "4'"
+                  ],
+                  [
+                        "1-1",
+                        "Guridi (pen)",
+                        "52'"
+                  ],
+                  [
+                        "2-1",
+                        "Peque (pen)",
+                        "90'+7"
+                  ]
+            ],
+            "cards": [
+                  [
+                        "y",
+                        "Isaac Romero"
+                  ],
+                  [
+                        "y",
+                        "Guridi"
+                  ],
+                  [
+                        "y",
+                        "Suazo"
+                  ],
+                  [
+                        "y",
+                        "Agoumé"
+                  ],
+                  [
+                        "r",
+                        "Kike Salas",
+                        "88'"
+                  ],
+                  [
+                        "y",
+                        "Álvaro García"
+                  ],
+                  [
+                        "y",
+                        "Unai López"
+                  ],
+                  [
+                        "y",
+                        "Fran Pérez"
+                  ]
+            ],
+            "xi": {
+                  "home": [
+                        [
+                              "GK",
+                              "Vlachodimos"
+                        ],
+                        [
+                              "DF",
+                              "Juan Iglesias"
+                        ],
+                        [
+                              "DF",
+                              "Sangante"
+                        ],
+                        [
+                              "DF",
+                              "Kike Salas",
+                              {
+                                    "r": "88'"
+                              }
+                        ],
+                        [
+                              "DF",
+                              "Suazo",
+                              {
+                                    "y": "81'"
+                              }
+                        ],
+                        [
+                              "MF",
+                              "Agoumé",
+                              {
+                                    "y": "90'"
+                              }
+                        ],
+                        [
+                              "MF",
+                              "Nico Guillén",
+                              {
+                                    "off": "46'"
+                              }
+                        ],
+                        [
+                              "MF",
+                              "Miguel Sierra",
+                              {
+                                    "off": "70'"
+                              }
+                        ],
+                        [
+                              "MF",
+                              "Guridi",
+                              {
+                                    "g": [
+                                          "52'"
+                                    ],
+                                    "y": "60'",
+                                    "off": "82'"
+                              }
+                        ],
+                        [
+                              "MF",
+                              "Oso",
+                              {
+                                    "off": "78'"
+                              }
+                        ],
+                        [
+                              "FW",
+                              "Isaac Romero",
+                              {
+                                    "y": "45'",
+                                    "off": "46'"
+                              }
+                        ]
+                  ],
+                  "away": [
+                        [
+                              "GK",
+                              "Batalla"
+                        ],
+                        [
+                              "DF",
+                              "Ratiu"
+                        ],
+                        [
+                              "DF",
+                              "Lejeune"
+                        ],
+                        [
+                              "MF",
+                              "Pathé Ciss"
+                        ],
+                        [
+                              "DF",
+                              "Balliu"
+                        ],
+                        [
+                              "MF",
+                              "Óscar Valentín",
+                              {
+                                    "off": "78'"
+                              }
+                        ],
+                        [
+                              "MF",
+                              "Unai López",
+                              {
+                                    "y": "75'",
+                                    "off": "78'"
+                              }
+                        ],
+                        [
+                              "FW",
+                              "De Frutos"
+                        ],
+                        [
+                              "MF",
+                              "Isi Palazón",
+                              {
+                                    "off": "65'"
+                              }
+                        ],
+                        [
+                              "MF",
+                              "Álvaro García",
+                              {
+                                    "g": [
+                                          "4'"
+                                    ],
+                                    "y": "67'",
+                                    "off": "70'"
+                              }
+                        ],
+                        [
+                              "FW",
+                              "Nteka",
+                              {
+                                    "off": "65'"
+                              }
+                        ]
+                  ]
+            },
+            "bench": {
+                  "home": [
+                        [
+                              "MF",
+                              "Peque",
+                              {
+                                    "on": "46'",
+                                    "g": [
+                                          "90'+7"
+                                    ]
+                              }
+                        ],
+                        [
+                              "FW",
+                              "Robbie Ure",
+                              {
+                                    "on": "46'"
+                              }
+                        ],
+                        [
+                              "FW",
+                              "Vargas",
+                              {
+                                    "on": "70'"
+                              }
+                        ],
+                        [
+                              "FW",
+                              "Ejuke",
+                              {
+                                    "on": "78'"
+                              }
+                        ],
+                        [
+                              "MF",
+                              "Manu Bueno",
+                              {
+                                    "on": "82'"
+                              }
+                        ]
+                  ],
+                  "away": [
+                        [
+                              "FW",
+                              "Camello",
+                              {
+                                    "on": "65'"
+                              }
+                        ],
+                        [
+                              "FW",
+                              "Alemao",
+                              {
+                                    "on": "65'"
+                              }
+                        ],
+                        [
+                              "FW",
+                              "Fran Pérez",
+                              {
+                                    "on": "70'",
+                                    "y": "76'"
+                              }
+                        ],
+                        [
+                              "MF",
+                              "Pelayo",
+                              {
+                                    "on": "78'"
+                              }
+                        ],
+                        [
+                              "MF",
+                              "Pedro Díaz",
+                              {
+                                    "on": "78'"
+                              }
+                        ]
+                  ]
+            },
+            "manager": {
+                  "home": "Luis García Plaza"
+            }
+      },
+      {
+            "home": "Racing Santander",
+            "away": "Villarreal",
+            "hs": 2,
+            "as": 2,
+            "stadium": "El Sardinero",
+            "day": "Sun 16 Aug",
+            "note": "Referee: Miguel Sesma · Racing back in the top flight after 14 years",
+            "goals": [
+                  [
+                        "1-0",
+                        "Andrés Martín (pen)",
+                        "20'"
+                  ],
+                  [
+                        "2-0",
+                        "Sergio Martínez",
+                        "34'"
+                  ],
+                  [
+                        "2-1",
+                        "Gueye",
+                        "45'"
+                  ],
+                  [
+                        "2-2",
+                        "Pepe",
+                        "45'+1"
+                  ]
+            ],
+            "cards": [
+                  [
+                        "y",
+                        "Puerta"
+                  ],
+                  [
+                        "y",
+                        "Pablo Ramón"
+                  ],
+                  [
+                        "y",
+                        "Foyth"
+                  ],
+                  [
+                        "y",
+                        "Gueye"
+                  ],
+                  [
+                        "y",
+                        "Mouriño"
+                  ],
+                  [
+                        "y",
+                        "Carlos Romero"
+                  ]
+            ],
+            "xi": {
+                  "home": [
+                        [
+                              "GK",
+                              "Agirrezabala"
+                        ],
+                        [
+                              "DF",
+                              "Mantilla"
+                        ],
+                        [
+                              "DF",
+                              "Salinas"
+                        ],
+                        [
+                              "DF",
+                              "Pedro Felipe",
+                              {
+                                    "off": "14'"
+                              }
+                        ],
+                        [
+                              "DF",
+                              "Pablo Ramón",
+                              {
+                                    "y": "75'",
+                                    "off": "76'"
+                              }
+                        ],
+                        [
+                              "MF",
+                              "Andrés Martín",
+                              {
+                                    "g": [
+                                          "20'"
+                                    ]
+                              }
+                        ],
+                        [
+                              "MF",
+                              "Canales",
+                              {
+                                    "off": "76'"
+                              }
+                        ],
+                        [
+                              "MF",
+                              "Sergio Martínez",
+                              {
+                                    "g": [
+                                          "34'"
+                                    ]
+                              }
+                        ],
+                        [
+                              "MF",
+                              "Iñigo Vicente"
+                        ],
+                        [
+                              "DF",
+                              "Puerta",
+                              {
+                                    "y": "45'"
+                              }
+                        ],
+                        [
+                              "FW",
+                              "Villalibre",
+                              {
+                                    "off": "69'"
+                              }
+                        ]
+                  ],
+                  "away": [
+                        [
+                              "GK",
+                              "Luiz Júnior"
+                        ],
+                        [
+                              "DF",
+                              "Mouriño",
+                              {
+                                    "y": "87'",
+                                    "off": "88'"
+                              }
+                        ],
+                        [
+                              "DF",
+                              "Foyth",
+                              {
+                                    "y": "48'"
+                              }
+                        ],
+                        [
+                              "DF",
+                              "Renato Veiga"
+                        ],
+                        [
+                              "DF",
+                              "Carlos Romero",
+                              {
+                                    "y": "90'"
+                              }
+                        ],
+                        [
+                              "MF",
+                              "Comesaña",
+                              {
+                                    "off": "55'"
+                              }
+                        ],
+                        [
+                              "MF",
+                              "Gueye",
+                              {
+                                    "g": [
+                                          "45'"
+                                    ],
+                                    "y": "72'"
+                              }
+                        ],
+                        [
+                              "FW",
+                              "Moleiro",
+                              {
+                                    "off": "55'"
+                              }
+                        ],
+                        [
+                              "FW",
+                              "Ayoze Pérez",
+                              {
+                                    "off": "55'"
+                              }
+                        ],
+                        [
+                              "FW",
+                              "Pepe",
+                              {
+                                    "g": [
+                                          "45'+1"
+                                    ],
+                                    "off": "76'"
+                              }
+                        ],
+                        [
+                              "FW",
+                              "Mikautadze"
+                        ]
+                  ]
+            },
+            "bench": {
+                  "home": [
+                        [
+                              "DF",
+                              "Hernando",
+                              {
+                                    "on": "14'"
+                              }
+                        ],
+                        [
+                              "FW",
+                              "Zabiri",
+                              {
+                                    "on": "69'"
+                              }
+                        ],
+                        [
+                              "DF",
+                              "Facu",
+                              {
+                                    "on": "76'"
+                              }
+                        ],
+                        [
+                              "MF",
+                              "Diego Díaz",
+                              {
+                                    "on": "76'"
+                              }
+                        ]
+                  ],
+                  "away": [
+                        [
+                              "MF",
+                              "Maciá",
+                              {
+                                    "on": "55'"
+                              }
+                        ],
+                        [
+                              "FW",
+                              "Buchanan",
+                              {
+                                    "on": "55'"
+                              }
+                        ],
+                        [
+                              "FW",
+                              "Gerard Moreno",
+                              {
+                                    "on": "55'"
+                              }
+                        ],
+                        [
+                              "FW",
+                              "Ilias",
+                              {
+                                    "on": "76'"
+                              }
+                        ],
+                        [
+                              "DF",
+                              "Freeman",
+                              {
+                                    "on": "88'"
+                              }
+                        ]
+                  ]
+            },
+            "manager": {
+                  "home": "José Alberto",
+                  "away": "Iñigo Pérez"
+            }
+      },
+      {
+            "home": "Espanyol",
+            "away": "Levante",
+            "hs": 3,
+            "as": 0,
+            "stadium": "RCDE Stadium",
+            "day": "Sun 16 Aug",
+            "note": "Referee: Muñiz Muñoz · 28,050",
+            "goals": [
+                  [
+                        "1-0",
+                        "Roberto Fernández",
+                        "4'"
+                  ],
+                  [
+                        "2-0",
+                        "Roberto Fernández",
+                        "40'"
+                  ],
+                  [
+                        "3-0",
+                        "Dolan",
+                        "80'"
+                  ]
+            ],
+            "cards": [
+                  [
+                        "y",
+                        "Urko González",
+                        "37'"
+                  ],
+                  [
+                        "y",
+                        "Cala",
+                        "63'"
+                  ],
+                  [
+                        "y",
+                        "Javi Hernández",
+                        "68'"
+                  ]
+            ],
+            "xi": {
+                  "home": [
+                        [
+                              "GK",
+                              "Dmitrović"
+                        ],
+                        [
+                              "DF",
+                              "Omar El Hilali"
+                        ],
+                        [
+                              "DF",
+                              "Unai Núñez"
+                        ],
+                        [
+                              "DF",
+                              "Riedel"
+                        ],
+                        [
+                              "DF",
+                              "Hinojo"
+                        ],
+                        [
+                              "MF",
+                              "Urko González",
+                              {
+                                    "y": "37'",
+                                    "off": "72'"
+                              }
+                        ],
+                        [
+                              "MF",
+                              "Edu Expósito",
+                              {
+                                    "off": "86'"
+                              }
+                        ],
+                        [
+                              "MF",
+                              "Javi Hernández",
+                              {
+                                    "y": "68'",
+                                    "off": "82'"
+                              }
+                        ],
+                        [
+                              "FW",
+                              "Dolan",
+                              {
+                                    "g": [
+                                          "80'"
+                                    ],
+                                    "off": "81'"
+                              }
+                        ],
+                        [
+                              "FW",
+                              "Cala",
+                              {
+                                    "y": "63'",
+                                    "off": "72'"
+                              }
+                        ],
+                        [
+                              "FW",
+                              "Roberto Fernández",
+                              {
+                                    "g": [
+                                          "4'",
+                                          "40'"
+                                    ]
+                              }
+                        ]
+                  ],
+                  "away": [
+                        [
+                              "GK",
+                              "Ryan"
+                        ],
+                        [
+                              "DF",
+                              "Nacho Pérez",
+                              {
+                                    "off": "77'"
+                              }
+                        ],
+                        [
+                              "DF",
+                              "Mandi"
+                        ],
+                        [
+                              "DF",
+                              "Dela"
+                        ],
+                        [
+                              "DF",
+                              "Manu Sánchez"
+                        ],
+                        [
+                              "MF",
+                              "Oriol Rey"
+                        ],
+                        [
+                              "MF",
+                              "Olasagasti"
+                        ],
+                        [
+                              "MF",
+                              "Carlos Álvarez",
+                              {
+                                    "off": "46'"
+                              }
+                        ],
+                        [
+                              "MF",
+                              "Víctor García",
+                              {
+                                    "off": "77'"
+                              }
+                        ],
+                        [
+                              "FW",
+                              "Iván Romero",
+                              {
+                                    "off": "64'"
+                              }
+                        ],
+                        [
+                              "FW",
+                              "Paco Cortés",
+                              {
+                                    "off": "46'"
+                              }
+                        ]
+                  ]
+            },
+            "bench": {
+                  "home": [
+                        [
+                              "MF",
+                              "Pol Lozano",
+                              {
+                                    "on": "72'"
+                              }
+                        ],
+                        [
+                              "MF",
+                              "Bauza",
+                              {
+                                    "on": "72'"
+                              }
+                        ],
+                        [
+                              "FW",
+                              "Jofre Carreras",
+                              {
+                                    "on": "81'"
+                              }
+                        ],
+                        [
+                              "MF",
+                              "Pere Milla",
+                              {
+                                    "on": "82'"
+                              }
+                        ],
+                        [
+                              "FW",
+                              "Marcos Fernández",
+                              {
+                                    "on": "86'"
+                              }
+                        ]
+                  ],
+                  "away": [
+                        [
+                              "FW",
+                              "Etta Eyong",
+                              {
+                                    "on": "46'"
+                              }
+                        ],
+                        [
+                              "MF",
+                              "Bardeli",
+                              {
+                                    "on": "46'"
+                              }
+                        ],
+                        [
+                              "FW",
+                              "Marc Santos",
+                              {
+                                    "on": "64'"
+                              }
+                        ],
+                        [
+                              "DF",
+                              "Toljan",
+                              {
+                                    "on": "77'"
+                              }
+                        ],
+                        [
+                              "FW",
+                              "Tunde",
+                              {
+                                    "on": "77'"
+                              }
+                        ]
+                  ]
+            },
+            "manager": {
+                  "home": "Manolo González",
+                  "away": "Luis Castro"
+            }
+      },
+      {
+            "home": "Deportivo",
+            "away": "Elche",
+            "hs": 1,
+            "as": 1,
+            "stadium": "Riazor",
+            "day": "Mon 17 Aug",
+            "note": "Referee: Hernández Maeso · both sides newly promoted",
+            "goals": [
+                  [
+                        "1-0",
+                        "Aubameyang",
+                        "21'"
+                  ],
+                  [
+                        "1-1",
+                        "Aguado",
+                        "76'"
+                  ]
+            ],
+            "cards": [
+                  [
+                        "y",
+                        "Ximo Navarro",
+                        "26'"
+                  ],
+                  [
+                        "y",
+                        "Amatucci",
+                        "45'"
+                  ],
+                  [
+                        "y",
+                        "Gonzalo Villar",
+                        "67'"
+                  ],
+                  [
+                        "y",
+                        "Umaru",
+                        "87'"
+                  ]
+            ],
+            "xi": {
+                  "home": [
+                        [
+                              "GK",
+                              "Leo Román"
+                        ],
+                        [
+                              "DF",
+                              "Ximo Navarro",
+                              {
+                                    "y": "26'"
+                              }
+                        ],
+                        [
+                              "DF",
+                              "Noubi"
+                        ],
+                        [
+                              "DF",
+                              "Bright Ede"
+                        ],
+                        [
+                              "DF",
+                              "Quagliata"
+                        ],
+                        [
+                              "MF",
+                              "Altimira",
+                              {
+                                    "off": "70'"
+                              }
+                        ],
+                        [
+                              "MF",
+                              "Mario Soriano",
+                              {
+                                    "off": "70'"
+                              }
+                        ],
+                        [
+                              "MF",
+                              "Amatucci",
+                              {
+                                    "y": "45'"
+                              }
+                        ],
+                        [
+                              "MF",
+                              "Asp Jensen",
+                              {
+                                    "off": "60'"
+                              }
+                        ],
+                        [
+                              "FW",
+                              "Nsongo Bil",
+                              {
+                                    "off": "60'"
+                              }
+                        ],
+                        [
+                              "FW",
+                              "Aubameyang",
+                              {
+                                    "g": [
+                                          "21'"
+                                    ],
+                                    "off": "85'"
+                              }
+                        ]
+                  ],
+                  "away": [
+                        [
+                              "GK",
+                              "Dituro"
+                        ],
+                        [
+                              "DF",
+                              "Buba Sangaré"
+                        ],
+                        [
+                              "DF",
+                              "Affengruber"
+                        ],
+                        [
+                              "MF",
+                              "Redondo",
+                              {
+                                    "off": "60'"
+                              }
+                        ],
+                        [
+                              "DF",
+                              "Víctor Chust"
+                        ],
+                        [
+                              "MF",
+                              "Germán Valera",
+                              {
+                                    "off": "81'"
+                              }
+                        ],
+                        [
+                              "MF",
+                              "Martim Neto",
+                              {
+                                    "off": "60'"
+                              }
+                        ],
+                        [
+                              "MF",
+                              "Gonzalo Villar",
+                              {
+                                    "y": "67'"
+                              }
+                        ],
+                        [
+                              "MF",
+                              "Aguado",
+                              {
+                                    "g": [
+                                          "76'"
+                                    ]
+                              }
+                        ],
+                        [
+                              "MF",
+                              "Aly Houary",
+                              {
+                                    "off": "81'"
+                              }
+                        ],
+                        [
+                              "FW",
+                              "Fer Niño",
+                              {
+                                    "off": "68'"
+                              }
+                        ]
+                  ]
+            },
+            "bench": {
+                  "home": [
+                        [
+                              "MF",
+                              "Villares",
+                              {
+                                    "on": "60'"
+                              }
+                        ],
+                        [
+                              "FW",
+                              "Eddahchouri",
+                              {
+                                    "on": "60'"
+                              }
+                        ],
+                        [
+                              "FW",
+                              "Mella",
+                              {
+                                    "on": "70'"
+                              }
+                        ],
+                        [
+                              "FW",
+                              "Luismi Cruz",
+                              {
+                                    "on": "70'"
+                              }
+                        ],
+                        [
+                              "FW",
+                              "Kevin Sánchez",
+                              {
+                                    "on": "85'"
+                              }
+                        ]
+                  ],
+                  "away": [
+                        [
+                              "MF",
+                              "Cepeda",
+                              {
+                                    "on": "60'"
+                              }
+                        ],
+                        [
+                              "FW",
+                              "Morente",
+                              {
+                                    "on": "60'"
+                              }
+                        ],
+                        [
+                              "FW",
+                              "Umaru",
+                              {
+                                    "on": "68'",
+                                    "y": "87'"
+                              }
+                        ],
+                        [
+                              "MF",
+                              "Morcillo",
+                              {
+                                    "on": "81'"
+                              }
+                        ],
+                        [
+                              "MF",
+                              "Padu",
+                              {
+                                    "on": "81'"
+                              }
+                        ]
+                  ]
+            },
+            "manager": {
+                  "home": "Antonio Hidalgo"
+            }
+      },
+      {
+            "home": "Atlético Madrid",
+            "away": "Málaga",
+            "status": "pending",
+            "stadium": "Riyadh Air Metropolitano",
+            "day": "Wed 19 Aug, 21:00"
+      },
+      {
+            "home": "Valencia",
+            "away": "Real Betis",
+            "status": "pending",
+            "stadium": "Mestalla",
+            "day": "Tue 25 Aug, 21:00"
+      },
+      {
+            "home": "Real Madrid",
+            "away": "Real Sociedad",
+            "status": "pending",
+            "stadium": "Santiago Bernabéu",
+            "day": "Wed 26 Aug, 21:00"
+      },
+      {
+            "home": "Celta",
+            "away": "Osasuna",
+            "status": "pending",
+            "stadium": "Balaídos",
+            "day": "Thu 27 Aug, 21:30"
+      },
+      {
+            "home": "Barcelona",
+            "away": "Athletic Club",
+            "status": "pending",
+            "stadium": "Spotify Camp Nou",
+            "day": "Thu 27 Aug, 21:00"
+      }
+];
+
+/* ── Renderer ───────────────────────────────────────────── */
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;" }[c]));
+
+const marks = (x = {}) =>
+    (x.g || []).map(t => `<span class="mk gl">${esc(t)}</span>`).join("") +
+    (x.y ? `<span class="mk yc">${esc(x.y)}</span>` : "") +
+    (x.r ? `<span class="mk rc">${esc(x.r)}</span>` : "") +
+    (x.off ? `<span class="mk off">&#9660;${esc(x.off)}</span>` : "") +
+    (x.on ? `<span class="mk on">&#9650;${esc(x.on)}</span>` : "");
+
+const player = p => {
+    const [pos, name, x = {}] = p;
+    const no = (x.n || x.n === 0)
+        ? `<span class="sb-no">${esc(x.n)}</span>`
+        : `<span class="sb-no tbd">0</span>`;   /* empty slot, ready for the shirt number */
+    return `<div class="sb-p"><span class="sb-pos">${esc(pos)}</span>${no}` +
+           `<span class="sb-pn">${esc(name)}</span>${marks(x)}</div>`;
+};
+
+const blank = n => `<div class="sb-p"><span class="sb-pos tbd">0</span>` +
+    `<span class="sb-no tbd">0</span><span class="sb-pn tbd"></span></div>`.repeat(n);
+
+const side = (m, k) => {
+    const xi    = (m.xi    && m.xi[k])    || [];
+    const bench = (m.bench && m.bench[k]) || [];
+    const boss  = (m.manager && m.manager[k]) || "";
+    return `<div class="sb-side">
+        <h4>${esc(k === "home" ? m.home : m.away)}</h4>
+        ${xi.length ? xi.map(player).join("") : blank(11)}
+        <div class="sb-subs">Substitutes</div>
+        ${bench.length ? bench.map(player).join("") : blank(5)}
+        <div class="sb-mgr"><b>Manager</b>${boss ? `<br>${esc(boss)}` : `<span class="tbd"></span>`}</div>
+    </div>`;
+};
+
+const card = m => {
+    const pending = m.status === "pending" || m.hs == null;
+    const state = pending ? "" : (m.hs > m.as ? "win-h" : m.hs < m.as ? "win-a" : "draw");
+
+    const goals = (m.goals && m.goals.length)
+        ? `<div><span class="lbl">Goals</span>${m.goals.map(g =>
+              `<span class="it"><b>${esc(g[0])}</b> ${esc(g[1])} ${esc(g[2])}</span>`).join("")}</div>` : "";
+    const cards = (m.cards && m.cards.length)
+        ? `<div><span class="lbl">Cards</span>${m.cards.map(c =>
+              `<span class="it"><span class="mk ${c[0] === "r" ? "rc" : "yc"}"></span>${esc(c[1])}${c[2] ? " " + esc(c[2]) : ""}</span>`).join("")}</div>` : "";
+    const foot = pending
+        ? `<div class="sb-foot sb-blank"><i></i><i></i></div>`
+        : `<div class="sb-foot">${goals}${cards}</div>`;
+
+    /* the panel is always there — empty slots when the match has no data yet */
+    const xi = `<details><summary>Lineups</summary><div class="sb-xi">${side(m, "home")}${side(m, "away")}</div></details>`;
+
+    return `<article class="sb-card ${state}">
+        <div class="sb-head">
+            ${m.stadium ? `<b>${esc(m.stadium)}</b>` : ""}
+            ${m.day ? `<span>${esc(m.day)}</span>` : ""}
+            ${pending ? "" : `<span class="sb-flag">Full time</span>`}
+        </div>
+        <div class="sb-score">
+            <div class="sb-row h"><span class="sb-team">${esc(m.home)}</span><span class="sb-num${pending ? " tbd" : ""}">${pending ? "" : m.hs}</span></div>
+            <div class="sb-row a"><span class="sb-team">${esc(m.away)}</span><span class="sb-num${pending ? " tbd" : ""}">${pending ? "" : m.as}</span></div>
+        </div>
+        ${foot}${xi}
+        ${m.note ? `<div class="sb-note">${esc(m.note)}</div>` : ""}
+    </article>`;
+};
+
+const root = document.getElementById("sb-laliga");
+root.innerHTML = `
+    <div class="sb-bar">
+        <b>${esc(LEAGUE)}</b>
+        <span class="sb-week">${esc(WEEK)}</span>
+        <span class="sb-dates">${esc(DATES)}</span>
+        <button type="button" class="sb-all">Show all lineups</button>
+    </div>
+    <div class="sb-grid">${MATCHES.map(card).join("")}</div>`;
+
+const btn = root.querySelector(".sb-all");
+btn.addEventListener("click", () => {
+    const open = btn.dataset.open !== "1";
+    root.querySelectorAll("details").forEach(d => d.open = open);
+    btn.dataset.open = open ? "1" : "0";
+    btn.textContent = open ? "Hide all lineups" : "Show all lineups";
+});
+
+})();
+</script>
