@@ -208,6 +208,9 @@
         .news-ticker { display: flex; white-space: nowrap; animation: ticker 25s linear infinite; }
         .news-ticker span { padding: 0 30px; color: #fff; font-size: 15px; font-weight: 500; }
         @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+        /* ── Countdown ── */
+        #demo { font-size: 1.2em; font-weight: bold; color: #e67e22; }
     </style>
 </head>
 <body>
@@ -247,10 +250,17 @@
 
 <main>
 
+    <!-- News Ticker -->
+    <div class="news-container">
+        <span class="news-title">Where am I?</span>
+        <div class="news-ticker-wrapper">
+            <div class="news-ticker" id="news-ticker"></div>
+        </div>
+    </div>
 
 
 <main>
-</div></div>
+	</div></div>
 <ol>
   <li>
     <details>
