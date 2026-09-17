@@ -2,6 +2,7 @@ const newsList = [
     "🌍 Now in Santiago.",
     "📰 I started my postdoc in the UTFSM",
     "🚀 Cristian Vega will be in COMCA 2026",
+    "🚀 and also in SOMACHI 2026",
     "💻 New optimization algorithms incoming!!!"
 ];
 (function() {
