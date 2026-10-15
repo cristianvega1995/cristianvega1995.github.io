@@ -214,6 +214,8 @@
     </style>
 </head>
 <body>
+
+
     <!-- Header with smaller photo -->
 <header class="page-header">
     <img src="cristian_vega.png" alt="Cristian Vega">
@@ -233,23 +235,45 @@
     </div>
 </header>
 
+<!-- Nav with hamburger on mobile -->
+<nav>
+    <button class="nav-toggle" onclick="document.querySelector('nav ul').classList.toggle('open')">☰ Menu</button>
+    <ul>
+        <li><a href="index.html">About</a></li>
+        <li><a href="index.html">Contact</a></li>
+        <li><a href="CV.html">CV</a></li>
+        <li><a href="Publications.html">Publications</a></li>
+        <li><a href="ResearchProject.html">Research Projects</a></li>
+        <li><a href="Talks.html">Talks</a></li>
+        <li><a href="Teaching.html">Teaching</a></li>
+        <li><a href="Others.html">Others</a></li>
+        <li><a href="Taller.html">Taller Python</a></li>
+    </ul>
+</nav>
 
 <main>
 
+    <!-- News Ticker -->
+    <div class="news-container">
+        <span class="news-title">Where am I?</span>
+        <div class="news-ticker-wrapper">
+            <div class="news-ticker" id="news-ticker"></div>
+        </div>
+    </div>
 
-
-<main>
+    <!-- Research Projects -->
+    <h2 id="research">Research Projects</h2>
+    <ol>
+        <li>UTA research project: "Fortalecimiento de Grupos de Investigación", Code 8802-25, 2026, Assistant researcher.</li>
+        <li>ECOS-Sud-France and ANID-Chile (ECOS240031): "Dynamical systems associated to nonconvex optimization problems", Apr. 2025--Mar. 2028. Member of Chilean team.</li>
+        <li>Marie Sklodowska-Curie grant agreement No. 861137, EU Horizon 2020 programme, Mar. 2021--Mar. 2024. PhD student.</li>
+        <li>FONDECYT 1190871, Regular 2019, "Fast primal-dual splitting algorithms for solving coupled inclusions". Apr. 2020--Nov. 2020. Master student.</li>
+    </ol>
 
     <hr>
-
-    <!-- CV -->
-    <h2 id="cv">Descargue el taller aqui</h2>
-
-    <hr>
-  <h2> <div class="social-icons"><a href="CV.pdf"><img src="PDF.jpeg" alt="Google Scholar"></a></div> Aqui!!!!</h2>
 </section>
   <footer>
-    &copy;  © Copyright 2026 Cristian Vega
+    &copy; Copyright 2026 Cristian Vega
   </footer>
 
 </main>

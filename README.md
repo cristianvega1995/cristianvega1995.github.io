@@ -84,9 +84,10 @@ Then, I spent two years researching with Felipe Lara in the University of Tarapa
 6. J.J. Maulén, F. Roldán, and C. Vega.: "*[Relaxed and inertial nonlinear Forward-Backward algorithm](https://arxiv.org/pdf/2507.18856)*", arXiv preprint arXiv:2507.18856, 2025.
 7. H. Labarriére, C. Molinari, L. Rosasco, C. Vega, and S. Villa.: "*[Optimization Insights into Deep Diagonal Linear Networks]({https://arxiv.org/pdf/2412.16765)*", arXiv preprint arXiv:2412.16765, 2024.
 8. V.S. Amaral, F. Lara, and C. Vega.: "*Block Coordinate Descent Methods for Nonconvex Nonsmooth Optimization with Applications*", 2026.
+9. C. Vega, C. Molinari, L. Rosasco, and S. Villa.: "*[Optimization by Reparametrization: Time-Warped Mirror Flows with Singular Geometry](https://arxiv.org/abs/2610.07040)*", arXiv preprint arXiv:2610.07040, 2026.
    
 ### Articles in preparation
-9. F. Lara, and C. Vega.: "*QuAdam: A Variant of Adam for Quasar Convex Functions*", in preparation, 2026.
+10. F. Lara, and C. Vega.: "*QuAdam: A Variant of Adam for Quasar Convex Functions*", in preparation, 2026.
 <br>
 
 
