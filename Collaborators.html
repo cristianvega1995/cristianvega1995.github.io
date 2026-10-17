@@ -211,6 +211,16 @@
 
         /* ── Countdown ── */
         #demo { font-size: 1.2em; font-weight: bold; color: #e67e22; }
+
+        /* ── Collaborators controls ── */
+        .collab-btn {
+            background: #159957; color: #fff; border: none;
+            padding: 0.4rem 0.9rem; border-radius: 6px;
+            font-size: 0.85rem; font-weight: 600; cursor: pointer;
+        }
+        .collab-btn:hover { background: #0f7a44; }
+        .collab-btn.secondary { background: #567482; }
+        .collab-btn.secondary:hover { background: #46606e; }
     </style>
 </head>
 <body>
@@ -261,83 +271,90 @@
     </div>
 
 <h2 id="collaborators">My collaborators</h2>
-<ol>
+<p>
+  <button type="button" id="collab-expand-all" class="collab-btn">Expand all</button>
+  <button type="button" id="collab-collapse-all" class="collab-btn secondary">Collapse all</button>
+  <label style="margin-left:0.75rem; font-size:0.9rem;">
+    <input type="checkbox" id="collab-allow-multiple"> Allow more than one open at once
+  </label>
+</p>
+<ol id="collaborators-list">
   <li><details><summary><big>🇨🇱 <a href="http://lbriceno.mat.utfsm.cl/">Luis Briceño</a> (2020)</big></summary>
 	  <p>His collaborators</p>
       <ol>
-		 <li>Mario Bravo</li>
-		 <li>Roberto Cominetti</li>
-		 <li>Cristian Cortes</li>
-		 <li>Francisco Martinez</li>
-		 <li>Hédy Attouch</li>
-		 <li>Patrick L Combettes</li>
-		 <li>César Vigouroux</li>
-		 <li>Jean-Christophe Pesquet</li>
-		 <li>Nelly Pustelnik</li>
-		 <li>Nguyen Dinh Hoang</li>
-		 <li>Juan Peypouquet</li>
-		 <li>José R Correa</li>
-		 <li>Andrés Perlroth</li>
-		 <li>Giovanni Chierchia</li>
-		 <li>Emilie Chouzenoux</li>
-		 <li>Dante Kalise</li>
-		 <li>Dante Kalise</li>
-		 <li>Sergio López Rivera</li>
-		 <li>Damek Davis</li>
-		 <li>Ziad Kobeissi</li>
-		 <li>Mathieu Laurière</li>
-		 <li>A Mateos González</li>
-		 <li>Julio Deride</li>
+		 <li>🇨🇱 Mario Bravo</li>
+		 <li>🇨🇱 Roberto Cominetti</li>
+		 <li>🇨🇱 Cristian Cortes</li>
+		 <li>🇨🇱 Francisco Martinez</li>
+		 <li>🇫🇷 Hédy Attouch</li>
+		 <li>🇫🇷 Patrick L Combettes</li>
+		 <li>🇫🇷 César Vigouroux</li>
+		 <li>🇫🇷 Jean-Christophe Pesquet</li>
+		 <li>🇫🇷 Nelly Pustelnik</li>
+		 <li>🇻🇳 Nguyen Dinh Hoang</li>
+		 <li>🇨🇱 Juan Peypouquet</li>
+		 <li>🇨🇱 José R Correa</li>
+		 <li>🇨🇱 Andrés Perlroth</li>
+		 <li>🇮🇹 Giovanni Chierchia</li>
+		 <li>🇫🇷 Emilie Chouzenoux</li>
+		 <li>🇮🇹 Dante Kalise</li>
+		 <li>🇮🇹 Dante Kalise</li>
+		 <li>🇨🇱 Sergio López Rivera</li>
+		 <li>🇺🇸 Damek Davis</li>
+		 <li>🇱🇧 Ziad Kobeissi</li>
+		 <li>🇫🇷 Mathieu Laurière</li>
+		 <li>🇪🇸 A Mateos González</li>
+		 <li>🇨🇱 Julio Deride</li>
 		 <li>Fernando Roldán</li>
-		 <li>Cristian Vega</li>
-		 <li>Jinjian Chen</li>
-		 <li>Yuchao Tang</li>
-		 <li>Xianjin Yang</li>
-		 <li>Cristóbal Vivar-Vargas</li>
-		 <li>Maël Le Treust</li>
-		 <li>Leo Davy</li>
-		 <li>Emilio Vilches</li>
-		 <li> Paulo Gonçalves </li>
-		 <li>Guillaume Lauga</li>
-		 <li>Elisa Riccietti</li>
-		 <li>Jose A. Carrillo</li>
-		 <li>Li Wang</li>
-		 <li>Nicolas Hernández-Santibáñez</li>
-		 <li>Vicente Moreno-Garrido</li>
+		 <li>🇨🇱 Cristian Vega</li>
+		 <li>🇨🇳 Jinjian Chen</li>
+		 <li>🇨🇳 Yuchao Tang</li>
+		 <li>🇨🇳 Xianjin Yang</li>
+		 <li>🇨🇱 Cristóbal Vivar-Vargas</li>
+		 <li>🇫🇷 Maël Le Treust</li>
+		 <li>🇫🇷 Leo Davy</li>
+		 <li>🇨🇱 Emilio Vilches</li>
+		 <li>🇫🇷 Paulo Gonçalves</li>
+		 <li>🇫🇷 Guillaume Lauga</li>
+		 <li>🇮🇹 Elisa Riccietti</li>
+		 <li>🇪🇸 Jose A. Carrillo</li>
+		 <li>🇨🇳 Li Wang</li>
+		 <li>🇨🇱 Nicolas Hernández-Santibáñez</li>
+		 <li>🇨🇱 Vicente Moreno-Garrido</li>
       </ol>
     </details>
   </li>
   <li><details><summary><big>🇨🇱 <a href="https://jderide.com/es/">Julio Deride</a> (2020)</big></summary>
 	  <p>His collaborators:</p> 
       <ol>
-        <li>Zhaomiao Guo</li>
-        <li>Yueyue Fan</li>
-        <li>David L Woodruff</li>
-		<li>Andrea Staid</li>
-        <li>Jean-Paul Watson</li>
-        <li>Gerrit Slevogt</li>
-		<li>César Silva-Monroy</li>
-        <li>Robert Bassett</li>
-        <li>Alejandro Jofré</li>
-		<li>Roger JB Wets</li>
-        <li>Luis G Crespo</li>
-        <li>Daniel Giesy</li>
-		<li>Sean Kenny</li>
-        <li>Luis Briceño-Arias</li>
-        <li>Sergio López-Rivera</li>
-		<li>Francisco J Silva</li>
-        <li>Cristian Vega</li>
-        <li>Alberto Mercado</li>
+        <li>🇨🇳 Zhaomiao Guo</li>
+        <li>🇺🇸 Yueyue Fan</li>
+        <li>🇺🇸 David L Woodruff</li>
+		<li>🇺🇸 Andrea Staid</li>
+        <li>🇺🇸 Jean-Paul Watson</li>
+        <li>🇩🇪 Gerrit Slevogt</li>
+		<li>🇺🇸 César Silva-Monroy</li>
+        <li>🇺🇸 Robert Bassett</li>
+        <li>🇨🇱 Alejandro Jofré</li>
+		<li>🇺🇸 Roger JB Wets</li>
+        <li>🇺🇸 Luis G Crespo</li>
+        <li>🇺🇸 Daniel Giesy</li>
+		<li>🇺🇸 Sean Kenny</li>
+        <li>🇨🇱 Luis Briceño-Arias</li>
+        <li>🇨🇱 Sergio López-Rivera</li>
+		<li>🇫🇷 Francisco J Silva</li>
+        <li>🇨🇱 Cristian Vega</li>
+        <li>🇨🇱 Alberto Mercado</li>
 		<li>José Fuentes</li>
-        <li>Sina Baghali</li>
-        <li>Cristopher Hermosilla</li>
-		<li>Mattia Solla</li>
-        <li>Fernanda Urrea</li>
-        <li>Johannes O Royset</li>
-		<li>Sebastián Álvarez</li>
-        <li>RT Rockafellar</li>
-        <li>Wolfgang Breytmann</li>
-		<li>Nicolás Hernández</li>
+        <li>🇮🇷 Sina Baghali</li>
+        <li>🇨🇱 Cristopher Hermosilla</li>
+		<li>🇮🇹 Mattia Solla</li>
+        <li>🇨🇱 Fernanda Urrea</li>
+        <li>🇳🇴 Johannes O Royset</li>
+		<li>🇨🇱 Sebastián Álvarez</li>
+        <li>🇺🇸 RT Rockafellar</li>
+        <li>🇩🇪 Wolfgang Breytmann</li>
+		<li>🇨🇱 Nicolás Hernández</li>
       </ol>
     </details>
   </li>
@@ -362,93 +379,93 @@
   <li><details><summary><big>🇫🇷 <a href="https://hippolytelbrrr.github.io/pages/index_eng.html">Hippolyte Labarrière</a> (2024)</big></summary>
 	  <p>His collaborators:</p> 
       <ol>
-        <li>Jean-François Aujol</li>
-        <li>Charles Dossal</li>
-        <li>Van Hao Hoàng</li>
-		<li>Aude Rondepierre</li>
-        <li>Lorenzo Rosasco</li>
-        <li>Cesare Molinari</li>
-        <li>Silvia Villa</li>
-        <li>Cristian Vega</li>
-        <li>Lucas Calatroni</li>
-		<li>Shuo Huang</li>
-        <li>Ernesto De Vito</li>
-        <li>Tomaso Poggio</li>
-        <li>Emanuele Naldi</li>
+        <li>🇫🇷 Jean-François Aujol</li>
+        <li>🇫🇷 Charles Dossal</li>
+        <li>🇻🇳 Van Hao Hoàng</li>
+		<li>🇫🇷 Aude Rondepierre</li>
+        <li>🇮🇹 Lorenzo Rosasco</li>
+        <li>🇮🇹 Cesare Molinari</li>
+        <li>🇮🇹 Silvia Villa</li>
+        <li>🇨🇱 Cristian Vega</li>
+        <li>🇮🇹 Lucas Calatroni</li>
+		<li>🇨🇳 Shuo Huang</li>
+        <li>🇮🇹 Ernesto De Vito</li>
+        <li>🇮🇹 Tomaso Poggio</li>
+        <li>🇮🇹 Emanuele Naldi</li>
       </ol>
     </details>
   </li>
    <li><details><summary><big>Fernando Roldán (2024)</big></summary>
 	  <p>His collaborators:</p> 
       <ol>
-        <li>Juan Peypouquet</li>
-        <li>Cesare Molinari</li>
-        <li>Luis Briceño</li>
-		<li>Jinjian Chen</li>
-        <li>Yuchao Tang</li>
-        <li>Emilie Chouzenoux</li>
-        <li>Jean-Christophe Pesquet</li>
-		<li>Cristian Vega</li>
-        <li>Raul Tintaya Marcavillaca</li>
-    	<li>Fernando Muñoz García</li>
-        <li>Juan José Maulén</li>
+        <li>🇨🇱 Juan Peypouquet</li>
+        <li>🇮🇹 Cesare Molinari</li>
+        <li>🇨🇱 Luis Briceño</li>
+		<li>🇨🇳 Jinjian Chen</li>
+        <li>🇨🇳 Yuchao Tang</li>
+        <li>🇫🇷 Emilie Chouzenoux</li>
+        <li>🇫🇷 Jean-Christophe Pesquet</li>
+		<li>🇨🇱 Cristian Vega</li>
+        <li>🇵🇪 Raul Tintaya Marcavillaca</li>
+    	<li>🇨🇱 Fernando Muñoz García</li>
+        <li>🇨🇱 Juan José Maulén</li>
       </ol>
     </details>
   </li>
   <li><details><summary><big>🇨🇱 <a href="http://felipelara.cl//">Felipe Lara</a> (2024)</big></summary>
 	  <p>His collaborators:</p> 
       <ol>
-        <li>Fabián Flores-Bazán</li>
-        <li>Nicolas Hadjisavvas</li>
-        <li>Iván Montenegro</li>
-		<li>Rubén López</li>
-        <li>Alfredo Iusem</li>
-        <li>Juan Enrique Martínez-Legaz</li>
-		<li>Benar F Svaiter</li>
-        <li>Luis Felipe Bueno</li>
-        <li>Gabriel Haeser</li>
-		<li>Frank Navarro Rojas</li>
-        <li>Dinh The Luc</li>
-        <li>Sorin-Mihai Grad</li>
-		<li>Alireza Kabgani</li>
-        <li>Raul Tinataya Marcavillaca</li>
-        <li>Le Hai Yen</li>
-		<li>Cristian Escudero</li>
-        <li>Miguel Sama</li>
+        <li>🇨🇱 Fabián Flores-Bazán</li>
+        <li>🇬🇷 Nicolas Hadjisavvas</li>
+        <li>🇨🇱 Iván Montenegro</li>
+		<li>🇨🇱 Rubén López</li>
+        <li>🇧🇷 Alfredo Iusem</li>
+        <li>🇪🇸 Juan Enrique Martínez-Legaz</li>
+		<li>🇧🇷 Benar F Svaiter</li>
+        <li>🇧🇷 Luis Felipe Bueno</li>
+        <li>🇧🇷 Gabriel Haeser</li>
+		<li>🇨🇱 Frank Navarro Rojas</li>
+        <li>🇻🇳 Dinh The Luc</li>
+        <li>🇷🇴 Sorin-Mihai Grad</li>
+		<li>🇮🇷 Alireza Kabgani</li>
+        <li>🇵🇪 Raul Tinataya Marcavillaca</li>
+        <li>🇻🇳 Le Hai Yen</li>
+		<li>🇨🇱 Cristian Escudero</li>
+        <li>🇪🇸 Miguel Sama</li>
         <li>Juan Choque</li>
-		<li>Le Phuoc Hai</li>
-        <li>Boris S Mordukhovich</li>
-        <li>Masoud Ahookhosh</li>
-		<li>Phan Tu Vuong</li>
-        <li>Nguyen Van Tuyen</li>
-        <li>Tran Van Nghi</li>
-        <li>José de Brito</li>
-        <li>Di Liu</li>
-		<li>Phan Quoc Khanh</li>
-        <li>Cristian Vega</li>
-        <li>MH Alizadeh</li>
-		<li>Tran Van Thang</li>
-        <li>Jinyun Yuan</li>
-        <li>Alberto Ramos</li>
-		<li>Rishabh Pandey</li>
-        <li>Vinay Singh</li>
-        <li>Pham Thi Hoai</li>
-		<li>Nguyen Duy Hoang</li>
-		<li>Nguyen Thi Van Han</li>
-        <li>Nguyen Dong Yen</li>
-        <li>Yboon García</li>
+		<li>🇻🇳 Le Phuoc Hai</li>
+        <li>🇺🇸 Boris S Mordukhovich</li>
+        <li>🇮🇷 Masoud Ahookhosh</li>
+		<li>🇻🇳 Phan Tu Vuong</li>
+        <li>🇻🇳 Nguyen Van Tuyen</li>
+        <li>🇻🇳 Tran Van Nghi</li>
+        <li>🇧🇷 José de Brito</li>
+        <li>🇨🇳 Di Liu</li>
+		<li>🇻🇳 Phan Quoc Khanh</li>
+        <li>🇨🇱 Cristian Vega</li>
+        <li>🇮🇷 MH Alizadeh</li>
+		<li>🇻🇳 Tran Van Thang</li>
+        <li>🇧🇷 Jinyun Yuan</li>
+        <li>🇧🇷 Alberto Ramos</li>
+		<li>🇮🇳 Rishabh Pandey</li>
+        <li>🇮🇳 Vinay Singh</li>
+        <li>🇻🇳 Pham Thi Hoai</li>
+		<li>🇻🇳 Nguyen Duy Hoang</li>
+		<li>🇻🇳 Nguyen Thi Van Han</li>
+        <li>🇻🇳 Nguyen Dong Yen</li>
+        <li>🇵🇪 Yboon García</li>
       </ol>
     </details>
   </li>
   <li><details><summary><big>🇨🇱 <a href="https://www.uoh.cl/investigacion/academico/juan-jose-maulen-munoz/">Juan José Maulén</a> (2025)</big></summary>
 	  <p>His collaborators:</p> 
       <ol>
-        <li>Juan Peypouquet</li>
-        <li>Ignacio Fierro</li>
-        <li>Huiyuan Guo</li>
+        <li>🇨🇱 Juan Peypouquet</li>
+        <li>🇨🇱 Ignacio Fierro</li>
+        <li>🇨🇳 Huiyuan Guo</li>
 		<li>Fernando Roldán</li>
-		<li>Cristian Vega</li>
-		<li>Samir Adly</li>
+		<li>🇨🇱 Cristian Vega</li>
+		<li>🇫🇷 Samir Adly</li>
       </ol>
     </details>
   </li>
@@ -461,26 +478,26 @@
   <li><details><summary><big>🇧🇷 <a href="https://scholar.google.com/citations?user=RVU2MKYAAAAJ&hl=en">Vitaliano Amaral</a> (2026)</big></summary>
 	  <p>His collaborators:</p> 
       <ol>
-        <li>Roberto Andreani</li>
-        <li>Ernesto Birgin</li>
-        <li>Diaulas Marcondes</li>
-        <li>José Mario Martínez</li>
-        <li>P. S. M. Santos</li>
-        <li>Gilson N. Silva1</li>
-        <li>Sissy S Souza</li>
-        <li>JO Lopes</li>
-        <li>Thiago Placido</li>
-		<li>Marcos Travaglia</li>
-        <li>PB Assunção</li>
-        <li>DR Souza</li>
-		<li>Atécio Alves</li>
-        <li>Jônatas OL Silva</li>
-        <li>Antônio Bortoloti</li>
-		<li>Sissy S Souza</li>
-        <li>Jurandir O Lopes</li>
-		<li> LD Secchin</li>
-        <li>Felipe Lara</li>
-		<li>Cristian Vega</li>
+        <li>🇧🇷 Roberto Andreani</li>
+        <li>🇧🇷 Ernesto Birgin</li>
+        <li>🇧🇷 Diaulas Marcondes</li>
+        <li>🇧🇷 José Mario Martínez</li>
+        <li>🇧🇷 P. S. M. Santos</li>
+        <li>🇧🇷 Gilson N. Silva1</li>
+        <li>🇧🇷 Sissy S Souza</li>
+        <li>🇧🇷 JO Lopes</li>
+        <li>🇧🇷 Thiago Placido</li>
+		<li>🇧🇷 Marcos Travaglia</li>
+        <li>🇧🇷 PB Assunção</li>
+        <li>🇧🇷 DR Souza</li>
+		<li>🇧🇷 Atécio Alves</li>
+        <li>🇧🇷 Jônatas OL Silva</li>
+        <li>🇧🇷 Antônio Bortoloti</li>
+		<li>🇧🇷 Sissy S Souza</li>
+        <li>🇧🇷 Jurandir O Lopes</li>
+		<li>🇧🇷 LD Secchin</li>
+        <li>🇨🇱 Felipe Lara</li>
+		<li>🇨🇱 Cristian Vega</li>
       </ol>
     </details>
   </li>
@@ -493,5 +510,6 @@
 </main>
 
 <script src="assets/js/news-ticker.js"></script>
+<script src="assets/js/collaborators-accordion.js"></script>
 </body>
 </html>
