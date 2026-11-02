@@ -1,7 +1,7 @@
 const newsList = [
-    "🌍 Now in Santiago.",
+    "📍 In Santiago until further notice.",
     "📰 I started my postdoc in the UTFSM",
-    "🚌 Cristian Vega will be in COMCA 2026 and also in SOMACHI 2026",
+    "🚀 Cristian Vega will be in ICOMaLTA 2026",
     "🚀 New article in AMO!!!",
     "💻 New optimization algorithms incoming!!!",
     "📤 New prepint on arxiv"
